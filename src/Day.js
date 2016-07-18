@@ -47,7 +47,7 @@ export default class day extends Component {
     // }
 
   	render() {
-          // console.log(this.props.disabledDays);
+
         let { day, onDayClick, empty, modifiers, tabIndex, children, month } = this.props;
         let dayModifiers = [];
 
@@ -60,8 +60,7 @@ export default class day extends Component {
             ...getModifiersForDay(day, this.getModifiersFromProps(this.props)),
         ];
 
-          // console.log(getModifiersForDay(day, this.getModifiersFromProps(this.props)));
-          // console.log(modifiers)
+
 
       	let className = 'DayPicker-Day';
         className += dayModifiers.map(modifier => ` ${className}--${modifier}`).join('');

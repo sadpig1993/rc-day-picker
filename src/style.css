@@ -103,12 +103,6 @@
     font-weight: 500;
 }
 
-.DayPicker-Day--disabled {
-    color: #dce0e0;
-    cursor: default;
-    background-color: #eff1f1;
-}
-
 .DayPicker-Day--sunday {
     color: #dce0e0;
     background-color: #f7f8f8;
@@ -118,6 +112,12 @@
     cursor: default;
     color: #dce0e0;
     background-color: #fff;
+}
+
+.DayPicker-Day.DayPicker-Day--disabled {
+    color: #dce0e0;
+    cursor: default;
+    background-color: #eff1f1;
 }
 
 .DayPicker-Day--selected {
