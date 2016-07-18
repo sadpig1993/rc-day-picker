@@ -1,0 +1,131 @@
+.DayPicker {
+    display: inline-block;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+    user-select: none;
+    /* border: 1px solid #d3d7da; */
+    background-color: #fff;
+    display: flex;
+}
+
+
+.DayPicker-Month {
+    display: table;
+    border-collapse: collapse;
+    border-spacing: 0;
+    user-select: none;
+}
+
+.DayPicker-NavBar {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 1.5em;
+    padding: .6em 0;
+}
+
+.DayPicker-NavButton {
+    position: absolute;
+    top: 50%;
+    margin-top: -6.5px;
+    width: 13px;
+    height: 13px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+
+.DayPicker-NavButton--prev {
+    left: 20px;
+    /*这里的相对路径的依据是构建后的common.css文件*/
+    background: url(./prev.png) no-repeat;
+}
+
+.DayPicker-NavButton--next {
+    right: 20px;
+    /*这里的相对路径的依据是构建后的common.css文件*/
+    background: url(./next.png) no-repeat;
+}
+
+.DayPicker-Caption {
+    display: table-caption;
+    height: 1.5em;
+    text-align: center;
+    padding: .6em 0;
+}
+
+.DayPicker-Weekdays {
+    display: table-header-group;
+    background-color: #f5f9fc;
+    color: #0082dc;
+    width: 245px;
+}
+.DayPicker-Weekdays > div {
+    display: table-row;
+
+    border-left: 20px solid #f5f9fc;
+    border-right: 20px solid #f5f9fc;
+}
+
+.DayPicker-Weekday {
+    display: table-cell;
+    padding: .5em;
+    font-size: .875em;
+    text-align: center;
+}
+
+.DayPicker-Body {
+    display: table-row-group;
+
+    border-left: 20px solid #fff;
+    border-right: 20px solid #fff;
+}
+
+.DayPicker-Week {
+    display: table-row;
+}
+
+.DayPicker-Day {
+    display: table-cell;
+    padding: .5em;
+    text-align: center;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+.DayPicker--interactionDisabled .DayPicker-Day {
+    cursor: default;
+}
+
+.DayPicker-Day--today {
+    color: #d0021b;
+    font-weight: 500;
+}
+
+.DayPicker-Day--disabled {
+    color: #dce0e0;
+    cursor: default;
+    background-color: #eff1f1;
+}
+
+.DayPicker-Day--sunday {
+    color: #dce0e0;
+    background-color: #f7f8f8;
+}
+
+.DayPicker-Day.DayPicker-Day--outside {
+    cursor: default;
+    color: #dce0e0;
+    background-color: #fff;
+}
+
+.DayPicker-Day--selected {
+    color: #fff;
+    background-color: #0082dc;
+    border-radius: 0;
+}
+
+.DayPicker--ar {
+    direction: rtl;
+}
