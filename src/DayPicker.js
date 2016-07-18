@@ -20,7 +20,12 @@ export default class DayPicker extends Component {
 	    className: PropTypes.string,
 
 	    canChangeMonth: PropTypes.bool,
-	    fixedWeeks: PropTypes.bool
+	    fixedWeeks: PropTypes.bool,
+
+	    captionElement: PropTypes.element,
+
+	    fromMonth: PropTypes.instanceOf(Date),
+    	toMonth: PropTypes.instanceOf(Date),
 
 	    
   	};
@@ -42,8 +47,6 @@ export default class DayPicker extends Component {
 
         this.showNextMonth = this.showNextMonth.bind(this);
     	this.showPreviousMonth = this.showPreviousMonth.bind(this);
-     //    this.allowPreviousMonth = this.allowPreviousMonth.bind(this);
-     //    this.allowNextMonth = this.allowNextMonth.bind(this);
      	this.state = {
      		currentMonth: this.props.initialMonth
      	}
@@ -72,7 +75,11 @@ export default class DayPicker extends Component {
     }
 
     allowMonth(day) {
-    	if (!this.props.canChangeMonth) {
+		const { fromMonth, toMonth, canChangeMonth } = this.props;
+
+    	if (!canChangeMonth ||
+    		(fromMonth && fromMonth > day) ||
+    		(toMonth && toMonth < day) ) {
     		return false;
     	}
     	return true;

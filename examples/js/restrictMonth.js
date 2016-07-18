@@ -48,7 +48,7 @@
 
 	__webpack_require__(1);
 
-	__webpack_require__(2);
+	__webpack_require__(192);
 
 /***/ },
 /* 1 */
@@ -63,88 +63,7 @@
 	/*istanbul ignore next*/module.exports = exports["default"]; // required to safely use babel/register within a browserify codebase
 
 /***/ },
-/* 2 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _react = __webpack_require__(3);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _reactDom = __webpack_require__(35);
-
-	var _reactDom2 = _interopRequireDefault(_reactDom);
-
-	var _DayPicker = __webpack_require__(174);
-
-	var _DayPicker2 = _interopRequireDefault(_DayPicker);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var Demo = function (_Component) {
-		_inherits(Demo, _Component);
-
-		function Demo() {
-			var _Object$getPrototypeO;
-
-			_classCallCheck(this, Demo);
-
-			for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-				args[_key] = arguments[_key];
-			}
-
-			var _this = _possibleConstructorReturn(this, (_Object$getPrototypeO = Object.getPrototypeOf(Demo)).call.apply(_Object$getPrototypeO, [this].concat(args)));
-
-			_this.state = {
-				selectedDay: null
-			};
-
-
-			_this.onDayClickHandler = _this.onDayClickHandler.bind(_this);
-			return _this;
-		}
-
-		_createClass(Demo, [{
-			key: 'onDayClickHandler',
-			value: function onDayClickHandler(e, day, modifilers) {
-				if (modifilers.disabled) {
-					return;
-				}
-				this.setState({
-					selectedDay: modifilers.selected ? null : day
-				});
-			}
-		}, {
-			key: 'render',
-			value: function render() {
-				var selectedDay = this.state.selectedDay;
-
-				return _react2.default.createElement(_DayPicker2.default, {
-					numberOfMonths: 2,
-					canChangeMonth: false,
-					selectedDays: function selectedDays(day) {
-						return _DayPicker.Utils.isSameDay(selectedDay, day);
-					},
-					onDayClick: this.onDayClickHandler
-				});
-			}
-		}]);
-
-		return Demo;
-	}(_react.Component);
-
-	_reactDom2.default.render(_react2.default.createElement(Demo, null), document.getElementById('root'));
-
-/***/ },
+/* 2 */,
 /* 3 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -22680,6 +22599,77 @@
 	  className: 'DayPicker-Caption'
 	};
 	exports.default = Month;
+
+/***/ },
+/* 189 */,
+/* 190 */,
+/* 191 */,
+/* 192 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(3);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactDom = __webpack_require__(35);
+
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+
+	var _DayPicker = __webpack_require__(174);
+
+	var _DayPicker2 = _interopRequireDefault(_DayPicker);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var fromMonth = new Date(2015, 0, 1, 0, 0);
+	var toMonth = new Date(2015, 9, 20, 23, 59);
+
+	var Demo = function (_Component) {
+	  _inherits(Demo, _Component);
+
+	  function Demo() {
+	    _classCallCheck(this, Demo);
+
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Demo).apply(this, arguments));
+	  }
+
+	  _createClass(Demo, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(_DayPicker2.default, {
+	        numberOfMonths: 2,
+	        fixedWeeks: true,
+	        initialMonth: fromMonth,
+	        fromMonth: fromMonth,
+	        toMonth: toMonth,
+	        disabledDays: function disabledDays(day) {
+	          return fromMonth > day || day > toMonth;
+	        },
+	        onDayClick: function onDayClick(e, day, _ref) {
+	          var disabled = _ref.disabled;
+
+	          if (!disabled) {
+	            console.log(day.toLocaleDateString());
+	          }
+	        }
+	      });
+	    }
+	  }]);
+
+	  return Demo;
+	}(_react.Component);
+
+	_reactDom2.default.render(_react2.default.createElement(Demo, null), document.getElementById('root'));
 
 /***/ }
 /******/ ]);

@@ -48,7 +48,7 @@
 
 	__webpack_require__(1);
 
-	__webpack_require__(192);
+	__webpack_require__(193);
 
 /***/ },
 /* 1 */
@@ -21218,8 +21218,6 @@
 
 			_this.showNextMonth = _this.showNextMonth.bind(_this);
 			_this.showPreviousMonth = _this.showPreviousMonth.bind(_this);
-			//    this.allowPreviousMonth = this.allowPreviousMonth.bind(this);
-			//    this.allowNextMonth = this.allowNextMonth.bind(this);
 			_this.state = {
 				currentMonth: _this.props.initialMonth
 			};
@@ -21256,7 +21254,13 @@
 		}, {
 			key: 'allowMonth',
 			value: function allowMonth(day) {
-				if (!this.props.canChangeMonth) {
+				var _props = this.props;
+				var fromMonth = _props.fromMonth;
+				var toMonth = _props.toMonth;
+				var canChangeMonth = _props.canChangeMonth;
+
+
+				if (!canChangeMonth || fromMonth && fromMonth > day || toMonth && toMonth < day) {
 					return false;
 				}
 				return true;
@@ -21312,12 +21316,12 @@
 		}, {
 			key: 'renderMonths',
 			value: function renderMonths() {
-				var _props = this.props;
-				var captionElement = _props.captionElement;
-				var selectedDays = _props.selectedDays;
-				var disabledDays = _props.disabledDays;
-				var fixedWeeks = _props.fixedWeeks;
-				var onDayClick = _props.onDayClick;
+				var _props2 = this.props;
+				var captionElement = _props2.captionElement;
+				var selectedDays = _props2.selectedDays;
+				var disabledDays = _props2.disabledDays;
+				var fixedWeeks = _props2.fixedWeeks;
+				var onDayClick = _props2.onDayClick;
 
 
 				var months = [];
@@ -21364,7 +21368,12 @@
 		className: _react.PropTypes.string,
 
 		canChangeMonth: _react.PropTypes.bool,
-		fixedWeeks: _react.PropTypes.bool
+		fixedWeeks: _react.PropTypes.bool,
+
+		captionElement: _react.PropTypes.element,
+
+		fromMonth: _react.PropTypes.instanceOf(Date),
+		toMonth: _react.PropTypes.instanceOf(Date)
 
 	};
 	DayPicker.defaultProps = {
@@ -22185,8 +22194,8 @@
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../node_modules/css-loader/index.js!./../node_modules/autoprefixer-loader/index.js?browsers=last 2 version!./style.css", function() {
-				var newContent = require("!!./../node_modules/css-loader/index.js!./../node_modules/autoprefixer-loader/index.js?browsers=last 2 version!./style.css");
+			module.hot.accept("!!./../node_modules/.npminstall/css-loader/0.23.1/css-loader/index.js!./../node_modules/.npminstall/autoprefixer-loader/3.2.0/autoprefixer-loader/index.js?browsers=last 2 version!./style.css", function() {
+				var newContent = require("!!./../node_modules/.npminstall/css-loader/0.23.1/css-loader/index.js!./../node_modules/.npminstall/autoprefixer-loader/3.2.0/autoprefixer-loader/index.js?browsers=last 2 version!./style.css");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -22595,7 +22604,8 @@
 /* 189 */,
 /* 190 */,
 /* 191 */,
-/* 192 */
+/* 192 */,
+/* 193 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
