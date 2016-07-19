@@ -51,7 +51,9 @@ export default class day extends Component {
         let { day, onDayClick, empty, modifiers, tabIndex, children, month } = this.props;
         let dayModifiers = [];
 
-        if (day.getMonth() !== month.getMonth()) {
+        const isOutside = day.getMonth() !== month.getMonth();
+        
+        if (isOutside) {
             dayModifiers.push('outside');
         }
 

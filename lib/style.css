@@ -119,11 +119,24 @@
     background-color: #f7f8f8;
 }
 
+
+.DayPicker-Day.DayPicker-Day--selected {
+    color: #fff;
+    background-color: #0082dc;
+    border-radius: 0;
+}
+
+.DayPicker-Day.DayPicker-Day--between {
+    color: #0082dc;
+    background-color: #e3edf4;
+}
+
 .DayPicker-Day.DayPicker-Day--outside {
     cursor: default;
     color: #dce0e0;
     background-color: #fff;
 }
+
 
 .DayPicker-Day.DayPicker-Day--disabled {
     color: #dce0e0;
@@ -131,15 +144,7 @@
     background-color: #eff1f1;
 }
 
-.DayPicker-Day.DayPicker-Day--selected {
-    color: #fff;
-    background-color: #0082dc;
-    border-radius: 0;
-}
-.DayPicker-Day.DayPicker-Day--between {
-    color: #0082dc;
-    background-color: #e3edf4;
-}
+
 
 .DayPicker--ar {
     direction: rtl;
