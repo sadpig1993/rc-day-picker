@@ -48,7 +48,7 @@
 
 	__webpack_require__(1);
 
-	__webpack_require__(190);
+	__webpack_require__(189);
 
 /***/ },
 /* 1 */
@@ -22731,8 +22731,7 @@
 /***/ },
 /* 187 */,
 /* 188 */,
-/* 189 */,
-/* 190 */
+/* 189 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -22760,60 +22759,88 @@
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 	var Demo = function (_Component) {
-		_inherits(Demo, _Component);
+	    _inherits(Demo, _Component);
 
-		function Demo() {
-			var _Object$getPrototypeO;
+	    function Demo() {
+	        var _Object$getPrototypeO;
 
-			_classCallCheck(this, Demo);
+	        _classCallCheck(this, Demo);
 
-			for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-				args[_key] = arguments[_key];
-			}
+	        for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+	            args[_key] = arguments[_key];
+	        }
 
-			var _this = _possibleConstructorReturn(this, (_Object$getPrototypeO = Object.getPrototypeOf(Demo)).call.apply(_Object$getPrototypeO, [this].concat(args)));
+	        var _this = _possibleConstructorReturn(this, (_Object$getPrototypeO = Object.getPrototypeOf(Demo)).call.apply(_Object$getPrototypeO, [this].concat(args)));
 
-			_this.state = {
-				from: null,
-				to: null
-			};
+	        _this.state = {
+	            start: _this.props.start,
+	            end: _this.props.end
+	        };
 
+	        _this.handleDayClick = _this.handleDayClick.bind(_this);
+	        return _this;
+	    }
 
-			_this.onDayClickHandler = _this.onDayClickHandler.bind(_this);
-			return _this;
-		}
+	    _createClass(Demo, [{
+	        key: 'componentWillReceiveProps',
+	        value: function componentWillReceiveProps(nextProps) {
+	            this.state.start = nextProps.start;
+	            this.state.end = nextProps.end;
+	            this.setState(this.state);
+	        }
+	    }, {
+	        key: 'handleDayClick',
+	        value: function handleDayClick(e, day, modifiers) {
+	            if (modifiers.disabled) {
+	                return;
+	            }
 
-		_createClass(Demo, [{
-			key: 'onDayClickHandler',
-			value: function onDayClickHandler(e, day, modifilers) {
-				if (modifilers.disabled) {
-					return;
-				}
-				var range = _DayPicker.Utils.addDayToRange(day, this.state);
-				this.setState({
-					from: range.from,
-					to: range.to
-				});
-			}
-		}, {
-			key: 'render',
-			value: function render() {
-				var _state = this.state;
-				var from = _state.from;
-				var to = _state.to;
+	            var start = this.state.start;
+	            var end = this.state.end;
 
-				return _react2.default.createElement(_DayPicker2.default, {
-					numberOfMonths: 2,
-					canChangeMonth: true,
-					selectedDays: function selectedDays(day) {
-						return _DayPicker.Utils.isDayInRange(day, { from: from, to: to });
-					},
-					onDayClick: this.onDayClickHandler
-				});
-			}
-		}]);
+	            if (!start || !end || !_DayPicker.Utils.isSameDay(start, end)) {
+	                start = day;
+	                end = day;
+	            } else {
+	                end = day;
+	                if (end < start) {
+	                    end = start;
+	                    start = day;
+	                }
+	            }
 
-		return Demo;
+	            this.state.start = start;
+	            this.state.end = end;
+	            this.setState(this.state);
+	            // this.props.onValueChange(this.state.start, this.state.end);
+	        }
+	    }, {
+	        key: 'render',
+	        value: function render() {
+	            // let className = [this.props.className].join(' ');
+	            var start = this.state.start;
+	            var end = this.state.end;
+
+	            var modifiers = {
+	                selected: function selected(day) {
+	                    return start && _DayPicker.Utils.isSameDay(day, start) || end && _DayPicker.Utils.isSameDay(day, end);
+	                },
+	                between: function between(day) {
+	                    return start && end && _DayPicker.Utils.isDayBetween(day, start, end);
+	                }
+	                // disabled: day => !isCloseBetween(day, this.props.allowPickStart, this.props.allowPickEnd)
+
+	            };
+
+	            return _react2.default.createElement(_DayPicker2.default, {
+	                numberOfMonths: 2,
+	                modifiers: modifiers,
+	                onDayClick: this.handleDayClick
+	            });
+	        }
+	    }]);
+
+	    return Demo;
 	}(_react.Component);
 
 	_reactDom2.default.render(_react2.default.createElement(Demo, null), document.getElementById('root'));

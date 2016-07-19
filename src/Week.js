@@ -6,10 +6,16 @@ export default class week extends Component {
 
 	static propTypes = {
 		className: PropTypes.string,
+
 		weekDays: PropTypes.array,
+
 		weekIndexRange: PropTypes.object,
+		modifiers: PropTypes.object,
+
 		weekIndex: PropTypes.number,
+
 		month: PropTypes.instanceOf(Date).isRequired,
+
 		disabledDays: PropTypes.func,
   		selectedDays: PropTypes.func,
   		onDayClick: PropTypes.func,
@@ -33,8 +39,9 @@ export default class week extends Component {
 			disabledDays, 
 			month,
 			fixedWeeks,
-			onDayClick
-		} = this.props;
+			onDayClick,
+			modifiers
+			} = this.props;
 
 		const days = weekDays.map((day, index) => {
 			// let dayIndex = weekIndex * 7 + index;
@@ -47,6 +54,7 @@ export default class week extends Component {
 					children = {day.getDate()} 
 					day = {day} 
 					month = {month}
+					modifiers = {modifiers}
 					key = {index}
 					empty = {empty}
 					selectedDays = {selectedDays}

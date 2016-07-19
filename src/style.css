@@ -64,8 +64,8 @@
 .DayPicker-Weekdays > div {
     display: table-row;
 
-    border-left: 20px solid #f5f9fc;
-    border-right: 20px solid #f5f9fc;
+    border-left: 20px solid #fff;
+    border-right: 20px solid #fff;
 }
 
 .DayPicker-Weekday {
@@ -120,10 +120,14 @@
     background-color: #eff1f1;
 }
 
-.DayPicker-Day--selected {
+.DayPicker-Day.DayPicker-Day--selected {
     color: #fff;
     background-color: #0082dc;
     border-radius: 0;
+}
+.DayPicker-Day.DayPicker-Day--between {
+    color: #0082dc;
+    background-color: #e3edf4;
 }
 
 .DayPicker--ar {

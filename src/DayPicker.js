@@ -11,23 +11,23 @@ export default class DayPicker extends Component {
 
 	static propTypes = {
 		initialMonth: PropTypes.instanceOf(Date),
+		fromMonth: PropTypes.instanceOf(Date),
+    	toMonth: PropTypes.instanceOf(Date),
 
 	    numberOfMonths: PropTypes.number,
+
 	    selectedDays: PropTypes.func,
 	    disabledDays: PropTypes.func,
 	    onDayClick: PropTypes.func,
+
+	    modifiers: PropTypes.object,
 
 	    className: PropTypes.string,
 
 	    canChangeMonth: PropTypes.bool,
 	    fixedWeeks: PropTypes.bool,
 
-	    captionElement: PropTypes.element,
-
-	    fromMonth: PropTypes.instanceOf(Date),
-    	toMonth: PropTypes.instanceOf(Date),
-
-	    
+	    captionElement: PropTypes.element,	    
   	};
 
 	static defaultProps = {
@@ -131,7 +131,8 @@ export default class DayPicker extends Component {
     		selectedDays, 
     		disabledDays, 
     		fixedWeeks,
-    		onDayClick
+    		onDayClick,
+    		modifiers,
     		} = this.props;
 
     	let months = [];
@@ -141,6 +142,7 @@ export default class DayPicker extends Component {
     		months.push(
     			<Month key = {i}
     				month = {month}
+    				modifiers = {modifiers}
     				captionElement = {captionElement}
     				selectedDays = {selectedDays}
     				disabledDays = {disabledDays}

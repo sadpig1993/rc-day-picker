@@ -11,7 +11,7 @@ export default class day extends Component {
         disabledDays: PropTypes.func,
         onDayClick: PropTypes.func,
         empty: PropTypes.bool,
-        modifiers: PropTypes.array,
+        modifiers: PropTypes.object,
         tabIndex: PropTypes.number
   	};
 

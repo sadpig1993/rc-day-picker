@@ -7,8 +7,13 @@ export default class Month extends Component {
 
 	static propTypes = {
   		month: PropTypes.instanceOf(Date).isRequired,
-  		className: PropTypes.string,
+
   		captionElement: PropTypes.node.isRequired,
+
+  		className: PropTypes.string,
+
+  		modifiers: PropTypes.object,
+
   		disabledDays: PropTypes.func,
   		selectedDays: PropTypes.func,
   		onDayClick: PropTypes.func,
@@ -23,7 +28,14 @@ export default class Month extends Component {
 
 	render () {
 		const weekLabels = [];
-		const { month, className, captionElement, selectedDays, disabledDays, fixedWeeks, onDayClick } = this.props;
+		const { month, 
+				className, 
+				captionElement, 
+				selectedDays, 
+				disabledDays, 
+				fixedWeeks, 
+				onDayClick,
+				modifiers } = this.props;
 
 		for (let i = 0; i < 7; i++) {
 			const eleProps = {
@@ -47,6 +59,7 @@ export default class Month extends Component {
     				disabledDays = {disabledDays}
     				fixedWeeks = {fixedWeeks}
     				onDayClick = {onDayClick}
+    				modifiers = {modifiers}
     				></Week>);
 		});
 		const captionProps = {

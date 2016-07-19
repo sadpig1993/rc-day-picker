@@ -10,7 +10,8 @@ module.exports = {
       canChangeMonth: __dirname + '/src/canChangeMonth/',
       year: __dirname + '/src/year/',
       fixWeek: __dirname + '/src/fixWeek/',
-      restrictMonth: __dirname + '/src/restrictMonth/'
+      restrictMonth: __dirname + '/src/restrictMonth/',
+      modifiers: __dirname + '/src/modifiers/'
   },
   output: {
         path: path.join(__dirname, '/js'),
