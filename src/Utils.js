@@ -13,13 +13,10 @@ const MONTHS = ['一月', '二月', '三月', '四月', '五月', '六月',
 const MONTHS_EN = ['January', 'February', 'March', 'April', 'May', 'June',
   'July', 'August', 'September', 'October', 'November', 'December'];
 
-export function formatDay(day) {
-  return day.toDateString();
-}
 
-export function formatMonthTitle(d) {
-  return `${d.getFullYear()}年 ${MONTHS[d.getMonth()]}`;
-}
+// export function formatMonthTitle(d) {
+//   return `${d.getFullYear()}年 ${MONTHS[d.getMonth()]}`;
+// }
 
 export function formatWeekday(i){
   return WEEKDAYS[i];
@@ -97,39 +94,6 @@ export function isDayBetween(d, d1, d2) {
   return (date1 < date && date < date2) || (date2 < date && date < date1);
 }
 
-/**
- * Add a day to a range and return a new range. A range is an object with
- * `from` and `to` days.
- *
- * @param {Date} day
- * @param {Object} range
- * @return {Object} Returns a new range object
- */
-export function addDayToRange(day, range = { from: null, to: null }) {
-  let { from, to } = range;
-  if (!from) {
-    from = day;
-  } else if (from && to && isSameDay(from, to) && isSameDay(day, from)) {
-    from = null;
-    to = null;
-  } else if (to && day < from) {
-    from = day;
-  } else if (to && isSameDay(day, to)) {
-    from = day;
-    to = day;
-  } else {
-    to = day;
-    if (to < from) {
-      to = from;
-      from = day;
-    }
-  }
-
-  return { from, to };
-}
-
-
-
 export function getModifiersForDay(d, modifierFunctions = {}) {
   return Object.keys(modifierFunctions).reduce((modifiers, modifier) => {
     const func = modifierFunctions[modifier];
@@ -161,7 +125,8 @@ export function getWeekArray(day, firstDayOfWeek = getFirstDayOfWeek()) {
       weekArray.push(week);
     }
   });
-  // unshift days to start the first week
+
+
   const firstWeek = weekArray[0];
   const startIndex = 7 - firstWeek.length;
   for (let i = startIndex; i > 0; i--) {
@@ -176,7 +141,7 @@ export function getWeekArray(day, firstDayOfWeek = getFirstDayOfWeek()) {
     outsideDate.setDate(lastWeek[lastWeek.length - 1].getDate() + 1);
     lastWeek.push(outsideDate);
   }
-  // console.log(firstWeek);
+
 
   return {
     'weekArray': weekArray,
@@ -205,8 +170,7 @@ export function clone(day) {
 }
 
 export default {
-  formatDay,
-  formatMonthTitle,
+  // formatMonthTitle,
   formatWeekday,
   formatWeekdayShort,
   formatWeekdayLong,
@@ -216,6 +180,5 @@ export default {
   addMonths,
   isSameDay,
   isDayInRange,
-  addDayToRange,
   getModifiersForDay
 };

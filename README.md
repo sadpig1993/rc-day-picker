@@ -2,7 +2,7 @@
 Day picker component of react
 
 [![npm version](https://img.shields.io/npm/v/rc-day-picker.svg?style=flat-square)](https://www.npmjs.com/package/rc-day-picker)
-[![Bower](https://img.shields.io/bower/v/rc-day-picker.svg?style=flat-square)](http://bower.io/search/?q=react-day-picker)
+[![Bower](https://img.shields.io/bower/v/rc-day-picker.svg?style=flat-square)](http://bower.io/search/?q=rc-day-picker)
 
 <p align="center">
 	<img width="359" src="http://sadpig1993.com/rc-day-picker/docs/images/A193E80D-7103-4198-B382-4FB1C93630C4.png" alt="">

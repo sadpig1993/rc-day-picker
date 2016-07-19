@@ -22786,6 +22786,7 @@
 
 
 			_this.onDayClickHandler = _this.onDayClickHandler.bind(_this);
+			_this.selected = _this.selected.bind(_this);
 			return _this;
 		}
 
@@ -22795,24 +22796,49 @@
 				if (modifilers.disabled) {
 					return;
 				}
-				var range = _DayPicker.Utils.addDayToRange(day, this.state);
+
+				// const range = Utils.addDayToRange(day, this.state);
+				var start = this.state.start;
+				var end = this.state.end;
+
+				if (!start || !end || !_DayPicker.Utils.isSameDay(start, end)) {
+					start = day;
+					end = day;
+				} else {
+					end = day;
+					if (end < start) {
+						end = start;
+						start = day;
+					}
+				}
+
 				this.setState({
-					from: range.from,
-					to: range.to
+					start: start,
+					end: end
 				});
+			}
+		}, {
+			key: 'selected',
+			value: function selected(day) {
+				var _state = this.state;
+				var start = _state.start;
+				var end = _state.end;
+
+				return start && _DayPicker.Utils.isSameDay(day, start) || end && _DayPicker.Utils.isSameDay(day, end) || day > start && day < end;
 			}
 		}, {
 			key: 'render',
 			value: function render() {
-				var _state = this.state;
-				var from = _state.from;
-				var to = _state.to;
+				var _this2 = this;
+
+				var start = this.state.start;
+				var end = this.state.end;
 
 				return _react2.default.createElement(_DayPicker2.default, {
 					numberOfMonths: 2,
 					canChangeMonth: true,
 					selectedDays: function selectedDays(day) {
-						return _DayPicker.Utils.isDayInRange(day, { from: from, to: to });
+						return _this2.selected(day);
 					},
 					onDayClick: this.onDayClickHandler
 				});

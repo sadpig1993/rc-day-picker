@@ -10,6 +10,7 @@ class Demo extends Component {
 		super(...args);
 
 		this.onDayClickHandler = this.onDayClickHandler.bind(this);
+		this.selected = this.selected.bind(this);
 	}
 
 	state = {
@@ -21,19 +22,44 @@ class Demo extends Component {
 		if (modifilers.disabled) {
 			return;
 		}
-		const range = Utils.addDayToRange(day, this.state);
+		
+		// const range = Utils.addDayToRange(day, this.state);
+		let start = this.state.start;
+        let end = this.state.end;
+
+        if (!start || !end || !Utils.isSameDay(start, end)) {
+            start = day;
+            end = day;
+        }
+        else {
+            end = day;
+            if (end < start) {
+                end = start;
+                start = day;
+            }
+        }
+
     	this.setState({
-    		from: range.from,
-    		to: range.to
+    		start: start,
+    		end: end
     	});
 	}
 
+	selected(day) {
+		let { start, end } = this.state;
+    	return (start && Utils.isSameDay(day, start))
+    		|| (end && Utils.isSameDay(day, end)) 
+    		|| (day > start && day < end);
+    }
+
 	render() {
-		const { from, to } = this.state;
+		let start = this.state.start;
+        let end = this.state.end;
+
 		return (<DayPicker 
 			numberOfMonths = {2} 
 			canChangeMonth = {true} 
-			selectedDays = {day => Utils.isDayInRange(day, { from, to })}
+			selectedDays = {day => this.selected(day)}
 			onDayClick = {this.onDayClickHandler}
 		/>);
 	}
