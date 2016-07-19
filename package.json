@@ -1,6 +1,6 @@
 {
   "name": "rc-day-picker",
-  "version": "0.1.5",
+  "version": "0.1.7",
   "description": "Day picker component of react",
   "main": "DayPicker.js",
   "scripts": {

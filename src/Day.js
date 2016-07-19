@@ -16,7 +16,7 @@ export default class day extends Component {
   	};
 
   	static defaultProps = {
-  		modifiers: [],
+  		modifiers: {},
     	empty: false
     };
 
@@ -68,7 +68,7 @@ export default class day extends Component {
   		return (
   			<div className = {className}
   				tabIndex = {this.props.tabIndex}
-  				onClick = {this.handleEvent(onDayClick, day, dayModifiers)}
+  				onClick = {!empty ? this.handleEvent(onDayClick, day, dayModifiers) : undefined}
   			>
   				{empty ? '' : children}
   			</div>

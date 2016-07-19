@@ -24,6 +24,7 @@ export default class week extends Component {
 
 	};
 	static defaultProps = {
+		modifiers: {}
   	};
 
   	constructor(...args) {

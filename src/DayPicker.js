@@ -39,7 +39,8 @@ export default class DayPicker extends Component {
 		// navbarElement: <Navbar />,
 		captionElement: <Caption />,
 		canChangeMonth: true,
-		fixedWeeks: false
+		fixedWeeks: false,
+		modifiers: {}
 	};
 
     constructor(...args) {

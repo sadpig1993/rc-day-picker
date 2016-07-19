@@ -23,7 +23,8 @@ export default class Month extends Component {
 
   	static defaultProps = {
   		month: new Date(),
-  		className: 'DayPicker-Month'
+  		className: 'DayPicker-Month',
+  		modifiers: {}
     };
 
 	render () {

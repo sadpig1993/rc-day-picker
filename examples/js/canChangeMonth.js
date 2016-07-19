@@ -21474,7 +21474,8 @@
 		// navbarElement: <Navbar />,
 		captionElement: _react2.default.createElement(_Caption2.default, null),
 		canChangeMonth: true,
-		fixedWeeks: false
+		fixedWeeks: false,
+		modifiers: {}
 	};
 	exports.default = DayPicker;
 	//# sourceMappingURL=DayPicker.js.map
@@ -21728,7 +21729,8 @@
 	};
 	Month.defaultProps = {
 		month: new Date(),
-		className: 'DayPicker-Month'
+		className: 'DayPicker-Month',
+		modifiers: {}
 	};
 	exports.default = Month;
 	//# sourceMappingURL=Month.js.map
@@ -22200,7 +22202,9 @@
 		fixedWeeks: _react.PropTypes.bool
 
 	};
-	week.defaultProps = {};
+	week.defaultProps = {
+		modifiers: {}
+	};
 	exports.default = week;
 	//# sourceMappingURL=Week.js.map
 
@@ -22337,7 +22341,7 @@
 
 	            return _react2.default.createElement('div', { className: className,
 	                tabIndex: this.props.tabIndex,
-	                onClick: this.handleEvent(onDayClick, day, dayModifiers)
+	                onClick: !empty ? this.handleEvent(onDayClick, day, dayModifiers) : undefined
 	            }, empty ? '' : children);
 	        }
 	    }, {
@@ -22372,7 +22376,7 @@
 	    tabIndex: _react.PropTypes.number
 	};
 	day.defaultProps = {
-	    modifiers: [],
+	    modifiers: {},
 	    empty: false
 	};
 	exports.default = day;
