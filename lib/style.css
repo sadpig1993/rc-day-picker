@@ -1,11 +1,19 @@
 .DayPicker {
     display: inline-block;
-    flex-wrap: wrap;
-    justify-content: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     position: relative;
-    user-select: none;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
     /* border: 1px solid #d3d7da; */
     background-color: #fff;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
 }
 
@@ -14,7 +22,10 @@
     display: table;
     border-collapse: collapse;
     border-spacing: 0;
-    user-select: none;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
 }
 
 .DayPicker-NavBar {

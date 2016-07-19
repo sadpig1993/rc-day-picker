@@ -48,7 +48,7 @@
 
 	__webpack_require__(1);
 
-	__webpack_require__(193);
+	__webpack_require__(191);
 
 /***/ },
 /* 1 */
@@ -21138,23 +21138,11 @@
 
 	'use strict';
 
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	exports.Utils = undefined;
+	var DayPicker = __webpack_require__(175);
+	var Utils = __webpack_require__(179);
 
-	var _DayPicker = __webpack_require__(175);
-
-	var _DayPicker2 = _interopRequireDefault(_DayPicker);
-
-	var _Utils = __webpack_require__(179);
-
-	var _Utils2 = _interopRequireDefault(_Utils);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	exports.default = _DayPicker2.default;
-	exports.Utils = _Utils2.default;
+	module.exports = DayPicker;
+	module.exports.Utils = Utils;
 
 /***/ },
 /* 175 */
@@ -21162,11 +21150,21 @@
 
 	'use strict';
 
+	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
+
 	Object.defineProperty(exports, "__esModule", {
 		value: true
 	});
 
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	var _createClass = function () {
+		function defineProperties(target, props) {
+			for (var i = 0; i < props.length; i++) {
+				var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);
+			}
+		}return function (Constructor, protoProps, staticProps) {
+			if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;
+		};
+	}();
 
 	var _react = __webpack_require__(3);
 
@@ -21190,17 +21188,31 @@
 
 	var _style2 = _interopRequireDefault(_style);
 
-	var _Caption = __webpack_require__(188);
+	var _Caption = __webpack_require__(186);
 
 	var _Caption2 = _interopRequireDefault(_Caption);
 
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	function _interopRequireDefault(obj) {
+		return obj && obj.__esModule ? obj : { default: obj };
+	}
 
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	function _classCallCheck(instance, Constructor) {
+		if (!(instance instanceof Constructor)) {
+			throw new TypeError("Cannot call a class as a function");
+		}
+	}
 
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	function _possibleConstructorReturn(self, call) {
+		if (!self) {
+			throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+		}return call && ((typeof call === "undefined" ? "undefined" : _typeof(call)) === "object" || typeof call === "function") ? call : self;
+	}
 
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	function _inherits(subClass, superClass) {
+		if (typeof superClass !== "function" && superClass !== null) {
+			throw new TypeError("Super expression must either be null or a function, not " + (typeof superClass === "undefined" ? "undefined" : _typeof(superClass)));
+		}subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+	}
 
 	var DayPicker = function (_Component) {
 		_inherits(DayPicker, _Component);
@@ -21258,7 +21270,6 @@
 				var fromMonth = _props.fromMonth;
 				var toMonth = _props.toMonth;
 				var canChangeMonth = _props.canChangeMonth;
-
 
 				if (!canChangeMonth || fromMonth && fromMonth > day || toMonth && toMonth < day) {
 					return false;
@@ -21323,7 +21334,6 @@
 				var fixedWeeks = _props2.fixedWeeks;
 				var onDayClick = _props2.onDayClick;
 
-
 				var months = [];
 
 				for (var i = 0; i < this.props.numberOfMonths; i++) {
@@ -21345,12 +21355,7 @@
 			value: function render() {
 				var className = this.props.className;
 
-				return _react2.default.createElement(
-					'div',
-					{ className: className },
-					this.renderNavbar(),
-					this.renderMonths()
-				);
+				return _react2.default.createElement('div', { className: className }, this.renderNavbar(), this.renderMonths());
 			}
 		}]);
 
@@ -21388,6 +21393,7 @@
 		fixedWeeks: false
 	};
 	exports.default = DayPicker;
+	//# sourceMappingURL=DayPicker.js.map
 
 /***/ },
 /* 176 */
@@ -21395,23 +21401,47 @@
 
 	'use strict';
 
+	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
+
 	Object.defineProperty(exports, "__esModule", {
 		value: true
 	});
 
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	var _createClass = function () {
+		function defineProperties(target, props) {
+			for (var i = 0; i < props.length; i++) {
+				var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);
+			}
+		}return function (Constructor, protoProps, staticProps) {
+			if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;
+		};
+	}();
 
 	var _react = __webpack_require__(3);
 
 	var _react2 = _interopRequireDefault(_react);
 
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	function _interopRequireDefault(obj) {
+		return obj && obj.__esModule ? obj : { default: obj };
+	}
 
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	function _classCallCheck(instance, Constructor) {
+		if (!(instance instanceof Constructor)) {
+			throw new TypeError("Cannot call a class as a function");
+		}
+	}
 
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	function _possibleConstructorReturn(self, call) {
+		if (!self) {
+			throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+		}return call && ((typeof call === "undefined" ? "undefined" : _typeof(call)) === "object" || typeof call === "function") ? call : self;
+	}
 
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	function _inherits(subClass, superClass) {
+		if (typeof superClass !== "function" && superClass !== null) {
+			throw new TypeError("Super expression must either be null or a function, not " + (typeof superClass === "undefined" ? "undefined" : _typeof(superClass)));
+		}subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+	}
 
 	var Navbar = function (_Component) {
 		_inherits(Navbar, _Component);
@@ -21433,7 +21463,6 @@
 				var onPreviousClick = _props.onPreviousClick;
 				var onNextClick = _props.onNextClick;
 
-
 				var previousButton = showPreviousButton && _react2.default.createElement('span', {
 					role: 'button',
 					key: 'previous',
@@ -21452,12 +21481,7 @@
 					}
 				});
 
-				return _react2.default.createElement(
-					'div',
-					{ className: className },
-					previousButton,
-					nextButton
-				);
+				return _react2.default.createElement('div', { className: className }, previousButton, nextButton);
 			}
 		}]);
 
@@ -21478,6 +21502,7 @@
 		showNextButton: true
 	};
 	exports.default = Navbar;
+	//# sourceMappingURL=Navbar.js.map
 
 /***/ },
 /* 177 */
@@ -21485,11 +21510,21 @@
 
 	'use strict';
 
+	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
+
 	Object.defineProperty(exports, "__esModule", {
 		value: true
 	});
 
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	var _createClass = function () {
+		function defineProperties(target, props) {
+			for (var i = 0; i < props.length; i++) {
+				var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);
+			}
+		}return function (Constructor, protoProps, staticProps) {
+			if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;
+		};
+	}();
 
 	var _react = __webpack_require__(3);
 
@@ -21505,13 +21540,27 @@
 
 	var _Utils = __webpack_require__(179);
 
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	function _interopRequireDefault(obj) {
+		return obj && obj.__esModule ? obj : { default: obj };
+	}
 
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	function _classCallCheck(instance, Constructor) {
+		if (!(instance instanceof Constructor)) {
+			throw new TypeError("Cannot call a class as a function");
+		}
+	}
 
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	function _possibleConstructorReturn(self, call) {
+		if (!self) {
+			throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+		}return call && ((typeof call === "undefined" ? "undefined" : _typeof(call)) === "object" || typeof call === "function") ? call : self;
+	}
 
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	function _inherits(subClass, superClass) {
+		if (typeof superClass !== "function" && superClass !== null) {
+			throw new TypeError("Super expression must either be null or a function, not " + (typeof superClass === "undefined" ? "undefined" : _typeof(superClass)));
+		}subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+	}
 
 	var Month = function (_Component) {
 		_inherits(Month, _Component);
@@ -21534,7 +21583,6 @@
 				var disabledDays = _props.disabledDays;
 				var fixedWeeks = _props.fixedWeeks;
 				var onDayClick = _props.onDayClick;
-
 
 				for (var i = 0; i < 7; i++) {
 					var eleProps = {
@@ -21570,25 +21618,7 @@
 					// onClick: onCaptionClick ? e => onCaptionClick(e, month) : undefined,
 				};
 
-				return _react2.default.createElement(
-					'div',
-					{ className: className },
-					_react2.default.cloneElement(captionElement, captionProps),
-					_react2.default.createElement(
-						'div',
-						{ className: 'DayPicker-Weekdays' },
-						_react2.default.createElement(
-							'div',
-							{ className: 'DayPicker-WeekdaysRow' },
-							weekLabels
-						)
-					),
-					_react2.default.createElement(
-						'div',
-						{ className: 'DayPicker-Body' },
-						weekEles
-					)
-				);
+				return _react2.default.createElement('div', { className: className }, _react2.default.cloneElement(captionElement, captionProps), _react2.default.createElement('div', { className: 'DayPicker-Weekdays' }, _react2.default.createElement('div', { className: 'DayPicker-WeekdaysRow' }, weekLabels)), _react2.default.createElement('div', { className: 'DayPicker-Body' }, weekEles));
 			}
 		}]);
 
@@ -21610,6 +21640,7 @@
 		className: 'DayPicker-Month'
 	};
 	exports.default = Month;
+	//# sourceMappingURL=Month.js.map
 
 /***/ },
 /* 178 */
@@ -21617,11 +21648,21 @@
 
 	'use strict';
 
+	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
+
 	Object.defineProperty(exports, "__esModule", {
 		value: true
 	});
 
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	var _createClass = function () {
+		function defineProperties(target, props) {
+			for (var i = 0; i < props.length; i++) {
+				var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);
+			}
+		}return function (Constructor, protoProps, staticProps) {
+			if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;
+		};
+	}();
 
 	var _react = __webpack_require__(3);
 
@@ -21629,13 +21670,27 @@
 
 	var _Utils = __webpack_require__(179);
 
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	function _interopRequireDefault(obj) {
+		return obj && obj.__esModule ? obj : { default: obj };
+	}
 
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	function _classCallCheck(instance, Constructor) {
+		if (!(instance instanceof Constructor)) {
+			throw new TypeError("Cannot call a class as a function");
+		}
+	}
 
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	function _possibleConstructorReturn(self, call) {
+		if (!self) {
+			throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+		}return call && ((typeof call === "undefined" ? "undefined" : _typeof(call)) === "object" || typeof call === "function") ? call : self;
+	}
 
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	function _inherits(subClass, superClass) {
+		if (typeof superClass !== "function" && superClass !== null) {
+			throw new TypeError("Super expression must either be null or a function, not " + (typeof superClass === "undefined" ? "undefined" : _typeof(superClass)));
+		}subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+	}
 
 	var WeekLabel = function (_Component) {
 		_inherits(WeekLabel, _Component);
@@ -21660,16 +21715,7 @@
 				var localeUtils = _props.localeUtils;
 				var weekDay = _props.weekDay;
 
-
-				return _react2.default.createElement(
-					'div',
-					{ className: className },
-					_react2.default.createElement(
-						'div',
-						null,
-						(0, _Utils.formatWeekday)(weekDay)
-					)
-				);
+				return _react2.default.createElement('div', { className: className }, _react2.default.createElement('div', null, (0, _Utils.formatWeekday)(weekDay)));
 			}
 		}]);
 
@@ -21683,6 +21729,7 @@
 	};
 	WeekLabel.defaultProps = {};
 	exports.default = WeekLabel;
+	//# sourceMappingURL=WeekLabel.js.map
 
 /***/ },
 /* 179 */
@@ -21929,6 +21976,7 @@
 	  addDayToRange: addDayToRange,
 	  getModifiersForDay: getModifiersForDay
 	};
+	//# sourceMappingURL=Utils.js.map
 
 /***/ },
 /* 180 */
@@ -21936,11 +21984,21 @@
 
 	'use strict';
 
+	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
+
 	Object.defineProperty(exports, "__esModule", {
 		value: true
 	});
 
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	var _createClass = function () {
+		function defineProperties(target, props) {
+			for (var i = 0; i < props.length; i++) {
+				var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);
+			}
+		}return function (Constructor, protoProps, staticProps) {
+			if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;
+		};
+	}();
 
 	var _react = __webpack_require__(3);
 
@@ -21952,13 +22010,27 @@
 
 	var _Day2 = _interopRequireDefault(_Day);
 
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	function _interopRequireDefault(obj) {
+		return obj && obj.__esModule ? obj : { default: obj };
+	}
 
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	function _classCallCheck(instance, Constructor) {
+		if (!(instance instanceof Constructor)) {
+			throw new TypeError("Cannot call a class as a function");
+		}
+	}
 
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	function _possibleConstructorReturn(self, call) {
+		if (!self) {
+			throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+		}return call && ((typeof call === "undefined" ? "undefined" : _typeof(call)) === "object" || typeof call === "function") ? call : self;
+	}
 
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	function _inherits(subClass, superClass) {
+		if (typeof superClass !== "function" && superClass !== null) {
+			throw new TypeError("Super expression must either be null or a function, not " + (typeof superClass === "undefined" ? "undefined" : _typeof(superClass)));
+		}subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+	}
 
 	var week = function (_Component) {
 		_inherits(week, _Component);
@@ -21989,7 +22061,6 @@
 				var fixedWeeks = _props.fixedWeeks;
 				var onDayClick = _props.onDayClick;
 
-
 				var days = weekDays.map(function (day, index) {
 					// let dayIndex = weekIndex * 7 + index;
 					// let empty = (dayIndex > weekIndexRange.endIndex || 
@@ -22010,11 +22081,7 @@
 					});
 				});
 
-				return _react2.default.createElement(
-					'div',
-					{ className: 'DayPicker-Week' },
-					days
-				);
+				return _react2.default.createElement('div', { className: 'DayPicker-Week' }, days);
 			}
 		}]);
 
@@ -22036,6 +22103,7 @@
 	};
 	week.defaultProps = {};
 	exports.default = week;
+	//# sourceMappingURL=Week.js.map
 
 /***/ },
 /* 181 */
@@ -22043,13 +22111,31 @@
 
 	'use strict';
 
+	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
+
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
 
-	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+	var _extends = Object.assign || function (target) {
+	    for (var i = 1; i < arguments.length; i++) {
+	        var source = arguments[i];for (var key in source) {
+	            if (Object.prototype.hasOwnProperty.call(source, key)) {
+	                target[key] = source[key];
+	            }
+	        }
+	    }return target;
+	};
 
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	var _createClass = function () {
+	    function defineProperties(target, props) {
+	        for (var i = 0; i < props.length; i++) {
+	            var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);
+	        }
+	    }return function (Constructor, protoProps, staticProps) {
+	        if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;
+	    };
+	}();
 
 	var _react = __webpack_require__(3);
 
@@ -22057,15 +22143,37 @@
 
 	var _Utils = __webpack_require__(179);
 
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	function _interopRequireDefault(obj) {
+	    return obj && obj.__esModule ? obj : { default: obj };
+	}
 
-	function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+	function _toConsumableArray(arr) {
+	    if (Array.isArray(arr)) {
+	        for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) {
+	            arr2[i] = arr[i];
+	        }return arr2;
+	    } else {
+	        return Array.from(arr);
+	    }
+	}
 
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	function _classCallCheck(instance, Constructor) {
+	    if (!(instance instanceof Constructor)) {
+	        throw new TypeError("Cannot call a class as a function");
+	    }
+	}
 
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	function _possibleConstructorReturn(self, call) {
+	    if (!self) {
+	        throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+	    }return call && ((typeof call === "undefined" ? "undefined" : _typeof(call)) === "object" || typeof call === "function") ? call : self;
+	}
 
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	function _inherits(subClass, superClass) {
+	    if (typeof superClass !== "function" && superClass !== null) {
+	        throw new TypeError("Super expression must either be null or a function, not " + (typeof superClass === "undefined" ? "undefined" : _typeof(superClass)));
+	    }subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+	}
 
 	var day = function (_Component) {
 	    _inherits(day, _Component);
@@ -22128,14 +22236,10 @@
 	                return ' ' + className + '--' + modifier;
 	            }).join('');
 
-	            return _react2.default.createElement(
-	                'div',
-	                { className: className,
-	                    tabIndex: this.props.tabIndex,
-	                    onClick: this.handleEvent(onDayClick, day, dayModifiers)
-	                },
-	                empty ? '' : children
-	            );
+	            return _react2.default.createElement('div', { className: className,
+	                tabIndex: this.props.tabIndex,
+	                onClick: this.handleEvent(onDayClick, day, dayModifiers)
+	            }, empty ? '' : children);
 	        }
 	    }, {
 	        key: 'handleEvent',
@@ -22173,6 +22277,7 @@
 	    empty: false
 	};
 	exports.default = day;
+	//# sourceMappingURL=Day.js.map
 
 /***/ },
 /* 182 */
@@ -22184,7 +22289,7 @@
 	var content = __webpack_require__(183);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(187)(content, {});
+	var update = __webpack_require__(185)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -22209,7 +22314,7 @@
 
 
 	// module
-	exports.push([module.id, ".DayPicker {\n    display: inline-block;\n    -ms-flex-wrap: wrap;\n        flex-wrap: wrap;\n    -ms-flex-pack: center;\n        justify-content: center;\n    position: relative;\n    -webkit-user-select: none;\n       -moz-user-select: none;\n        -ms-user-select: none;\n            user-select: none;\n    /* border: 1px solid #d3d7da; */\n    background-color: #fff;\n    display: -ms-flexbox;\n    display: flex;\n}\n\n\n.DayPicker-Month {\n    display: table;\n    border-collapse: collapse;\n    border-spacing: 0;\n    -webkit-user-select: none;\n       -moz-user-select: none;\n        -ms-user-select: none;\n            user-select: none;\n}\n\n.DayPicker-NavBar {\n    position: absolute;\n    left: 0;\n    right: 0;\n    height: 1.5em;\n    padding: .6em 0;\n}\n\n.DayPicker-NavButton {\n    position: absolute;\n    top: 50%;\n    margin-top: -6.5px;\n    width: 13px;\n    height: 13px;\n    background-repeat: no-repeat;\n    cursor: pointer;\n}\n\n\n.DayPicker-NavButton--prev {\n    left: 20px;\n    /*这里的相对路径的依据是构建后的common.css文件*/\n    background: url(" + __webpack_require__(185) + ") no-repeat;\n}\n\n.DayPicker-NavButton--next {\n    right: 20px;\n    /*这里的相对路径的依据是构建后的common.css文件*/\n    background: url(" + __webpack_require__(186) + ") no-repeat;\n}\n\n.DayPicker-Caption {\n    display: table-caption;\n    height: 1.5em;\n    text-align: center;\n    padding: .6em 0;\n}\n\n.DayPicker-Weekdays {\n    display: table-header-group;\n    background-color: #f5f9fc;\n    color: #0082dc;\n    width: 245px;\n}\n.DayPicker-Weekdays > div {\n    display: table-row;\n\n    border-left: 20px solid #f5f9fc;\n    border-right: 20px solid #f5f9fc;\n}\n\n.DayPicker-Weekday {\n    display: table-cell;\n    padding: .5em;\n    font-size: .875em;\n    text-align: center;\n}\n\n.DayPicker-Body {\n    display: table-row-group;\n\n    border-left: 20px solid #fff;\n    border-right: 20px solid #fff;\n}\n\n.DayPicker-Week {\n    display: table-row;\n}\n\n.DayPicker-Day {\n    display: table-cell;\n    padding: .5em;\n    text-align: center;\n    cursor: pointer;\n    vertical-align: middle;\n}\n\n.DayPicker--interactionDisabled .DayPicker-Day {\n    cursor: default;\n}\n\n.DayPicker-Day--today {\n    color: #d0021b;\n    font-weight: 500;\n}\n\n.DayPicker-Day--sunday {\n    color: #dce0e0;\n    background-color: #f7f8f8;\n}\n\n.DayPicker-Day.DayPicker-Day--outside {\n    cursor: default;\n    color: #dce0e0;\n    background-color: #fff;\n}\n\n.DayPicker-Day.DayPicker-Day--disabled {\n    color: #dce0e0;\n    cursor: default;\n    background-color: #eff1f1;\n}\n\n.DayPicker-Day--selected {\n    color: #fff;\n    background-color: #0082dc;\n    border-radius: 0;\n}\n\n.DayPicker--ar {\n    direction: rtl;\n}\n", ""]);
+	exports.push([module.id, ".DayPicker {\n    display: inline-block;\n    -ms-flex-wrap: wrap;\n        flex-wrap: wrap;\n    -ms-flex-pack: center;\n        justify-content: center;\n    position: relative;\n    -webkit-user-select: none;\n       -moz-user-select: none;\n        -ms-user-select: none;\n            user-select: none;\n    /* border: 1px solid #d3d7da; */\n    background-color: #fff;\n    display: -ms-flexbox;\n    display: flex;\n}\n\n\n.DayPicker-Month {\n    display: table;\n    border-collapse: collapse;\n    border-spacing: 0;\n    -webkit-user-select: none;\n       -moz-user-select: none;\n        -ms-user-select: none;\n            user-select: none;\n}\n\n.DayPicker-NavBar {\n    position: absolute;\n    left: 0;\n    right: 0;\n    height: 1.5em;\n    padding: .6em 0;\n}\n\n.DayPicker-NavButton {\n    position: absolute;\n    top: 50%;\n    margin-top: -6.5px;\n    width: 13px;\n    height: 13px;\n    background-repeat: no-repeat;\n    cursor: pointer;\n}\n\n\n.DayPicker-NavButton--prev {\n    left: 20px;\n    /*这里的相对路径的依据是构建后的common.css文件*/\n    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAOCAYAAAASVl2WAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA3hpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDIxIDc5LjE1NTc3MiwgMjAxNC8wMS8xMy0xOTo0NDowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1NDUxMjhkNy0zYTU5LTQwYzMtOGM3MC04OTVmYmE2ZTFhMDAiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MTY3NTkwMkY1QThDMTFFNTgzOTA5Qjc2QTUxRkMzRjYiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MTY3NTkwMkU1QThDMTFFNTgzOTA5Qjc2QTUxRkMzRjYiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTQgKE1hY2ludG9zaCkiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo1NDUxMjhkNy0zYTU5LTQwYzMtOGM3MC04OTVmYmE2ZTFhMDAiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6NTQ1MTI4ZDctM2E1OS00MGMzLThjNzAtODk1ZmJhNmUxYTAwIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+DG+IrAAAAKZJREFUeNpiYWi6w4AD6ALxEhYckipAvBOIM5iwSMoA8S4gLgXiTegKRIF4BxD3AfFSkACyAn4g3gzEq4B4CkwQpoAdiNcB8UkgbkI2EqZgGRA/BeICdAcxIdHfsXkHpiAaiLWBuA2Xgm9A7A3EXkBcgawAOaA+ArELEB8F4vdAPBNdAQi8BmJXID4IxB+AeCW2oH4ItQoUmh9xxcU1IA4G4rkAAQYA5IwdRZRbAocAAAAASUVORK5CYII=) no-repeat;\n}\n\n.DayPicker-NavButton--next {\n    right: 20px;\n    /*这里的相对路径的依据是构建后的common.css文件*/\n    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAOCAYAAAASVl2WAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA3hpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDIxIDc5LjE1NTc3MiwgMjAxNC8wMS8xMy0xOTo0NDowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1NDUxMjhkNy0zYTU5LTQwYzMtOGM3MC04OTVmYmE2ZTFhMDAiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MTY3NTkwMkI1QThDMTFFNTgzOTA5Qjc2QTUxRkMzRjYiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MTY3NTkwMkE1QThDMTFFNTgzOTA5Qjc2QTUxRkMzRjYiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTQgKE1hY2ludG9zaCkiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo1NDUxMjhkNy0zYTU5LTQwYzMtOGM3MC04OTVmYmE2ZTFhMDAiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6NTQ1MTI4ZDctM2E1OS00MGMzLThjNzAtODk1ZmJhNmUxYTAwIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+JFYItAAAAKRJREFUeNpiYWi6wwAEJ4A4H4hPMqABJijdAMRrgVgLl4IdQFwMxNuAWB5ZAQsSeyUQCwDxbiC2BuLX6ApAYCYQCwLxHiC2A+KPTAyYoANq1VYg5sKmAASqgPgqEK/ApeA/EP8CYm4WHAoagdgUiF2wKcgD4kAgdgbiL+gKYqEKHLB50w/qA3sgfoIeUE5APAuIXYH4Drag7gLiACC+jO4ggAADABZfHJIH/WrvAAAAAElFTkSuQmCC) no-repeat;\n}\n\n.DayPicker-Caption {\n    display: table-caption;\n    height: 1.5em;\n    text-align: center;\n    padding: .6em 0;\n}\n\n.DayPicker-Weekdays {\n    display: table-header-group;\n    background-color: #f5f9fc;\n    color: #0082dc;\n    width: 245px;\n}\n.DayPicker-Weekdays > div {\n    display: table-row;\n\n    border-left: 20px solid #f5f9fc;\n    border-right: 20px solid #f5f9fc;\n}\n\n.DayPicker-Weekday {\n    display: table-cell;\n    padding: .5em;\n    font-size: .875em;\n    text-align: center;\n}\n\n.DayPicker-Body {\n    display: table-row-group;\n\n    border-left: 20px solid #fff;\n    border-right: 20px solid #fff;\n}\n\n.DayPicker-Week {\n    display: table-row;\n}\n\n.DayPicker-Day {\n    display: table-cell;\n    padding: .5em;\n    text-align: center;\n    cursor: pointer;\n    vertical-align: middle;\n}\n\n.DayPicker--interactionDisabled .DayPicker-Day {\n    cursor: default;\n}\n\n.DayPicker-Day--today {\n    color: #d0021b;\n    font-weight: 500;\n}\n\n.DayPicker-Day--sunday {\n    color: #dce0e0;\n    background-color: #f7f8f8;\n}\n\n.DayPicker-Day.DayPicker-Day--outside {\n    cursor: default;\n    color: #dce0e0;\n    background-color: #fff;\n}\n\n.DayPicker-Day.DayPicker-Day--disabled {\n    color: #dce0e0;\n    cursor: default;\n    background-color: #eff1f1;\n}\n\n.DayPicker-Day--selected {\n    color: #fff;\n    background-color: #0082dc;\n    border-radius: 0;\n}\n\n.DayPicker--ar {\n    direction: rtl;\n}\n", ""]);
 
 	// exports
 
@@ -22271,18 +22376,6 @@
 
 /***/ },
 /* 185 */
-/***/ function(module, exports) {
-
-	module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAOCAYAAAASVl2WAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA3hpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDIxIDc5LjE1NTc3MiwgMjAxNC8wMS8xMy0xOTo0NDowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1NDUxMjhkNy0zYTU5LTQwYzMtOGM3MC04OTVmYmE2ZTFhMDAiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MTY3NTkwMkY1QThDMTFFNTgzOTA5Qjc2QTUxRkMzRjYiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MTY3NTkwMkU1QThDMTFFNTgzOTA5Qjc2QTUxRkMzRjYiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTQgKE1hY2ludG9zaCkiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo1NDUxMjhkNy0zYTU5LTQwYzMtOGM3MC04OTVmYmE2ZTFhMDAiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6NTQ1MTI4ZDctM2E1OS00MGMzLThjNzAtODk1ZmJhNmUxYTAwIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+DG+IrAAAAKZJREFUeNpiYWi6w4AD6ALxEhYckipAvBOIM5iwSMoA8S4gLgXiTegKRIF4BxD3AfFSkACyAn4g3gzEq4B4CkwQpoAdiNcB8UkgbkI2EqZgGRA/BeICdAcxIdHfsXkHpiAaiLWBuA2Xgm9A7A3EXkBcgawAOaA+ArELEB8F4vdAPBNdAQi8BmJXID4IxB+AeCW2oH4ItQoUmh9xxcU1IA4G4rkAAQYA5IwdRZRbAocAAAAASUVORK5CYII="
-
-/***/ },
-/* 186 */
-/***/ function(module, exports) {
-
-	module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAOCAYAAAASVl2WAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA3hpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDIxIDc5LjE1NTc3MiwgMjAxNC8wMS8xMy0xOTo0NDowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1NDUxMjhkNy0zYTU5LTQwYzMtOGM3MC04OTVmYmE2ZTFhMDAiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MTY3NTkwMkI1QThDMTFFNTgzOTA5Qjc2QTUxRkMzRjYiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MTY3NTkwMkE1QThDMTFFNTgzOTA5Qjc2QTUxRkMzRjYiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTQgKE1hY2ludG9zaCkiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo1NDUxMjhkNy0zYTU5LTQwYzMtOGM3MC04OTVmYmE2ZTFhMDAiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6NTQ1MTI4ZDctM2E1OS00MGMzLThjNzAtODk1ZmJhNmUxYTAwIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+JFYItAAAAKRJREFUeNpiYWi6wwAEJ4A4H4hPMqABJijdAMRrgVgLl4IdQFwMxNuAWB5ZAQsSeyUQCwDxbiC2BuLX6ApAYCYQCwLxHiC2A+KPTAyYoANq1VYg5sKmAASqgPgqEK/ApeA/EP8CYm4WHAoagdgUiF2wKcgD4kAgdgbiL+gKYqEKHLB50w/qA3sgfoIeUE5APAuIXYH4Drag7gLiACC+jO4ggAADABZfHJIH/WrvAAAAAElFTkSuQmCC"
-
-/***/ },
-/* 187 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -22534,16 +22627,26 @@
 
 
 /***/ },
-/* 188 */
+/* 186 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
+
+	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
 
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
 
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	var _createClass = function () {
+	  function defineProperties(target, props) {
+	    for (var i = 0; i < props.length; i++) {
+	      var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);
+	    }
+	  }return function (Constructor, protoProps, staticProps) {
+	    if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;
+	  };
+	}();
 
 	var _react = __webpack_require__(3);
 
@@ -22551,13 +22654,27 @@
 
 	var _Utils = __webpack_require__(179);
 
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	function _interopRequireDefault(obj) {
+	  return obj && obj.__esModule ? obj : { default: obj };
+	}
 
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	function _classCallCheck(instance, Constructor) {
+	  if (!(instance instanceof Constructor)) {
+	    throw new TypeError("Cannot call a class as a function");
+	  }
+	}
 
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	function _possibleConstructorReturn(self, call) {
+	  if (!self) {
+	    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+	  }return call && ((typeof call === "undefined" ? "undefined" : _typeof(call)) === "object" || typeof call === "function") ? call : self;
+	}
 
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	function _inherits(subClass, superClass) {
+	  if (typeof superClass !== "function" && superClass !== null) {
+	    throw new TypeError("Super expression must either be null or a function, not " + (typeof superClass === "undefined" ? "undefined" : _typeof(superClass)));
+	  }subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+	}
 
 	var Month = function (_Component) {
 	  _inherits(Month, _Component);
@@ -22576,11 +22693,7 @@
 	      var className = _props.className;
 	      var date = _props.date;
 
-	      return _react2.default.createElement(
-	        'div',
-	        { className: className },
-	        (0, _Utils.formatMonthTitle)(date)
-	      );
+	      return _react2.default.createElement('div', { className: className }, (0, _Utils.formatMonthTitle)(date));
 	    }
 	  }]);
 
@@ -22595,13 +22708,14 @@
 	  className: 'DayPicker-Caption'
 	};
 	exports.default = Month;
+	//# sourceMappingURL=Caption.js.map
 
 /***/ },
+/* 187 */,
+/* 188 */,
 /* 189 */,
 /* 190 */,
-/* 191 */,
-/* 192 */,
-/* 193 */
+/* 191 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';

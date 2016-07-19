@@ -26,6 +26,7 @@ module.exports = {
   		{
   			test: /\.css$/,
   			loaders: ['style', 'css', 'autoprefixer-loader?browsers=last 2 version']
+        // loaders: ['style', 'css']
   		},
       {
         test: /\.(png|gif|jpe?g|svg)$/i,
