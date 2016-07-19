@@ -4,6 +4,8 @@
   "description": "Day picker component of react",
   "main": "DayPicker.js",
   "scripts": {
+    "clean": "rimraf dist lib",
+    "dist": "webpack --config webpack.config.js",
     "build": "babel ./src -d ./lib --source-maps && postcss --use autoprefixer src/style.css -d lib/"
   },
   "repository": {
@@ -46,6 +48,7 @@
     "postcss-cli": "^2.5.2",
     "react": "^15.2.1",
     "react-dom": "^15.2.1",
+    "rimraf": "^2.5.3",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
     "webpack-dev-server": "^1.14.1"

@@ -1,0 +1,28 @@
+{
+  "name": "rc-day-picker",
+  "description": "Day picker component of react",
+  "main": "./dist/DayPicker.js",
+  "authors": [
+    "sadpig <sadpig93@gmail.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "react",
+    "day-picker"
+  ],
+  "homepage": "https://github.com/sadpig1993/rc-day-picker",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "docs",
+    "src",
+    "lib",
+    "examples/"
+  ],
+  "dependencies": {
+    "react": "~0.13.x || ~0.14.x || ~15.x"
+  }
+}
