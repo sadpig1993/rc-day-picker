@@ -4,7 +4,7 @@ import ReactDom from 'react-dom';
 import DayPicker, {Utils} from '../../../DayPicker.js';
 
 
-class Demo extends Component {
+class Ex3 extends Component {
 
 	constructor(...args) {
 		super(...args);
@@ -28,5 +28,5 @@ class Demo extends Component {
 
 
 
-
-ReactDom.render(<Demo></Demo>, document.getElementById('root'));
+export default Ex3;
+// ReactDom.render(<Demo></Demo>, document.getElementById('root'));

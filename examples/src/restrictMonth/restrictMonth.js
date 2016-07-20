@@ -9,7 +9,7 @@ import DayPicker, {Utils} from '../../../DayPicker.js';
 const fromMonth = new Date(2015, 0, 1, 0, 0);
 const toMonth = new Date(2015, 9, 20, 23, 59);
 
-class Demo extends Component {
+class Ex7 extends Component {
   render() {
     return (
       <DayPicker
@@ -30,4 +30,6 @@ class Demo extends Component {
   
 }
 
-ReactDom.render(<Demo></Demo>, document.getElementById('root'));
+export default Ex7;
+
+// ReactDom.render(<Demo></Demo>, document.getElementById('root'));

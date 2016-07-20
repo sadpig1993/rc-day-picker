@@ -54,16 +54,97 @@
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
+	__webpack_require__(189);
+
+	var _code = __webpack_require__(191);
+
+	var _code2 = _interopRequireDefault(_code);
+
+	var _selectedDays = __webpack_require__(213);
+
+	var _selectedDays2 = _interopRequireDefault(_selectedDays);
+
+	var _canChangeMonth = __webpack_require__(172);
+
+	var _canChangeMonth2 = _interopRequireDefault(_canChangeMonth);
+
+	var _disabledDays = __webpack_require__(187);
+
+	var _disabledDays2 = _interopRequireDefault(_disabledDays);
+
+	var _rangeOfDays = __webpack_require__(214);
+
+	var _rangeOfDays2 = _interopRequireDefault(_rangeOfDays);
+
+	var _year = __webpack_require__(215);
+
+	var _year2 = _interopRequireDefault(_year);
+
 	var _fixWeek = __webpack_require__(188);
 
 	var _fixWeek2 = _interopRequireDefault(_fixWeek);
+
+	var _restrictMonth = __webpack_require__(216);
+
+	var _restrictMonth2 = _interopRequireDefault(_restrictMonth);
+
+	var _modifiers = __webpack_require__(217);
+
+	var _modifiers2 = _interopRequireDefault(_modifiers);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	__webpack_require__(186);
 
 
-	_reactDom2.default.render(_react2.default.createElement(_fixWeek2.default, null), document.getElementById('root'));
+	_reactDom2.default.render(_react2.default.createElement(
+	    'div',
+	    null,
+	    _react2.default.createElement(_selectedDays2.default, null),
+	    _react2.default.createElement(_code2.default, { name: 'selectedDays' })
+	), document.getElementById('ex1'));
+	_reactDom2.default.render(_react2.default.createElement(
+	    'div',
+	    null,
+	    _react2.default.createElement(_canChangeMonth2.default, null),
+	    _react2.default.createElement(_code2.default, { name: 'canChangeMonth' })
+	), document.getElementById('ex2'));
+	_reactDom2.default.render(_react2.default.createElement(
+	    'div',
+	    null,
+	    _react2.default.createElement(_disabledDays2.default, null),
+	    _react2.default.createElement(_code2.default, { name: 'disabledDays' })
+	), document.getElementById('ex3'));
+	_reactDom2.default.render(_react2.default.createElement(
+	    'div',
+	    null,
+	    _react2.default.createElement(_rangeOfDays2.default, null),
+	    _react2.default.createElement(_code2.default, { name: 'rangeOfDays' })
+	), document.getElementById('ex4'));
+	_reactDom2.default.render(_react2.default.createElement(
+	    'div',
+	    null,
+	    _react2.default.createElement(_year2.default, null),
+	    _react2.default.createElement(_code2.default, { name: 'year' })
+	), document.getElementById('ex5'));
+	_reactDom2.default.render(_react2.default.createElement(
+	    'div',
+	    null,
+	    _react2.default.createElement(_fixWeek2.default, null),
+	    _react2.default.createElement(_code2.default, { name: 'fixWeek' })
+	), document.getElementById('ex6'));
+	_reactDom2.default.render(_react2.default.createElement(
+	    'div',
+	    null,
+	    _react2.default.createElement(_restrictMonth2.default, null),
+	    _react2.default.createElement(_code2.default, { name: 'restrictMonth' })
+	), document.getElementById('ex7'));
+	_reactDom2.default.render(_react2.default.createElement(
+	    'div',
+	    null,
+	    _react2.default.createElement(_modifiers2.default, null),
+	    _react2.default.createElement(_code2.default, { name: 'modifiers' })
+	), document.getElementById('ex8'));
 
 /***/ },
 /* 1 */
@@ -21135,7 +21216,87 @@
 	module.exports = ReactMount.renderSubtreeIntoContainer;
 
 /***/ },
-/* 172 */,
+/* 172 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _DayPicker = __webpack_require__(173);
+
+	var _DayPicker2 = _interopRequireDefault(_DayPicker);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Ex2 = function (_Component) {
+		_inherits(Ex2, _Component);
+
+		function Ex2() {
+			var _Object$getPrototypeO;
+
+			_classCallCheck(this, Ex2);
+
+			for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+				args[_key] = arguments[_key];
+			}
+
+			var _this = _possibleConstructorReturn(this, (_Object$getPrototypeO = Object.getPrototypeOf(Ex2)).call.apply(_Object$getPrototypeO, [this].concat(args)));
+
+			_this.state = {
+				selectedDay: null
+			};
+
+			_this.onDayClickHandler = _this.onDayClickHandler.bind(_this);
+			return _this;
+		}
+
+		_createClass(Ex2, [{
+			key: 'onDayClickHandler',
+			value: function onDayClickHandler(e, day, modifilers) {
+				if (modifilers.disabled) {
+					return;
+				}
+				this.setState({
+					selectedDay: modifilers.selected ? null : day
+				});
+			}
+		}, {
+			key: 'render',
+			value: function render() {
+				var selectedDay = this.state.selectedDay;
+
+				return _react2.default.createElement(_DayPicker2.default, {
+					numberOfMonths: 2,
+					canChangeMonth: false,
+					selectedDays: function selectedDays(day) {
+						return _DayPicker.Utils.isSameDay(selectedDay, day);
+					},
+					onDayClick: this.onDayClickHandler
+				});
+			}
+		}]);
+
+		return Ex2;
+	}(_react.Component);
+
+	exports.default = Ex2;
+
+/***/ },
 /* 173 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -22750,7 +22911,82 @@
 	/*istanbul ignore next*/module.exports = exports["default"]; // required to safely use babel/register within a browserify codebase
 
 /***/ },
-/* 187 */,
+/* 187 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactDom = __webpack_require__(33);
+
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+
+	var _DayPicker = __webpack_require__(173);
+
+	var _DayPicker2 = _interopRequireDefault(_DayPicker);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Ex3 = function (_Component) {
+		_inherits(Ex3, _Component);
+
+		function Ex3() {
+			var _Object$getPrototypeO;
+
+			_classCallCheck(this, Ex3);
+
+			for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+				args[_key] = arguments[_key];
+			}
+
+			var _this = _possibleConstructorReturn(this, (_Object$getPrototypeO = Object.getPrototypeOf(Ex3)).call.apply(_Object$getPrototypeO, [this].concat(args)));
+
+			_this.state = {
+				from: new Date(),
+				to: _DayPicker.Utils.addMonths(new Date(), 1)
+			};
+			return _this;
+		}
+
+		_createClass(Ex3, [{
+			key: 'render',
+			value: function render() {
+				var _state = this.state;
+				var from = _state.from;
+				var to = _state.to;
+
+				return _react2.default.createElement(_DayPicker2.default, {
+					numberOfMonths: 1,
+					canChangeMonth: true,
+					disabledDays: function disabledDays(day) {
+						return _DayPicker.Utils.isDayInRange(day, { from: from, to: to });
+					}
+				});
+			}
+		}]);
+
+		return Ex3;
+	}(_react.Component);
+
+	exports.default = Ex3;
+	// ReactDom.render(<Demo></Demo>, document.getElementById('root'));
+
+/***/ },
 /* 188 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -22812,6 +23048,910 @@
 	}(_react.Component);
 
 	exports.default = Ex6;
+
+	// ReactDom.render(<Demo></Demo>, document.getElementById('root'));
+
+/***/ },
+/* 189 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(190);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(184)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/.npminstall/css-loader/0.23.1/css-loader/index.js!./../../node_modules/.npminstall/autoprefixer-loader/3.2.0/autoprefixer-loader/index.js?browsers=last 2 version!./prism.css", function() {
+				var newContent = require("!!./../../node_modules/.npminstall/css-loader/0.23.1/css-loader/index.js!./../../node_modules/.npminstall/autoprefixer-loader/3.2.0/autoprefixer-loader/index.js?browsers=last 2 version!./prism.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 190 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(183)();
+	// imports
+
+
+	// module
+	exports.push([module.id, "/* http://prismjs.com/download.html?themes=prism&languages=markup+clike+javascript+jsx */\n/**\n * prism.js default theme for JavaScript, CSS and HTML\n * Based on dabblet (http://dabblet.com)\n * @author Lea Verou\n */\n\ncode[class*=\"language-\"],\npre[class*=\"language-\"] {\n  color: black;\n  text-shadow: 0 1px white;\n  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;\n  direction: ltr;\n  text-align: left;\n  white-space: pre;\n  word-spacing: normal;\n  word-break: normal;\n  word-wrap: normal;\n  line-height: 1.5;\n\n  -moz-tab-size: 4;\n  tab-size: 4;\n\n  -webkit-hyphens: none;\n  -ms-hyphens: none;\n  hyphens: none;\n}\n\npre[class*=\"language-\"]::-moz-selection, pre[class*=\"language-\"] ::-moz-selection,\ncode[class*=\"language-\"]::-moz-selection, code[class*=\"language-\"] ::-moz-selection {\n  text-shadow: none;\n  background: #b3d4fc;\n}\n\npre[class*=\"language-\"]::selection, pre[class*=\"language-\"] ::selection,\ncode[class*=\"language-\"]::selection, code[class*=\"language-\"] ::selection {\n  text-shadow: none;\n  background: #b3d4fc;\n}\n\n@media print {\n  code[class*=\"language-\"],\n  pre[class*=\"language-\"] {\n    text-shadow: none;\n  }\n}\n\n/* Code blocks */\npre[class*=\"language-\"] {\n  padding: 1em;\n  margin: .5em 0;\n  overflow: auto;\n}\n\n:not(pre) > code[class*=\"language-\"],\npre[class*=\"language-\"] {\n  background: #f5f2f0;\n}\n\n/* Inline code */\n:not(pre) > code[class*=\"language-\"] {\n  padding: .1em;\n  border-radius: .3em;\n  white-space: normal;\n}\n\n.token.comment,\n.token.prolog,\n.token.doctype,\n.token.cdata {\n  color: slategray;\n}\n\n.token.punctuation {\n  color: #999;\n}\n\n.namespace {\n  opacity: .7;\n}\n\n.token.property,\n.token.tag,\n.token.boolean,\n.token.number,\n.token.constant,\n.token.symbol,\n.token.deleted {\n  color: #905;\n}\n\n.token.selector,\n.token.attr-name,\n.token.string,\n.token.char,\n.token.builtin,\n.token.inserted {\n  color: #690;\n}\n\n.token.operator,\n.token.entity,\n.token.url,\n.language-css .token.string,\n.style .token.string {\n  color: #a67f59;\n  background: hsla(0, 0%, 100%, .5);\n}\n\n.token.atrule,\n.token.attr-value,\n.token.keyword {\n  color: #07a;\n}\n\n.token.function {\n  color: #DD4A68;\n}\n\n.token.regex,\n.token.important,\n.token.variable {\n  color: #e90;\n}\n\n.token.important,\n.token.bold {\n  font-weight: bold;\n}\n.token.italic {\n  font-style: italic;\n}\n\n.token.entity {\n  cursor: help;\n}\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 191 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _prism = __webpack_require__(192);
+
+	var _prism2 = _interopRequireDefault(_prism);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var exampleCode = function (_Component) {
+	    _inherits(exampleCode, _Component);
+
+	    function exampleCode() {
+	        var _Object$getPrototypeO;
+
+	        _classCallCheck(this, exampleCode);
+
+	        for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+	            args[_key] = arguments[_key];
+	        }
+
+	        return _possibleConstructorReturn(this, (_Object$getPrototypeO = Object.getPrototypeOf(exampleCode)).call.apply(_Object$getPrototypeO, [this].concat(args)));
+	    }
+
+	    _createClass(exampleCode, [{
+	        key: 'componentDidMount',
+	        value: function componentDidMount() {
+	            _prism2.default.highlightAll();
+	        }
+	    }, {
+	        key: 'render',
+	        value: function render() {
+	            var fileName = this.props.name;
+
+	            var source = __webpack_require__(193)("./" + fileName + '/' + fileName + '.js');
+
+	            return _react2.default.createElement(
+	                'pre',
+	                { className: 'language-jsx' },
+	                _react2.default.createElement(
+	                    'code',
+	                    { className: 'language-jsx' },
+	                    source
+	                )
+	            );
+	        }
+	    }]);
+
+	    return exampleCode;
+	}(_react.Component);
+
+	exampleCode.propTypes = {
+	    name: _react.PropTypes.string
+	};
+	exports.default = exampleCode;
+
+/***/ },
+/* 192 */
+/***/ function(module, exports) {
+
+	/* WEBPACK VAR INJECTION */(function(global) {"use strict";
+
+	/* http://prismjs.com/download.html?themes=prism&languages=markup+clike+javascript+jsx */
+	var _self = "undefined" != typeof window ? window : "undefined" != typeof WorkerGlobalScope && self instanceof WorkerGlobalScope ? self : {},
+	    Prism = function () {
+	  var e = /\blang(?:uage)?-(?!\*)(\w+)\b/i,
+	      t = _self.Prism = { util: { encode: function encode(e) {
+	        return e instanceof n ? new n(e.type, t.util.encode(e.content), e.alias) : "Array" === t.util.type(e) ? e.map(t.util.encode) : e.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/\u00a0/g, " ");
+	      }, type: function type(e) {
+	        return Object.prototype.toString.call(e).match(/\[object (\w+)\]/)[1];
+	      }, clone: function clone(e) {
+	        var n = t.util.type(e);switch (n) {case "Object":
+	            var a = {};for (var r in e) {
+	              e.hasOwnProperty(r) && (a[r] = t.util.clone(e[r]));
+	            }return a;case "Array":
+	            return e.map && e.map(function (e) {
+	              return t.util.clone(e);
+	            });}return e;
+	      } }, languages: { extend: function extend(e, n) {
+	        var a = t.util.clone(t.languages[e]);for (var r in n) {
+	          a[r] = n[r];
+	        }return a;
+	      }, insertBefore: function insertBefore(e, n, a, r) {
+	        r = r || t.languages;var l = r[e];if (2 == arguments.length) {
+	          a = arguments[1];for (var i in a) {
+	            a.hasOwnProperty(i) && (l[i] = a[i]);
+	          }return l;
+	        }var o = {};for (var s in l) {
+	          if (l.hasOwnProperty(s)) {
+	            if (s == n) for (var i in a) {
+	              a.hasOwnProperty(i) && (o[i] = a[i]);
+	            }o[s] = l[s];
+	          }
+	        }return t.languages.DFS(t.languages, function (t, n) {
+	          n === r[e] && t != e && (this[t] = o);
+	        }), r[e] = o;
+	      }, DFS: function DFS(e, n, a) {
+	        for (var r in e) {
+	          e.hasOwnProperty(r) && (n.call(e, r, e[r], a || r), "Object" === t.util.type(e[r]) ? t.languages.DFS(e[r], n) : "Array" === t.util.type(e[r]) && t.languages.DFS(e[r], n, r));
+	        }
+	      } }, plugins: {}, highlightAll: function highlightAll(e, n) {
+	      for (var a, r = document.querySelectorAll('code[class*="language-"], [class*="language-"] code, code[class*="lang-"], [class*="lang-"] code'), l = 0; a = r[l++];) {
+	        t.highlightElement(a, e === !0, n);
+	      }
+	    }, highlightElement: function highlightElement(n, a, r) {
+	      for (var l, i, o = n; o && !e.test(o.className);) {
+	        o = o.parentNode;
+	      }o && (l = (o.className.match(e) || [, ""])[1], i = t.languages[l]), n.className = n.className.replace(e, "").replace(/\s+/g, " ") + " language-" + l, o = n.parentNode, /pre/i.test(o.nodeName) && (o.className = o.className.replace(e, "").replace(/\s+/g, " ") + " language-" + l);var s = n.textContent,
+	          u = { element: n, language: l, grammar: i, code: s };if (!s || !i) return t.hooks.run("complete", u), void 0;if (t.hooks.run("before-highlight", u), a && _self.Worker) {
+	        var g = new Worker(t.filename);g.onmessage = function (e) {
+	          u.highlightedCode = e.data, t.hooks.run("before-insert", u), u.element.innerHTML = u.highlightedCode, r && r.call(u.element), t.hooks.run("after-highlight", u), t.hooks.run("complete", u);
+	        }, g.postMessage(JSON.stringify({ language: u.language, code: u.code, immediateClose: !0 }));
+	      } else u.highlightedCode = t.highlight(u.code, u.grammar, u.language), t.hooks.run("before-insert", u), u.element.innerHTML = u.highlightedCode, r && r.call(n), t.hooks.run("after-highlight", u), t.hooks.run("complete", u);
+	    }, highlight: function highlight(e, a, r) {
+	      var l = t.tokenize(e, a);return n.stringify(t.util.encode(l), r);
+	    }, tokenize: function tokenize(e, n) {
+	      var a = t.Token,
+	          r = [e],
+	          l = n.rest;if (l) {
+	        for (var i in l) {
+	          n[i] = l[i];
+	        }delete n.rest;
+	      }e: for (var i in n) {
+	        if (n.hasOwnProperty(i) && n[i]) {
+	          var o = n[i];o = "Array" === t.util.type(o) ? o : [o];for (var s = 0; s < o.length; ++s) {
+	            var u = o[s],
+	                g = u.inside,
+	                c = !!u.lookbehind,
+	                f = 0,
+	                h = u.alias;u = u.pattern || u;for (var p = 0; p < r.length; p++) {
+	              var d = r[p];if (r.length > e.length) break e;if (!(d instanceof a)) {
+	                u.lastIndex = 0;var m = u.exec(d);if (m) {
+	                  c && (f = m[1].length);var y = m.index - 1 + f,
+	                      m = m[0].slice(f),
+	                      v = m.length,
+	                      k = y + v,
+	                      b = d.slice(0, y + 1),
+	                      w = d.slice(k + 1),
+	                      P = [p, 1];b && P.push(b);var A = new a(i, g ? t.tokenize(m, g) : m, h);P.push(A), w && P.push(w), Array.prototype.splice.apply(r, P);
+	                }
+	              }
+	            }
+	          }
+	        }
+	      }return r;
+	    }, hooks: { all: {}, add: function add(e, n) {
+	        var a = t.hooks.all;a[e] = a[e] || [], a[e].push(n);
+	      }, run: function run(e, n) {
+	        var a = t.hooks.all[e];if (a && a.length) for (var r, l = 0; r = a[l++];) {
+	          r(n);
+	        }
+	      } } },
+	      n = t.Token = function (e, t, n) {
+	    this.type = e, this.content = t, this.alias = n;
+	  };if (n.stringify = function (e, a, r) {
+	    if ("string" == typeof e) return e;if ("Array" === t.util.type(e)) return e.map(function (t) {
+	      return n.stringify(t, a, e);
+	    }).join("");var l = { type: e.type, content: n.stringify(e.content, a, r), tag: "span", classes: ["token", e.type], attributes: {}, language: a, parent: r };if ("comment" == l.type && (l.attributes.spellcheck = "true"), e.alias) {
+	      var i = "Array" === t.util.type(e.alias) ? e.alias : [e.alias];Array.prototype.push.apply(l.classes, i);
+	    }t.hooks.run("wrap", l);var o = "";for (var s in l.attributes) {
+	      o += (o ? " " : "") + s + '="' + (l.attributes[s] || "") + '"';
+	    }return "<" + l.tag + ' class="' + l.classes.join(" ") + '" ' + o + ">" + l.content + "</" + l.tag + ">";
+	  }, !_self.document) return _self.addEventListener ? (_self.addEventListener("message", function (e) {
+	    var n = JSON.parse(e.data),
+	        a = n.language,
+	        r = n.code,
+	        l = n.immediateClose;_self.postMessage(t.highlight(r, t.languages[a], a)), l && _self.close();
+	  }, !1), _self.Prism) : _self.Prism;var a = document.getElementsByTagName("script");return a = a[a.length - 1], a && (t.filename = a.src, document.addEventListener && !a.hasAttribute("data-manual") && document.addEventListener("DOMContentLoaded", t.highlightAll)), _self.Prism;
+	}();"undefined" != typeof module && module.exports && (module.exports = Prism), "undefined" != typeof global && (global.Prism = Prism);
+	Prism.languages.markup = { comment: /<!--[\w\W]*?-->/, prolog: /<\?[\w\W]+?\?>/, doctype: /<!DOCTYPE[\w\W]+?>/, cdata: /<!\[CDATA\[[\w\W]*?]]>/i, tag: { pattern: /<\/?(?!\d)[^\s>\/=.$<]+(?:\s+[^\s>\/=]+(?:=(?:("|')(?:\\\1|\\?(?!\1)[\w\W])*\1|[^\s'">=]+))?)*\s*\/?>/i, inside: { tag: { pattern: /^<\/?[^\s>\/]+/i, inside: { punctuation: /^<\/?/, namespace: /^[^\s>\/:]+:/ } }, "attr-value": { pattern: /=(?:('|")[\w\W]*?(\1)|[^\s>]+)/i, inside: { punctuation: /[=>"']/ } }, punctuation: /\/?>/, "attr-name": { pattern: /[^\s>\/]+/, inside: { namespace: /^[^\s>\/:]+:/ } } } }, entity: /&#?[\da-z]{1,8};/i }, Prism.hooks.add("wrap", function (a) {
+	  "entity" === a.type && (a.attributes.title = a.content.replace(/&amp;/, "&"));
+	}), Prism.languages.xml = Prism.languages.markup, Prism.languages.html = Prism.languages.markup, Prism.languages.mathml = Prism.languages.markup, Prism.languages.svg = Prism.languages.markup;
+	Prism.languages.clike = { comment: [{ pattern: /(^|[^\\])\/\*[\w\W]*?\*\//, lookbehind: !0 }, { pattern: /(^|[^\\:])\/\/.*/, lookbehind: !0 }], string: /(["'])(\\(?:\r\n|[\s\S])|(?!\1)[^\\\r\n])*\1/, "class-name": { pattern: /((?:\b(?:class|interface|extends|implements|trait|instanceof|new)\s+)|(?:catch\s+\())[a-z0-9_\.\\]+/i, lookbehind: !0, inside: { punctuation: /(\.|\\)/ } }, keyword: /\b(if|else|while|do|for|return|in|instanceof|function|new|try|throw|catch|finally|null|break|continue)\b/, "boolean": /\b(true|false)\b/, "function": /[a-z0-9_]+(?=\()/i, number: /\b-?(?:0x[\da-f]+|\d*\.?\d+(?:e[+-]?\d+)?)\b/i, operator: /--?|\+\+?|!=?=?|<=?|>=?|==?=?|&&?|\|\|?|\?|\*|\/|~|\^|%/, punctuation: /[{}[\];(),.:]/ };
+	Prism.languages.javascript = Prism.languages.extend("clike", { keyword: /\b(as|async|await|break|case|catch|class|const|continue|debugger|default|delete|do|else|enum|export|extends|finally|for|from|function|get|if|implements|import|in|instanceof|interface|let|new|null|of|package|private|protected|public|return|set|static|super|switch|this|throw|try|typeof|var|void|while|with|yield)\b/, number: /\b-?(0x[\dA-Fa-f]+|0b[01]+|0o[0-7]+|\d*\.?\d+([Ee][+-]?\d+)?|NaN|Infinity)\b/, "function": /[_$a-zA-Z\xA0-\uFFFF][_$a-zA-Z0-9\xA0-\uFFFF]*(?=\()/i }), Prism.languages.insertBefore("javascript", "keyword", { regex: { pattern: /(^|[^\/])\/(?!\/)(\[.+?]|\\.|[^\/\\\r\n])+\/[gimyu]{0,5}(?=\s*($|[\r\n,.;})]))/, lookbehind: !0 } }), Prism.languages.insertBefore("javascript", "class-name", { "template-string": { pattern: /`(?:\\`|\\?[^`])*`/, inside: { interpolation: { pattern: /\$\{[^}]+\}/, inside: { "interpolation-punctuation": { pattern: /^\$\{|\}$/, alias: "punctuation" }, rest: Prism.languages.javascript } }, string: /[\s\S]+/ } } }), Prism.languages.markup && Prism.languages.insertBefore("markup", "tag", { script: { pattern: /(<script[\w\W]*?>)[\w\W]*?(?=<\/script>)/i, lookbehind: !0, inside: Prism.languages.javascript, alias: "language-javascript" } }), Prism.languages.js = Prism.languages.javascript;
+	!function (a) {
+	  var s = a.util.clone(a.languages.javascript);a.languages.jsx = a.languages.extend("markup", s), a.languages.jsx.tag.pattern = /<\/?[\w:-]+\s*(?:\s+[\w:-]+(?:=(?:("|')(\\?[\w\W])*?\1|[^\s'">=]+|(\{[\w\W]*?\})))?\s*)*\/?>/i, a.languages.jsx.tag.inside["attr-value"].pattern = /=[^\{](?:('|")[\w\W]*?(\1)|[^\s>]+)/i, a.languages.insertBefore("inside", "attr-value", { script: { pattern: /=(\{(?:\{[^}]*\}|[^}])+\})/i, inside: { "function": a.languages.javascript.function, punctuation: /[={}[\];(),.:]/, keyword: a.languages.javascript.keyword, "boolean": a.languages.javascript.boolean }, alias: "language-javascript" } }, a.languages.jsx.tag);
+	}(Prism);
+	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
+
+/***/ },
+/* 193 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var map = {
+		"./canChangeMonth/canChangeMonth.js": 194,
+		"./canChangeMonth/code.js": 195,
+		"./canChangeMonth/index.js": 196,
+		"./code.js": 197,
+		"./disabledDays/disabledDays.js": 198,
+		"./disabledDays/index.js": 199,
+		"./fixWeek/fixWeek.js": 200,
+		"./fixWeek/index.js": 201,
+		"./index.js": 202,
+		"./modifiers/index.js": 203,
+		"./modifiers/modifiers.js": 204,
+		"./rangeOfDays/index.js": 205,
+		"./rangeOfDays/rangeOfDays.js": 206,
+		"./restrictMonth/index.js": 207,
+		"./restrictMonth/restrictMonth.js": 208,
+		"./selectedDays/index.js": 209,
+		"./selectedDays/selectedDays.js": 210,
+		"./year/index.js": 211,
+		"./year/year.js": 212
+	};
+	function webpackContext(req) {
+		return __webpack_require__(webpackContextResolve(req));
+	};
+	function webpackContextResolve(req) {
+		return map[req] || (function() { throw new Error("Cannot find module '" + req + "'.") }());
+	};
+	webpackContext.keys = function webpackContextKeys() {
+		return Object.keys(map);
+	};
+	webpackContext.resolve = webpackContextResolve;
+	module.exports = webpackContext;
+	webpackContext.id = 193;
+
+
+/***/ },
+/* 194 */
+/***/ function(module, exports) {
+
+	module.exports = "import React, { Component, PropTypes } from 'react';\nimport DayPicker, {Utils} from '../../../DayPicker.js';\n\n\nclass Ex2 extends Component {\n\tconstructor(...args) {\n\t\tsuper(...args);\n\t\tthis.onDayClickHandler = this.onDayClickHandler.bind(this);\n\t}\n\tstate = {\n\t\tselectedDay: null\n\t};\n\tonDayClickHandler(e, day, modifilers) {\n\t\tif (modifilers.disabled) {\n\t\t\treturn;\n\t\t}\n\t\tthis.setState({\n\t    \tselectedDay: modifilers.selected ? null : day,\n\t    });\n\t}\n\trender() {\n\t\tconst { selectedDay } = this.state;\n\t\treturn (\n\t\t\t<DayPicker \n\t\t\t\tnumberOfMonths = {2} \n\t\t\t\tcanChangeMonth = {false} \n\t\t\t\tselectedDays = {day => Utils.isSameDay(selectedDay, day)}\n\t\t\t\tonDayClick = {this.onDayClickHandler}\n\t\t\t/>\n\t\t);\n\t}\n}\n\nexport default Ex2;"
+
+/***/ },
+/* 195 */
+/***/ function(module, exports) {
+
+	module.exports = "import React, { Component, PropTypes } from 'react';\n\nimport DayPicker, {Utils} from '../../../DayPicker.js';\n\nimport Prism from '../../vendors/prism';\n\nlet source = require(`!raw!./canChangeMonth.js`);\n\nexport default class Ex2Source extends Component {\n\n    componentDidMount() {\n        Prism.highlightAll();\n    }\n\n    render() {\n        return (<pre className=\"language-jsx\"><code className=\"language-jsx\">{source}</code></pre>)\n    }\n}"
+
+/***/ },
+/* 196 */
+/***/ function(module, exports) {
+
+	module.exports = "require('babel-register');\nimport React, { Component, PropTypes } from 'react';\nimport ReactDom from 'react-dom';\n\nimport Ex2 from './canChangeMonth.js';\n\n\n\n\nReactDom.render(<Ex2></Ex2>, document.getElementById('root'));\n\n\n"
+
+/***/ },
+/* 197 */
+/***/ function(module, exports) {
+
+	module.exports = "import React, { Component, PropTypes } from 'react';\nimport Prism from '../vendors/prism.js';\n\n\nexport default class exampleCode extends Component {\n\n\n    static propTypes = {\n        name: PropTypes.string\n    };\n\n    constructor(...args) {\n        super(...args);\n    }\n\n    componentDidMount() {\n        Prism.highlightAll();\n    }\n\n\n    render() {\n        let fileName = this.props.name;\n\n        let source = require(`!raw!./${fileName}/${fileName}.js`);\n\n        return (<pre className=\"language-jsx\"><code className=\"language-jsx\">{source}</code></pre>)\n    }\n}"
+
+/***/ },
+/* 198 */
+/***/ function(module, exports) {
+
+	module.exports = "import React, { Component, PropTypes } from 'react';\n\nimport ReactDom from 'react-dom';\nimport DayPicker, {Utils} from '../../../DayPicker.js';\n\n\nclass Ex3 extends Component {\n\n\tconstructor(...args) {\n\t\tsuper(...args);\n\t}\n\n\tstate = {\n\t\tfrom: new Date(),\n\t\tto: Utils.addMonths(new Date(), 1)\n\t};\n\n\trender() {\n\t\tconst { from, to } = this.state;\n\t\treturn (<DayPicker \n\t\t\tnumberOfMonths = {1} \n\t\t\tcanChangeMonth = {true} \n\t\t\tdisabledDays = {day => Utils.isDayInRange(day, { from, to })}\n\t\t/>);\n\t}\n}\n\n\n\n\nexport default Ex3;\n// ReactDom.render(<Demo></Demo>, document.getElementById('root'));"
+
+/***/ },
+/* 199 */
+/***/ function(module, exports) {
+
+	module.exports = "require('babel-register');\nimport React, { Component, PropTypes } from 'react';\nimport ReactDom from 'react-dom';\n\nimport Ex3 from './disabledDays.js';\n\nReactDom.render(<Ex3></Ex3>, document.getElementById('root'));\n"
+
+/***/ },
+/* 200 */
+/***/ function(module, exports) {
+
+	module.exports = "import React, { Component, PropTypes } from 'react';\n\nimport ReactDom from 'react-dom';\nimport DayPicker, {Utils} from '../../../DayPicker.js';\n\n\nclass Ex6 extends Component {\n\n\tconstructor(...args) {\n\t\tsuper(...args);\n\t}\n\n\n\trender() {\n\t\t\n\t\treturn (<DayPicker \n\t\t\tnumberOfMonths = {2} \n\t\t\tfixedWeeks = {true}\n\t\t/>);\n\t}\n}\n\n\n\n\nexport default Ex6;\n\n// ReactDom.render(<Demo></Demo>, document.getElementById('root'));"
+
+/***/ },
+/* 201 */
+/***/ function(module, exports) {
+
+	module.exports = "require('babel-register');\nimport React, { Component, PropTypes } from 'react';\nimport ReactDom from 'react-dom';\n\nimport Ex6 from './fixWeek.js';\n\nReactDom.render(<Ex6></Ex6>, document.getElementById('root'));\n"
+
+/***/ },
+/* 202 */
+/***/ function(module, exports) {
+
+	module.exports = "require('babel-register');\nimport React, { Component, PropTypes } from 'react';\nimport ReactDom from 'react-dom';\n\n\nimport '../vendors/prism.css';\n\nimport ExSource  from './code.js';\n\nimport Ex1 from './selectedDays/selectedDays.js';\n\nimport Ex2 from './canChangeMonth/canChangeMonth.js';\n\n\nimport Ex3 from './disabledDays/disabledDays.js';\nimport Ex4 from './rangeOfDays/rangeOfDays.js';\nimport Ex5 from './year/year.js';\nimport Ex6 from './fixWeek/fixWeek.js';\nimport Ex7 from './restrictMonth/restrictMonth.js';\nimport Ex8 from './modifiers/modifiers.js';\n\n\n\nReactDom.render(<div>\n                    <Ex1></Ex1>\n                    <ExSource name=\"selectedDays\"></ExSource>\n                </div>, document.getElementById('ex1'));\nReactDom.render(\n                <div>\n                    <Ex2></Ex2>\n                    <ExSource name=\"canChangeMonth\"></ExSource>\n                </div>, document.getElementById('ex2'));\nReactDom.render(<div><Ex3></Ex3><ExSource name=\"disabledDays\"></ExSource></div>, document.getElementById('ex3'));\nReactDom.render(<div><Ex4></Ex4><ExSource name=\"rangeOfDays\"></ExSource></div>, document.getElementById('ex4'));\nReactDom.render(<div><Ex5></Ex5><ExSource name=\"year\"></ExSource></div>, document.getElementById('ex5'));\nReactDom.render(<div><Ex6></Ex6><ExSource name=\"fixWeek\"></ExSource></div>, document.getElementById('ex6'));\nReactDom.render(<div><Ex7></Ex7><ExSource name=\"restrictMonth\"></ExSource></div>, document.getElementById('ex7'));\nReactDom.render(<div><Ex8></Ex8><ExSource name=\"modifiers\"></ExSource></div>, document.getElementById('ex8'));"
+
+/***/ },
+/* 203 */
+/***/ function(module, exports) {
+
+	module.exports = "require('babel-register');\nimport React, { Component, PropTypes } from 'react';\nimport ReactDom from 'react-dom';\n\nimport Ex8 from './modifiers.js';\n\nReactDom.render(<Ex8></Ex8>, document.getElementById('root'));\n"
+
+/***/ },
+/* 204 */
+/***/ function(module, exports) {
+
+	module.exports = "import React, { Component, PropTypes } from 'react';\n\nimport ReactDom from 'react-dom';\nimport DayPicker, {Utils} from '../../../DayPicker.js';\n\n\nclass Ex8 extends Component {\n\n\tconstructor(...args) {\n\t\tsuper(...args);\n\t\tthis.state = {\n            start: this.props.start,\n            end: this.props.end\n        };\n\n        this.handleDayClick = this.handleDayClick.bind(this);\n\t}\n\tcomponentWillReceiveProps(nextProps) {\n        this.state.start = nextProps.start;\n        this.state.end = nextProps.end;\n        this.setState(this.state);\n    }\n\n    handleDayClick(e, day, modifiers) {\n        if (modifiers.disabled) {\n            return;\n        }\n\n        let start = this.state.start;\n        let end = this.state.end;\n\n        if (!start || !end || !Utils.isSameDay(start, end)) {\n            start = day;\n            end = day;\n        }\n        else {\n            end = day;\n            if (end < start) {\n                end = start;\n                start = day;\n            }\n        }\n\n        this.state.start = start;\n        this.state.end = end;\n        this.setState(this.state);\n        // this.props.onValueChange(this.state.start, this.state.end);\n    }\n\n\trender() {\n\t\t// let className = [this.props.className].join(' ');\n        let start = this.state.start;\n        let end = this.state.end;\n\n        let modifiers = {\n            selected(day) {\n                return (start && Utils.isSameDay(day, start))\n                || (end && Utils.isSameDay(day, end));\n            },\n            between(day) {\n                return start && end && Utils.isDayBetween(day, start, end);\n            }\n            // disabled: day => !isCloseBetween(day, this.props.allowPickStart, this.props.allowPickEnd)\n        };\n\t\t\n\t\treturn (<DayPicker \n\t\t\tnumberOfMonths = {2} \n\t\t\tmodifiers = {modifiers}\n\t\t\tonDayClick={this.handleDayClick}\n\t\t/>);\n\t}\n}\n\n\nexport default Ex8;\n\n\n// ReactDom.render(<Demo></Demo>, document.getElementById('root'));"
+
+/***/ },
+/* 205 */
+/***/ function(module, exports) {
+
+	module.exports = "require('babel-register');\nimport React, { Component, PropTypes } from 'react';\nimport ReactDom from 'react-dom';\n\nimport Ex4 from './rangeOfDays.js';\n\nReactDom.render(<Ex4></Ex4>, document.getElementById('root'));\n"
+
+/***/ },
+/* 206 */
+/***/ function(module, exports) {
+
+	module.exports = "import React, { Component, PropTypes } from 'react';\n\nimport ReactDom from 'react-dom';\nimport DayPicker, {Utils} from '../../../DayPicker.js';\n\n\nclass Ex4 extends Component {\n\n\tconstructor(...args) {\n\t\tsuper(...args);\n\n\t\tthis.onDayClickHandler = this.onDayClickHandler.bind(this);\n\t\tthis.selected = this.selected.bind(this);\n\t}\n\n\tstate = {\n\t\tfrom: null,\n\t\tto: null\n\t};\n\n\tonDayClickHandler(e, day, modifilers) {\n\t\tif (modifilers.disabled) {\n\t\t\treturn;\n\t\t}\n\t\t\n\t\t// const range = Utils.addDayToRange(day, this.state);\n\t\tlet start = this.state.start;\n        let end = this.state.end;\n\n        if (!start || !end || !Utils.isSameDay(start, end)) {\n            start = day;\n            end = day;\n        }\n        else {\n            end = day;\n            if (end < start) {\n                end = start;\n                start = day;\n            }\n        }\n\n    \tthis.setState({\n    \t\tstart: start,\n    \t\tend: end\n    \t});\n\t}\n\n\tselected(day) {\n\t\tlet { start, end } = this.state;\n    \treturn (start && Utils.isSameDay(day, start))\n    \t\t|| (end && Utils.isSameDay(day, end)) \n    \t\t|| (day > start && day < end);\n    }\n\n\trender() {\n\t\tlet start = this.state.start;\n        let end = this.state.end;\n\n\t\treturn (<DayPicker \n\t\t\tnumberOfMonths = {2} \n\t\t\tcanChangeMonth = {true} \n\t\t\tselectedDays = {day => this.selected(day)}\n\t\t\tonDayClick = {this.onDayClickHandler}\n\t\t/>);\n\t}\n}\n\nexport default Ex4;\n\n\n\n// ReactDom.render(<Demo></Demo>, document.getElementById('root'));"
+
+/***/ },
+/* 207 */
+/***/ function(module, exports) {
+
+	module.exports = "require('babel-register');\nimport React, { Component, PropTypes } from 'react';\nimport ReactDom from 'react-dom';\n\nimport Ex7 from './restrictMonth.js';\n\nReactDom.render(<Ex7></Ex7>, document.getElementById('root'));\n"
+
+/***/ },
+/* 208 */
+/***/ function(module, exports) {
+
+	module.exports = "import React, { Component, PropTypes } from 'react';\n\nimport ReactDom from 'react-dom';\nimport DayPicker, {Utils} from '../../../DayPicker.js';\n\n\n\n\nconst fromMonth = new Date(2015, 0, 1, 0, 0);\nconst toMonth = new Date(2015, 9, 20, 23, 59);\n\nclass Ex7 extends Component {\n  render() {\n    return (\n      <DayPicker\n        numberOfMonths = {2}\n        fixedWeeks = {true}\n        initialMonth = {fromMonth}\n        fromMonth = {fromMonth}\n        toMonth = {toMonth}\n        disabledDays = {day => fromMonth > day || day > toMonth}\n        onDayClick = {(e, day, { disabled }) => {\n          if (!disabled) {\n            console.log(day.toLocaleDateString());\n          }\n        }}\n      />\n    );\n  }\n  \n}\n\nexport default Ex7;\n\n// ReactDom.render(<Demo></Demo>, document.getElementById('root'));"
+
+/***/ },
+/* 209 */
+/***/ function(module, exports) {
+
+	module.exports = "require('babel-register');\nimport React, { Component, PropTypes } from 'react';\nimport ReactDom from 'react-dom';\n\nimport Ex1 from './selectedDays.js';\n\nReactDom.render(<Ex1></Ex1>, document.getElementById('root'));\n"
+
+/***/ },
+/* 210 */
+/***/ function(module, exports) {
+
+	module.exports = "import React, { Component, PropTypes } from 'react';\n\nimport ReactDom from 'react-dom';\nimport DayPicker, {Utils} from '../../../DayPicker.js';\n\n\nclass Ex1 extends Component {\n\n\tconstructor(...args) {\n\t\tsuper(...args);\n\n\t\tthis.onDayClickHandler = this.onDayClickHandler.bind(this);\n\t}\n\n\tstate = {\n\t\tselectedDay: null\n\t};\n\n\tonDayClickHandler(e, day, modifilers) {\n\t\tif (modifilers.disabled) {\n\t\t\treturn;\n\t\t}\n\t\tthis.setState({\n\t    \tselectedDay: modifilers.selected ? null : day,\n\t    });\n\t}\n\n\trender() {\n\t\tconst { selectedDay } = this.state;\n\t\treturn (<DayPicker \n\t\t\tnumberOfMonths = {2} \n\t\t\tcanChangeMonth = {true} \n\t\t\tselectedDays = {day => Utils.isSameDay(selectedDay, day)}\n\t\t\tfixedWeeks = {true}\n\t\t\tonDayClick = {this.onDayClickHandler}\n\t\t/>);\n\t}\n}\n\n\nexport default Ex1;\n\n\n// ReactDom.render(<Demo></Demo>, document.getElementById('root'));"
+
+/***/ },
+/* 211 */
+/***/ function(module, exports) {
+
+	module.exports = "require('babel-register');\nimport React, { Component, PropTypes } from 'react';\nimport ReactDom from 'react-dom';\n\nimport Ex5 from './year.js';\n\nReactDom.render(<Ex5></Ex5>, document.getElementById('root'));\n"
+
+/***/ },
+/* 212 */
+/***/ function(module, exports) {
+
+	module.exports = "import React, { Component, PropTypes } from 'react';\n\nimport ReactDom from 'react-dom';\nimport DayPicker, {Utils} from '../../../DayPicker.js';\n\n\nclass Ex5 extends Component {\n\n\tconstructor(...args) {\n\t\tsuper(...args);\n\n\t\tthis.showPrevious = this.showPrevious.bind(this);\n\t\tthis.showNext = this.showNext.bind(this);\n\t}\n\n\tstate = {\n    \tyear: (new Date()).getFullYear(),\n  \t};\n  \t\n  \tshowPrevious() {\n  \t\tthis.setState({\n    \t\tyear: this.state.year - 1,\n    \t});\n  \t}\n\n  \tshowNext() {\n  \t\tthis.setState({\n    \t\tyear: this.state.year + 1,\n    \t});\n  \t}\n\n\trender() {\n\t\tconst { year } = this.state;\n\t\t\n\t\treturn (\n\t\t\t<div>\n\t\t\t\t<h1>\n\t\t\t\t\t<a onClick={this.showPrevious}>{year - 1}</a>\n\t          \t\t{year}\n\t          \t\t<a onClick={this.showNext}>{year + 1}</a>\n          \t\t</h1>\n\t\t\t\t<DayPicker \n\t\t\t\tnumberOfMonths = {12} \n\t\t\t\tcanChangeMonth = {false}\n\t\t\t\tinitialMonth = {new Date(year, 0, 1)}\n\t\t\t\t></DayPicker>\n\t\t\t</div>\n\t\t);\n\t}\n}\n\n\nexport default Ex5;\n\n\n// ReactDom.render(<Demo></Demo>, document.getElementById('root'));"
+
+/***/ },
+/* 213 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactDom = __webpack_require__(33);
+
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+
+	var _DayPicker = __webpack_require__(173);
+
+	var _DayPicker2 = _interopRequireDefault(_DayPicker);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Ex1 = function (_Component) {
+		_inherits(Ex1, _Component);
+
+		function Ex1() {
+			var _Object$getPrototypeO;
+
+			_classCallCheck(this, Ex1);
+
+			for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+				args[_key] = arguments[_key];
+			}
+
+			var _this = _possibleConstructorReturn(this, (_Object$getPrototypeO = Object.getPrototypeOf(Ex1)).call.apply(_Object$getPrototypeO, [this].concat(args)));
+
+			_this.state = {
+				selectedDay: null
+			};
+
+
+			_this.onDayClickHandler = _this.onDayClickHandler.bind(_this);
+			return _this;
+		}
+
+		_createClass(Ex1, [{
+			key: 'onDayClickHandler',
+			value: function onDayClickHandler(e, day, modifilers) {
+				if (modifilers.disabled) {
+					return;
+				}
+				this.setState({
+					selectedDay: modifilers.selected ? null : day
+				});
+			}
+		}, {
+			key: 'render',
+			value: function render() {
+				var selectedDay = this.state.selectedDay;
+
+				return _react2.default.createElement(_DayPicker2.default, {
+					numberOfMonths: 2,
+					canChangeMonth: true,
+					selectedDays: function selectedDays(day) {
+						return _DayPicker.Utils.isSameDay(selectedDay, day);
+					},
+					fixedWeeks: true,
+					onDayClick: this.onDayClickHandler
+				});
+			}
+		}]);
+
+		return Ex1;
+	}(_react.Component);
+
+	exports.default = Ex1;
+
+	// ReactDom.render(<Demo></Demo>, document.getElementById('root'));
+
+/***/ },
+/* 214 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactDom = __webpack_require__(33);
+
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+
+	var _DayPicker = __webpack_require__(173);
+
+	var _DayPicker2 = _interopRequireDefault(_DayPicker);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Ex4 = function (_Component) {
+		_inherits(Ex4, _Component);
+
+		function Ex4() {
+			var _Object$getPrototypeO;
+
+			_classCallCheck(this, Ex4);
+
+			for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+				args[_key] = arguments[_key];
+			}
+
+			var _this = _possibleConstructorReturn(this, (_Object$getPrototypeO = Object.getPrototypeOf(Ex4)).call.apply(_Object$getPrototypeO, [this].concat(args)));
+
+			_this.state = {
+				from: null,
+				to: null
+			};
+
+
+			_this.onDayClickHandler = _this.onDayClickHandler.bind(_this);
+			_this.selected = _this.selected.bind(_this);
+			return _this;
+		}
+
+		_createClass(Ex4, [{
+			key: 'onDayClickHandler',
+			value: function onDayClickHandler(e, day, modifilers) {
+				if (modifilers.disabled) {
+					return;
+				}
+
+				// const range = Utils.addDayToRange(day, this.state);
+				var start = this.state.start;
+				var end = this.state.end;
+
+				if (!start || !end || !_DayPicker.Utils.isSameDay(start, end)) {
+					start = day;
+					end = day;
+				} else {
+					end = day;
+					if (end < start) {
+						end = start;
+						start = day;
+					}
+				}
+
+				this.setState({
+					start: start,
+					end: end
+				});
+			}
+		}, {
+			key: 'selected',
+			value: function selected(day) {
+				var _state = this.state;
+				var start = _state.start;
+				var end = _state.end;
+
+				return start && _DayPicker.Utils.isSameDay(day, start) || end && _DayPicker.Utils.isSameDay(day, end) || day > start && day < end;
+			}
+		}, {
+			key: 'render',
+			value: function render() {
+				var _this2 = this;
+
+				var start = this.state.start;
+				var end = this.state.end;
+
+				return _react2.default.createElement(_DayPicker2.default, {
+					numberOfMonths: 2,
+					canChangeMonth: true,
+					selectedDays: function selectedDays(day) {
+						return _this2.selected(day);
+					},
+					onDayClick: this.onDayClickHandler
+				});
+			}
+		}]);
+
+		return Ex4;
+	}(_react.Component);
+
+	exports.default = Ex4;
+
+	// ReactDom.render(<Demo></Demo>, document.getElementById('root'));
+
+/***/ },
+/* 215 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactDom = __webpack_require__(33);
+
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+
+	var _DayPicker = __webpack_require__(173);
+
+	var _DayPicker2 = _interopRequireDefault(_DayPicker);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Ex5 = function (_Component) {
+		_inherits(Ex5, _Component);
+
+		function Ex5() {
+			var _Object$getPrototypeO;
+
+			_classCallCheck(this, Ex5);
+
+			for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+				args[_key] = arguments[_key];
+			}
+
+			var _this = _possibleConstructorReturn(this, (_Object$getPrototypeO = Object.getPrototypeOf(Ex5)).call.apply(_Object$getPrototypeO, [this].concat(args)));
+
+			_this.state = {
+				year: new Date().getFullYear()
+			};
+
+
+			_this.showPrevious = _this.showPrevious.bind(_this);
+			_this.showNext = _this.showNext.bind(_this);
+			return _this;
+		}
+
+		_createClass(Ex5, [{
+			key: 'showPrevious',
+			value: function showPrevious() {
+				this.setState({
+					year: this.state.year - 1
+				});
+			}
+		}, {
+			key: 'showNext',
+			value: function showNext() {
+				this.setState({
+					year: this.state.year + 1
+				});
+			}
+		}, {
+			key: 'render',
+			value: function render() {
+				var year = this.state.year;
+
+
+				return _react2.default.createElement(
+					'div',
+					null,
+					_react2.default.createElement(
+						'h1',
+						null,
+						_react2.default.createElement(
+							'a',
+							{ onClick: this.showPrevious },
+							year - 1
+						),
+						year,
+						_react2.default.createElement(
+							'a',
+							{ onClick: this.showNext },
+							year + 1
+						)
+					),
+					_react2.default.createElement(_DayPicker2.default, {
+						numberOfMonths: 12,
+						canChangeMonth: false,
+						initialMonth: new Date(year, 0, 1)
+					})
+				);
+			}
+		}]);
+
+		return Ex5;
+	}(_react.Component);
+
+	exports.default = Ex5;
+
+	// ReactDom.render(<Demo></Demo>, document.getElementById('root'));
+
+/***/ },
+/* 216 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactDom = __webpack_require__(33);
+
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+
+	var _DayPicker = __webpack_require__(173);
+
+	var _DayPicker2 = _interopRequireDefault(_DayPicker);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var fromMonth = new Date(2015, 0, 1, 0, 0);
+	var toMonth = new Date(2015, 9, 20, 23, 59);
+
+	var Ex7 = function (_Component) {
+	  _inherits(Ex7, _Component);
+
+	  function Ex7() {
+	    _classCallCheck(this, Ex7);
+
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Ex7).apply(this, arguments));
+	  }
+
+	  _createClass(Ex7, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(_DayPicker2.default, {
+	        numberOfMonths: 2,
+	        fixedWeeks: true,
+	        initialMonth: fromMonth,
+	        fromMonth: fromMonth,
+	        toMonth: toMonth,
+	        disabledDays: function disabledDays(day) {
+	          return fromMonth > day || day > toMonth;
+	        },
+	        onDayClick: function onDayClick(e, day, _ref) {
+	          var disabled = _ref.disabled;
+
+	          if (!disabled) {
+	            console.log(day.toLocaleDateString());
+	          }
+	        }
+	      });
+	    }
+	  }]);
+
+	  return Ex7;
+	}(_react.Component);
+
+	exports.default = Ex7;
+
+	// ReactDom.render(<Demo></Demo>, document.getElementById('root'));
+
+/***/ },
+/* 217 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactDom = __webpack_require__(33);
+
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+
+	var _DayPicker = __webpack_require__(173);
+
+	var _DayPicker2 = _interopRequireDefault(_DayPicker);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Ex8 = function (_Component) {
+	    _inherits(Ex8, _Component);
+
+	    function Ex8() {
+	        var _Object$getPrototypeO;
+
+	        _classCallCheck(this, Ex8);
+
+	        for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+	            args[_key] = arguments[_key];
+	        }
+
+	        var _this = _possibleConstructorReturn(this, (_Object$getPrototypeO = Object.getPrototypeOf(Ex8)).call.apply(_Object$getPrototypeO, [this].concat(args)));
+
+	        _this.state = {
+	            start: _this.props.start,
+	            end: _this.props.end
+	        };
+
+	        _this.handleDayClick = _this.handleDayClick.bind(_this);
+	        return _this;
+	    }
+
+	    _createClass(Ex8, [{
+	        key: 'componentWillReceiveProps',
+	        value: function componentWillReceiveProps(nextProps) {
+	            this.state.start = nextProps.start;
+	            this.state.end = nextProps.end;
+	            this.setState(this.state);
+	        }
+	    }, {
+	        key: 'handleDayClick',
+	        value: function handleDayClick(e, day, modifiers) {
+	            if (modifiers.disabled) {
+	                return;
+	            }
+
+	            var start = this.state.start;
+	            var end = this.state.end;
+
+	            if (!start || !end || !_DayPicker.Utils.isSameDay(start, end)) {
+	                start = day;
+	                end = day;
+	            } else {
+	                end = day;
+	                if (end < start) {
+	                    end = start;
+	                    start = day;
+	                }
+	            }
+
+	            this.state.start = start;
+	            this.state.end = end;
+	            this.setState(this.state);
+	            // this.props.onValueChange(this.state.start, this.state.end);
+	        }
+	    }, {
+	        key: 'render',
+	        value: function render() {
+	            // let className = [this.props.className].join(' ');
+	            var start = this.state.start;
+	            var end = this.state.end;
+
+	            var modifiers = {
+	                selected: function selected(day) {
+	                    return start && _DayPicker.Utils.isSameDay(day, start) || end && _DayPicker.Utils.isSameDay(day, end);
+	                },
+	                between: function between(day) {
+	                    return start && end && _DayPicker.Utils.isDayBetween(day, start, end);
+	                }
+	                // disabled: day => !isCloseBetween(day, this.props.allowPickStart, this.props.allowPickEnd)
+
+	            };
+
+	            return _react2.default.createElement(_DayPicker2.default, {
+	                numberOfMonths: 2,
+	                modifiers: modifiers,
+	                onDayClick: this.handleDayClick
+	            });
+	        }
+	    }]);
+
+	    return Ex8;
+	}(_react.Component);
+
+	exports.default = Ex8;
 
 	// ReactDom.render(<Demo></Demo>, document.getElementById('root'));
 

@@ -4,6 +4,7 @@ var path = require('path');
 
 module.exports = {
   entry: {
+      index: __dirname + '/src/index.js',
       selectedDays: __dirname + '/src/selectedDays/',
       rangeOfDays: __dirname + '/src/rangeOfDays/',
       disabledDays: __dirname + '/src/disabledDays/',

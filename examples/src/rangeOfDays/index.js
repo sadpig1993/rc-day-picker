@@ -1,3 +1,7 @@
 require('babel-register');
+import React, { Component, PropTypes } from 'react';
+import ReactDom from 'react-dom';
 
-require('./rangeOfDays.js');
+import Ex4 from './rangeOfDays.js';
+
+ReactDom.render(<Ex4></Ex4>, document.getElementById('root'));
