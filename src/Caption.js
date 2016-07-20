@@ -1,24 +1,29 @@
+/**
+* @file 每个月的头部年份月份标题
+* @author xijiawei@baidu.com
+*/
+
 import React, { Component, PropTypes } from 'react';
 import {formatMonthTitle} from './Utils.js';
 
-export default class Month extends Component {
-	static propTypes = {
-		date: PropTypes.instanceOf(Date),
-		onClick: PropTypes.func,
-  	};
+export default class Caption extends Component {
+    static propTypes = {
+        // 传入的Date对象，通过这个对象生成对应的月份标题
+        date: PropTypes.instanceOf(Date)
+    };
 
-  	static defaultProps = {
-  		className: 'DayPicker-Caption'
+    static defaultProps = {
+        // 默认的className
+        className: 'DayPicker-Caption'
     };
 
     render() {
-    	// {localeUtils.formatMonthTitle(date, locale)}
-    	let { className, date } = this.props;
-    	return(
-			<div className={className}>
-				{formatMonthTitle(date)}
-			</div>
-    	);
+        let { className, date } = this.props;
+        
+        return(
+            <div className={className}>
+                {formatMonthTitle(date)}
+            </div>
+        );
     }
-
 }

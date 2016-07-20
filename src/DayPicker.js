@@ -1,3 +1,8 @@
+/**
+* @file React日期选择组件入口文件
+* @author xijiawei@baidu.com
+*/
+
 import React, { Component, PropTypes } from 'react';
 
 import Navbar from './Navbar';
@@ -9,160 +14,161 @@ import Caption from './Caption';
 
 export default class DayPicker extends Component {
 
-	static propTypes = {
-		initialMonth: PropTypes.instanceOf(Date),
-		fromMonth: PropTypes.instanceOf(Date),
-    	toMonth: PropTypes.instanceOf(Date),
+    static propTypes = {
+        initialMonth: PropTypes.instanceOf(Date),
+        fromMonth: PropTypes.instanceOf(Date),
+        toMonth: PropTypes.instanceOf(Date),
 
-	    numberOfMonths: PropTypes.number,
+        numberOfMonths: PropTypes.number,
 
-	    selectedDays: PropTypes.func,
-	    disabledDays: PropTypes.func,
-	    onDayClick: PropTypes.func,
+        selectedDays: PropTypes.func,
+        disabledDays: PropTypes.func,
+        onDayClick: PropTypes.func,
 
-	    modifiers: PropTypes.object,
+        modifiers: PropTypes.object,
 
-	    className: PropTypes.string,
+        className: PropTypes.string,
 
-	    canChangeMonth: PropTypes.bool,
-	    fixedWeeks: PropTypes.bool,
+        canChangeMonth: PropTypes.bool,
+        fixedWeeks: PropTypes.bool,
 
-	    captionElement: PropTypes.element,	    
-  	};
+        captionElement: PropTypes.element    
+    };
 
-	static defaultProps = {
-	    tabIndex: 0,
-	    initialMonth: new Date(),
-	    numberOfMonths: 1,
-	    className: 'DayPicker',
-	    // weekdayElement: <Weekday />,
-		// navbarElement: <Navbar />,
-		captionElement: <Caption />,
-		canChangeMonth: true,
-		fixedWeeks: false,
-		modifiers: {}
-	};
+    static defaultProps = {
+        tabIndex: 0,
+        initialMonth: new Date(),
+        numberOfMonths: 1,
+        className: 'DayPicker',
+        captionElement: <Caption />,
+        canChangeMonth: true,
+        fixedWeeks: false,
+        modifiers: {}
+    };
 
     constructor(...args) {
         super(...args);
 
         this.showNextMonth = this.showNextMonth.bind(this);
-    	this.showPreviousMonth = this.showPreviousMonth.bind(this);
-     	this.state = {
-     		currentMonth: this.props.initialMonth
-     	}
+        this.showPreviousMonth = this.showPreviousMonth.bind(this);
+        this.state = {
+            currentMonth: this.props.initialMonth
+        }
     }
 
     componentWillReceiveProps(nextProps) {
-	    if (this.props.initialMonth !== nextProps.initialMonth) {
-	      this.setState({
-	      	currentMonth: nextProps.initialMonth
-	      });
-	    }
-  	}
+        if (this.props.initialMonth !== nextProps.initialMonth) {
+            this.setState({
+                currentMonth: nextProps.initialMonth
+            });
+        }
+    }
 
     showMonth(day, callback) {
-    	if (!this.allowMonth(day)) {
-	      return;
-	    }
-	    this.setState({ currentMonth: day }, () => { //Helpers.startOfMonth(d)
-			if (callback) {
-				callback();
-			}
-			if (this.props.onMonthChange) {
-				this.props.onMonthChange(this.state.currentMonth);
-			}
-	    })
+        if (!this.allowMonth(day)) {
+            return;
+        }
+        this.setState({ currentMonth: day }, () => {
+            if (callback) {
+                callback();
+            }
+            if (this.props.onMonthChange) {
+            this.props.onMonthChange(this.state.currentMonth);
+        }
+        })
     }
 
     allowMonth(day) {
-		const { fromMonth, toMonth, canChangeMonth } = this.props;
+        const { fromMonth, toMonth, canChangeMonth } = this.props;
 
-    	if (!canChangeMonth ||
-    		(fromMonth && fromMonth > day) ||
-    		(toMonth && toMonth < day) ) {
-    		return false;
-    	}
-    	return true;
+        if (!canChangeMonth ||
+            (fromMonth && fromMonth > day) ||
+            (toMonth && toMonth < day) 
+        ) {
+            return false;
+        }
+
+        return true;
     }
 
     allowNextMonth() {
-    	const { numberOfMonths } = this.props;
-    	const { currentMonth } = this.state;
-		const previousMonth = addMonths(currentMonth, numberOfMonths);
-    	return this.allowMonth(previousMonth);
+        const { numberOfMonths } = this.props;
+        const { currentMonth } = this.state;
+        const previousMonth = addMonths(currentMonth, numberOfMonths);
+        return this.allowMonth(previousMonth);
     }
 
     allowPreviousMonth() {
-    	const { currentMonth } = this.state;
-    	const { numberOfMonths } = this.props;
-    	const previousMonth = addMonths(currentMonth, -1);
-    	return this.allowMonth(previousMonth);
+        const { currentMonth } = this.state;
+        const { numberOfMonths } = this.props;
+        const previousMonth = addMonths(currentMonth, -1);
+        return this.allowMonth(previousMonth);
     }
 
-	showNextMonth(callback) {
-		if (!this.allowNextMonth()) {
-			return;
-		}
-		const nextMonth = addMonths(this.state.currentMonth, 1);
-		this.showMonth(nextMonth, callback);
-	}
+    showNextMonth(callback) {
+        if (!this.allowNextMonth()) {
+            return;
+        }
+        const nextMonth = addMonths(this.state.currentMonth, 1);
+        this.showMonth(nextMonth, callback);
+    }
 
-	showPreviousMonth(callback) {
-		if (!this.allowPreviousMonth()) {
-			return;
-		}
-		const previousMonth = addMonths(this.state.currentMonth, -1);
-		this.showMonth(previousMonth, callback);
-	}
+    showPreviousMonth(callback) {
+        if (!this.allowPreviousMonth()) {
+            return;
+        }
+        const previousMonth = addMonths(this.state.currentMonth, -1);
+        this.showMonth(previousMonth, callback);
+    }
 
     renderNavbar() {
-    	const props = {
-			className: 'DayPicker-NavBar',
-			showPreviousButton: this.allowPreviousMonth(),
-			showNextButton: this.allowNextMonth(),
-			onNextClick: this.showNextMonth,
-			onPreviousClick: this.showPreviousMonth
-    	};
-    	return (<Navbar {...props}></Navbar>);
+        const props = {
+            className: 'DayPicker-NavBar',
+            showPreviousButton: this.allowPreviousMonth(),
+            showNextButton: this.allowNextMonth(),
+            onNextClick: this.showNextMonth,
+            onPreviousClick: this.showPreviousMonth
+        };
+        return (<Navbar {...props}></Navbar>);
     }
 
-	renderMonths() {
-    	let { captionElement, 
-    		selectedDays, 
-    		disabledDays, 
-    		fixedWeeks,
-    		onDayClick,
-    		modifiers,
-    		} = this.props;
+    renderMonths() {
+        let { 
+            captionElement, 
+            selectedDays, 
+            disabledDays, 
+            fixedWeeks,
+            onDayClick,
+            modifiers,
+        } = this.props;
 
-    	let months = [];
+        let months = [];
 
-    	for (let i = 0; i < this.props.numberOfMonths; i++) {
-    		const month = addMonths(this.state.currentMonth, i);
-    		months.push(
-    			<Month key = {i}
-    				month = {month}
-    				modifiers = {modifiers}
-    				captionElement = {captionElement}
-    				selectedDays = {selectedDays}
-    				disabledDays = {disabledDays}
-    				fixedWeeks = {fixedWeeks}
-    				onDayClick = { onDayClick || undefined }
-    			></Month>
-    		)
-    	}
+        for (let i = 0; i < this.props.numberOfMonths; i++) {
+            const month = addMonths(this.state.currentMonth, i);
+            months.push(
+                <Month key = {i}
+                    month = {month}
+                    modifiers = {modifiers}
+                    captionElement = {captionElement}
+                    selectedDays = {selectedDays}
+                    disabledDays = {disabledDays}
+                    fixedWeeks = {fixedWeeks}
+                    onDayClick = { onDayClick || undefined }
+                ></Month>
+            )
+        }
 
-    	return months;
-	}
-	
-	render() {
-		let {className} = this.props;
-		return (
-			<div className={className}>
-				{this.renderNavbar()}
-				{this.renderMonths()}
-			</div>
-		);
-	}
+        return months;
+    }
+
+    render() {
+        let {className} = this.props;
+        return (
+            <div className={className}>
+                {this.renderNavbar()}
+                {this.renderMonths()}
+            </div>
+        );
+    }
 }
