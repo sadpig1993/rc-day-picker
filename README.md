@@ -10,7 +10,7 @@ Day picker component of react
 
 
 
-[more demo](http://sadpig1993.com/rc-day-picker/examples/)
+[Examples](http://sadpig1993.com/rc-day-picker/examples/)
 
 
 ## Install
