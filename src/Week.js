@@ -14,8 +14,7 @@ export default class week extends Component {
         className: PropTypes.string,
 
         weekDays: PropTypes.array,
-
-        weekIndexRange: PropTypes.object,
+        
         modifiers: PropTypes.object,
 
         weekIndex: PropTypes.number,
@@ -41,7 +40,6 @@ export default class week extends Component {
         let className = this.props.className || 'DayPicker-Day';
         let { weekDays, 
             weekIndex, 
-            weekIndexRange, 
             selectedDays, 
             disabledDays, 
             month,
