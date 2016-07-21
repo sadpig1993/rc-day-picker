@@ -6,7 +6,8 @@
   "scripts": {
     "clean": "rimraf dist lib",
     "dist": "webpack --config webpack.config.js",
-    "build": "babel ./src -d ./lib --source-maps && postcss --use autoprefixer src/style.css -d lib/"
+    "build": "babel ./src -d ./lib --source-maps && postcss --use autoprefixer src/style.css -d lib/",
+    "test": "mocha --compilers js:babel-core/register ./test/*.js"
   },
   "repository": {
     "type": "git",

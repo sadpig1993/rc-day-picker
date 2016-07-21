@@ -14,9 +14,9 @@ const MONTHS_EN = ['January', 'February', 'March', 'April', 'May', 'June',
   'July', 'August', 'September', 'October', 'November', 'December'];
 
 
-// export function formatMonthTitle(d) {
-//   return `${d.getFullYear()}年 ${MONTHS[d.getMonth()]}`;
-// }
+export function formatMonthTitle(d) {
+  return `${d.getFullYear()}年 ${MONTHS[d.getMonth()]}`;
+}
 
 export function formatWeekday(i){
   return WEEKDAYS[i];
@@ -142,14 +142,7 @@ export function getWeekArray(day, firstDayOfWeek = getFirstDayOfWeek()) {
     lastWeek.push(outsideDate);
   }
 
-
-  return {
-    'weekArray': weekArray,
-    'weekIndexRange': {
-      'startIndex': startIndex,
-      'endIndex': startIndex + dayNumOfMonth - 1
-    }
-  };
+  return weekArray;
 }
 
 export function getFirstDayOfMonth(day) {

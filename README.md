@@ -27,6 +27,14 @@ npm install rc-day-picker --save
 bower install rc-day-picker --save
 ```
 
+
+**Build libs**
+
+```
+npm run build
+```
+
+
 ### Example
 
 ```javascript

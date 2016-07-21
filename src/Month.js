@@ -49,12 +49,11 @@ export default class Month extends Component {
 		}
 
 		// let month = new Date();
-		const { weekArray, weekIndexRange } = getWeekArray(month);
+		const weekArray = getWeekArray(month);
 		const weekEles = weekArray.map((week, index) => {
 			return (<Week weekDays = {week} 
 					key = {index}
 					month = {month} 
-					weekIndexRange = {weekIndexRange}
 					weekIndex = {index}
 					selectedDays = {selectedDays}
     				disabledDays = {disabledDays}

@@ -8,8 +8,7 @@ export default class WeekLabel extends Component {
 		weekDay: PropTypes.number,
 
 	};
-	static defaultProps = {
-  	};
+
 
   	constructor(...args) {
 		super(...args);
