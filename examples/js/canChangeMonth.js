@@ -21683,17 +21683,11 @@
 				}
 
 				// let month = new Date();
-
-				var _getWeekArray = (0, _Utils.getWeekArray)(month);
-
-				var weekArray = _getWeekArray.weekArray;
-				var weekIndexRange = _getWeekArray.weekIndexRange;
-
+				var weekArray = (0, _Utils.getWeekArray)(month);
 				var weekEles = weekArray.map(function (week, index) {
 					return _react2.default.createElement(_Week2.default, { weekDays: week,
 						key: index,
 						month: month,
-						weekIndexRange: weekIndexRange,
 						weekIndex: index,
 						selectedDays: selectedDays,
 						disabledDays: disabledDays,
@@ -21822,7 +21816,6 @@
 		weekDay: _react.PropTypes.number
 
 	};
-	WeekLabel.defaultProps = {};
 	exports.default = WeekLabel;
 	//# sourceMappingURL=WeekLabel.js.map
 
@@ -21835,7 +21828,6 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	exports.formatDay = formatDay;
 	exports.formatMonthTitle = formatMonthTitle;
 	exports.formatWeekday = formatWeekday;
 	exports.formatWeekdayShort = formatWeekdayShort;
@@ -21846,7 +21838,6 @@
 	exports.isSameDay = isSameDay;
 	exports.isDayInRange = isDayInRange;
 	exports.isDayBetween = isDayBetween;
-	exports.addDayToRange = addDayToRange;
 	exports.getModifiersForDay = getModifiersForDay;
 	exports.getWeekArray = getWeekArray;
 	exports.getFirstDayOfMonth = getFirstDayOfMonth;
@@ -21861,10 +21852,6 @@
 	var MONTHS = ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月'];
 
 	var MONTHS_EN = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-
-	function formatDay(day) {
-	  return day.toDateString();
-	}
 
 	function formatMonthTitle(d) {
 	  return d.getFullYear() + '年 ' + MONTHS[d.getMonth()];
@@ -21944,40 +21931,6 @@
 	  return date1 < date && date < date2 || date2 < date && date < date1;
 	}
 
-	/**
-	 * Add a day to a range and return a new range. A range is an object with
-	 * `from` and `to` days.
-	 *
-	 * @param {Date} day
-	 * @param {Object} range
-	 * @return {Object} Returns a new range object
-	 */
-	function addDayToRange(day) {
-	  var range = arguments.length <= 1 || arguments[1] === undefined ? { from: null, to: null } : arguments[1];
-	  var from = range.from;
-	  var to = range.to;
-
-	  if (!from) {
-	    from = day;
-	  } else if (from && to && isSameDay(from, to) && isSameDay(day, from)) {
-	    from = null;
-	    to = null;
-	  } else if (to && day < from) {
-	    from = day;
-	  } else if (to && isSameDay(day, to)) {
-	    from = day;
-	    to = day;
-	  } else {
-	    to = day;
-	    if (to < from) {
-	      to = from;
-	      from = day;
-	    }
-	  }
-
-	  return { from: from, to: to };
-	}
-
 	function getModifiersForDay(d) {
 	  var modifierFunctions = arguments.length <= 1 || arguments[1] === undefined ? {} : arguments[1];
 
@@ -22013,7 +21966,7 @@
 	      weekArray.push(week);
 	    }
 	  });
-	  // unshift days to start the first week
+
 	  var firstWeek = weekArray[0];
 	  var startIndex = 7 - firstWeek.length;
 	  for (var _i = startIndex; _i > 0; _i--) {
@@ -22028,15 +21981,8 @@
 	    _outsideDate.setDate(lastWeek[lastWeek.length - 1].getDate() + 1);
 	    lastWeek.push(_outsideDate);
 	  }
-	  // console.log(firstWeek);
 
-	  return {
-	    'weekArray': weekArray,
-	    'weekIndexRange': {
-	      'startIndex': startIndex,
-	      'endIndex': startIndex + dayNumOfMonth - 1
-	    }
-	  };
+	  return weekArray;
 	}
 
 	function getFirstDayOfMonth(day) {
@@ -22057,8 +22003,7 @@
 	}
 
 	exports.default = {
-	  formatDay: formatDay,
-	  formatMonthTitle: formatMonthTitle,
+	  // formatMonthTitle,
 	  formatWeekday: formatWeekday,
 	  formatWeekdayShort: formatWeekdayShort,
 	  formatWeekdayLong: formatWeekdayLong,
@@ -22068,7 +22013,6 @@
 	  addMonths: addMonths,
 	  isSameDay: isSameDay,
 	  isDayInRange: isDayInRange,
-	  addDayToRange: addDayToRange,
 	  getModifiersForDay: getModifiersForDay
 	};
 	//# sourceMappingURL=Utils.js.map
@@ -22149,7 +22093,6 @@
 				var _props = this.props;
 				var weekDays = _props.weekDays;
 				var weekIndex = _props.weekIndex;
-				var weekIndexRange = _props.weekIndexRange;
 				var selectedDays = _props.selectedDays;
 				var disabledDays = _props.disabledDays;
 				var month = _props.month;
@@ -22190,7 +22133,6 @@
 
 		weekDays: _react.PropTypes.array,
 
-		weekIndexRange: _react.PropTypes.object,
 		modifiers: _react.PropTypes.object,
 
 		weekIndex: _react.PropTypes.number,

@@ -60,7 +60,7 @@
 
 	var _code2 = _interopRequireDefault(_code);
 
-	var _selectedDays = __webpack_require__(213);
+	var _selectedDays = __webpack_require__(212);
 
 	var _selectedDays2 = _interopRequireDefault(_selectedDays);
 
@@ -72,11 +72,11 @@
 
 	var _disabledDays2 = _interopRequireDefault(_disabledDays);
 
-	var _rangeOfDays = __webpack_require__(214);
+	var _rangeOfDays = __webpack_require__(213);
 
 	var _rangeOfDays2 = _interopRequireDefault(_rangeOfDays);
 
-	var _year = __webpack_require__(215);
+	var _year = __webpack_require__(214);
 
 	var _year2 = _interopRequireDefault(_year);
 
@@ -84,11 +84,11 @@
 
 	var _fixWeek2 = _interopRequireDefault(_fixWeek);
 
-	var _restrictMonth = __webpack_require__(216);
+	var _restrictMonth = __webpack_require__(215);
 
 	var _restrictMonth2 = _interopRequireDefault(_restrictMonth);
 
-	var _modifiers = __webpack_require__(217);
+	var _modifiers = __webpack_require__(216);
 
 	var _modifiers2 = _interopRequireDefault(_modifiers);
 
@@ -21764,17 +21764,11 @@
 				}
 
 				// let month = new Date();
-
-				var _getWeekArray = (0, _Utils.getWeekArray)(month);
-
-				var weekArray = _getWeekArray.weekArray;
-				var weekIndexRange = _getWeekArray.weekIndexRange;
-
+				var weekArray = (0, _Utils.getWeekArray)(month);
 				var weekEles = weekArray.map(function (week, index) {
 					return _react2.default.createElement(_Week2.default, { weekDays: week,
 						key: index,
 						month: month,
-						weekIndexRange: weekIndexRange,
 						weekIndex: index,
 						selectedDays: selectedDays,
 						disabledDays: disabledDays,
@@ -21903,7 +21897,6 @@
 		weekDay: _react.PropTypes.number
 
 	};
-	WeekLabel.defaultProps = {};
 	exports.default = WeekLabel;
 	//# sourceMappingURL=WeekLabel.js.map
 
@@ -21916,7 +21909,6 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	exports.formatDay = formatDay;
 	exports.formatMonthTitle = formatMonthTitle;
 	exports.formatWeekday = formatWeekday;
 	exports.formatWeekdayShort = formatWeekdayShort;
@@ -21927,7 +21919,6 @@
 	exports.isSameDay = isSameDay;
 	exports.isDayInRange = isDayInRange;
 	exports.isDayBetween = isDayBetween;
-	exports.addDayToRange = addDayToRange;
 	exports.getModifiersForDay = getModifiersForDay;
 	exports.getWeekArray = getWeekArray;
 	exports.getFirstDayOfMonth = getFirstDayOfMonth;
@@ -21942,10 +21933,6 @@
 	var MONTHS = ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月'];
 
 	var MONTHS_EN = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-
-	function formatDay(day) {
-	  return day.toDateString();
-	}
 
 	function formatMonthTitle(d) {
 	  return d.getFullYear() + '年 ' + MONTHS[d.getMonth()];
@@ -22025,40 +22012,6 @@
 	  return date1 < date && date < date2 || date2 < date && date < date1;
 	}
 
-	/**
-	 * Add a day to a range and return a new range. A range is an object with
-	 * `from` and `to` days.
-	 *
-	 * @param {Date} day
-	 * @param {Object} range
-	 * @return {Object} Returns a new range object
-	 */
-	function addDayToRange(day) {
-	  var range = arguments.length <= 1 || arguments[1] === undefined ? { from: null, to: null } : arguments[1];
-	  var from = range.from;
-	  var to = range.to;
-
-	  if (!from) {
-	    from = day;
-	  } else if (from && to && isSameDay(from, to) && isSameDay(day, from)) {
-	    from = null;
-	    to = null;
-	  } else if (to && day < from) {
-	    from = day;
-	  } else if (to && isSameDay(day, to)) {
-	    from = day;
-	    to = day;
-	  } else {
-	    to = day;
-	    if (to < from) {
-	      to = from;
-	      from = day;
-	    }
-	  }
-
-	  return { from: from, to: to };
-	}
-
 	function getModifiersForDay(d) {
 	  var modifierFunctions = arguments.length <= 1 || arguments[1] === undefined ? {} : arguments[1];
 
@@ -22094,7 +22047,7 @@
 	      weekArray.push(week);
 	    }
 	  });
-	  // unshift days to start the first week
+
 	  var firstWeek = weekArray[0];
 	  var startIndex = 7 - firstWeek.length;
 	  for (var _i = startIndex; _i > 0; _i--) {
@@ -22109,15 +22062,8 @@
 	    _outsideDate.setDate(lastWeek[lastWeek.length - 1].getDate() + 1);
 	    lastWeek.push(_outsideDate);
 	  }
-	  // console.log(firstWeek);
 
-	  return {
-	    'weekArray': weekArray,
-	    'weekIndexRange': {
-	      'startIndex': startIndex,
-	      'endIndex': startIndex + dayNumOfMonth - 1
-	    }
-	  };
+	  return weekArray;
 	}
 
 	function getFirstDayOfMonth(day) {
@@ -22138,8 +22084,7 @@
 	}
 
 	exports.default = {
-	  formatDay: formatDay,
-	  formatMonthTitle: formatMonthTitle,
+	  // formatMonthTitle,
 	  formatWeekday: formatWeekday,
 	  formatWeekdayShort: formatWeekdayShort,
 	  formatWeekdayLong: formatWeekdayLong,
@@ -22149,7 +22094,6 @@
 	  addMonths: addMonths,
 	  isSameDay: isSameDay,
 	  isDayInRange: isDayInRange,
-	  addDayToRange: addDayToRange,
 	  getModifiersForDay: getModifiersForDay
 	};
 	//# sourceMappingURL=Utils.js.map
@@ -22230,7 +22174,6 @@
 				var _props = this.props;
 				var weekDays = _props.weekDays;
 				var weekIndex = _props.weekIndex;
-				var weekIndexRange = _props.weekIndexRange;
 				var selectedDays = _props.selectedDays;
 				var disabledDays = _props.disabledDays;
 				var month = _props.month;
@@ -22271,7 +22214,6 @@
 
 		weekDays: _react.PropTypes.array,
 
-		weekIndexRange: _react.PropTypes.object,
 		modifiers: _react.PropTypes.object,
 
 		weekIndex: _react.PropTypes.number,
@@ -23295,24 +23237,23 @@
 
 	var map = {
 		"./canChangeMonth/canChangeMonth.js": 194,
-		"./canChangeMonth/code.js": 195,
-		"./canChangeMonth/index.js": 196,
-		"./code.js": 197,
-		"./disabledDays/disabledDays.js": 198,
-		"./disabledDays/index.js": 199,
-		"./fixWeek/fixWeek.js": 200,
-		"./fixWeek/index.js": 201,
-		"./index.js": 202,
-		"./modifiers/index.js": 203,
-		"./modifiers/modifiers.js": 204,
-		"./rangeOfDays/index.js": 205,
-		"./rangeOfDays/rangeOfDays.js": 206,
-		"./restrictMonth/index.js": 207,
-		"./restrictMonth/restrictMonth.js": 208,
-		"./selectedDays/index.js": 209,
-		"./selectedDays/selectedDays.js": 210,
-		"./year/index.js": 211,
-		"./year/year.js": 212
+		"./canChangeMonth/index.js": 195,
+		"./code.js": 196,
+		"./disabledDays/disabledDays.js": 197,
+		"./disabledDays/index.js": 198,
+		"./fixWeek/fixWeek.js": 199,
+		"./fixWeek/index.js": 200,
+		"./index.js": 201,
+		"./modifiers/index.js": 202,
+		"./modifiers/modifiers.js": 203,
+		"./rangeOfDays/index.js": 204,
+		"./rangeOfDays/rangeOfDays.js": 205,
+		"./restrictMonth/index.js": 206,
+		"./restrictMonth/restrictMonth.js": 207,
+		"./selectedDays/index.js": 208,
+		"./selectedDays/selectedDays.js": 209,
+		"./year/index.js": 210,
+		"./year/year.js": 211
 	};
 	function webpackContext(req) {
 		return __webpack_require__(webpackContextResolve(req));
@@ -23338,112 +23279,106 @@
 /* 195 */
 /***/ function(module, exports) {
 
-	module.exports = "import React, { Component, PropTypes } from 'react';\n\nimport DayPicker, {Utils} from '../../../DayPicker.js';\n\nimport Prism from '../../vendors/prism';\n\nlet source = require(`!raw!./canChangeMonth.js`);\n\nexport default class Ex2Source extends Component {\n\n    componentDidMount() {\n        Prism.highlightAll();\n    }\n\n    render() {\n        return (<pre className=\"language-jsx\"><code className=\"language-jsx\">{source}</code></pre>)\n    }\n}"
+	module.exports = "require('babel-register');\nimport React, { Component, PropTypes } from 'react';\nimport ReactDom from 'react-dom';\n\nimport Ex2 from './canChangeMonth.js';\n\n\n\n\nReactDom.render(<Ex2></Ex2>, document.getElementById('root'));\n\n\n"
 
 /***/ },
 /* 196 */
 /***/ function(module, exports) {
 
-	module.exports = "require('babel-register');\nimport React, { Component, PropTypes } from 'react';\nimport ReactDom from 'react-dom';\n\nimport Ex2 from './canChangeMonth.js';\n\n\n\n\nReactDom.render(<Ex2></Ex2>, document.getElementById('root'));\n\n\n"
+	module.exports = "import React, { Component, PropTypes } from 'react';\nimport Prism from '../vendors/prism.js';\n\n\nexport default class exampleCode extends Component {\n\n\n    static propTypes = {\n        name: PropTypes.string\n    };\n\n    constructor(...args) {\n        super(...args);\n    }\n\n    componentDidMount() {\n        Prism.highlightAll();\n    }\n\n\n    render() {\n        let fileName = this.props.name;\n\n        let source = require(`!raw!./${fileName}/${fileName}.js`);\n\n        return (<pre className=\"language-jsx\"><code className=\"language-jsx\">{source}</code></pre>)\n    }\n}"
 
 /***/ },
 /* 197 */
 /***/ function(module, exports) {
 
-	module.exports = "import React, { Component, PropTypes } from 'react';\nimport Prism from '../vendors/prism.js';\n\n\nexport default class exampleCode extends Component {\n\n\n    static propTypes = {\n        name: PropTypes.string\n    };\n\n    constructor(...args) {\n        super(...args);\n    }\n\n    componentDidMount() {\n        Prism.highlightAll();\n    }\n\n\n    render() {\n        let fileName = this.props.name;\n\n        let source = require(`!raw!./${fileName}/${fileName}.js`);\n\n        return (<pre className=\"language-jsx\"><code className=\"language-jsx\">{source}</code></pre>)\n    }\n}"
+	module.exports = "import React, { Component, PropTypes } from 'react';\n\nimport ReactDom from 'react-dom';\nimport DayPicker, {Utils} from '../../../DayPicker.js';\n\n\nclass Ex3 extends Component {\n\n\tconstructor(...args) {\n\t\tsuper(...args);\n\t}\n\n\tstate = {\n\t\tfrom: new Date(),\n\t\tto: Utils.addMonths(new Date(), 1)\n\t};\n\n\trender() {\n\t\tconst { from, to } = this.state;\n\t\treturn (<DayPicker \n\t\t\tnumberOfMonths = {1} \n\t\t\tcanChangeMonth = {true} \n\t\t\tdisabledDays = {day => Utils.isDayInRange(day, { from, to })}\n\t\t/>);\n\t}\n}\n\n\n\n\nexport default Ex3;\n// ReactDom.render(<Demo></Demo>, document.getElementById('root'));"
 
 /***/ },
 /* 198 */
 /***/ function(module, exports) {
 
-	module.exports = "import React, { Component, PropTypes } from 'react';\n\nimport ReactDom from 'react-dom';\nimport DayPicker, {Utils} from '../../../DayPicker.js';\n\n\nclass Ex3 extends Component {\n\n\tconstructor(...args) {\n\t\tsuper(...args);\n\t}\n\n\tstate = {\n\t\tfrom: new Date(),\n\t\tto: Utils.addMonths(new Date(), 1)\n\t};\n\n\trender() {\n\t\tconst { from, to } = this.state;\n\t\treturn (<DayPicker \n\t\t\tnumberOfMonths = {1} \n\t\t\tcanChangeMonth = {true} \n\t\t\tdisabledDays = {day => Utils.isDayInRange(day, { from, to })}\n\t\t/>);\n\t}\n}\n\n\n\n\nexport default Ex3;\n// ReactDom.render(<Demo></Demo>, document.getElementById('root'));"
+	module.exports = "require('babel-register');\nimport React, { Component, PropTypes } from 'react';\nimport ReactDom from 'react-dom';\n\nimport Ex3 from './disabledDays.js';\n\nReactDom.render(<Ex3></Ex3>, document.getElementById('root'));\n"
 
 /***/ },
 /* 199 */
 /***/ function(module, exports) {
 
-	module.exports = "require('babel-register');\nimport React, { Component, PropTypes } from 'react';\nimport ReactDom from 'react-dom';\n\nimport Ex3 from './disabledDays.js';\n\nReactDom.render(<Ex3></Ex3>, document.getElementById('root'));\n"
+	module.exports = "import React, { Component, PropTypes } from 'react';\n\nimport ReactDom from 'react-dom';\nimport DayPicker, {Utils} from '../../../DayPicker.js';\n\n\nclass Ex6 extends Component {\n\n\tconstructor(...args) {\n\t\tsuper(...args);\n\t}\n\n\n\trender() {\n\t\t\n\t\treturn (<DayPicker \n\t\t\tnumberOfMonths = {2} \n\t\t\tfixedWeeks = {true}\n\t\t/>);\n\t}\n}\n\n\n\n\nexport default Ex6;\n\n// ReactDom.render(<Demo></Demo>, document.getElementById('root'));"
 
 /***/ },
 /* 200 */
 /***/ function(module, exports) {
 
-	module.exports = "import React, { Component, PropTypes } from 'react';\n\nimport ReactDom from 'react-dom';\nimport DayPicker, {Utils} from '../../../DayPicker.js';\n\n\nclass Ex6 extends Component {\n\n\tconstructor(...args) {\n\t\tsuper(...args);\n\t}\n\n\n\trender() {\n\t\t\n\t\treturn (<DayPicker \n\t\t\tnumberOfMonths = {2} \n\t\t\tfixedWeeks = {true}\n\t\t/>);\n\t}\n}\n\n\n\n\nexport default Ex6;\n\n// ReactDom.render(<Demo></Demo>, document.getElementById('root'));"
+	module.exports = "require('babel-register');\nimport React, { Component, PropTypes } from 'react';\nimport ReactDom from 'react-dom';\n\nimport Ex6 from './fixWeek.js';\n\nReactDom.render(<Ex6></Ex6>, document.getElementById('root'));\n"
 
 /***/ },
 /* 201 */
 /***/ function(module, exports) {
 
-	module.exports = "require('babel-register');\nimport React, { Component, PropTypes } from 'react';\nimport ReactDom from 'react-dom';\n\nimport Ex6 from './fixWeek.js';\n\nReactDom.render(<Ex6></Ex6>, document.getElementById('root'));\n"
+	module.exports = "require('babel-register');\nimport React, { Component, PropTypes } from 'react';\nimport ReactDom from 'react-dom';\n\n\nimport '../vendors/prism.css';\n\nimport ExSource  from './code.js';\n\nimport Ex1 from './selectedDays/selectedDays.js';\n\nimport Ex2 from './canChangeMonth/canChangeMonth.js';\n\n\nimport Ex3 from './disabledDays/disabledDays.js';\nimport Ex4 from './rangeOfDays/rangeOfDays.js';\nimport Ex5 from './year/year.js';\nimport Ex6 from './fixWeek/fixWeek.js';\nimport Ex7 from './restrictMonth/restrictMonth.js';\nimport Ex8 from './modifiers/modifiers.js';\n\n\n\nReactDom.render(<div>\n                    <Ex1></Ex1>\n                    <ExSource name=\"selectedDays\"></ExSource>\n                </div>, document.getElementById('ex1'));\nReactDom.render(\n                <div>\n                    <Ex2></Ex2>\n                    <ExSource name=\"canChangeMonth\"></ExSource>\n                </div>, document.getElementById('ex2'));\nReactDom.render(<div><Ex3></Ex3><ExSource name=\"disabledDays\"></ExSource></div>, document.getElementById('ex3'));\nReactDom.render(<div><Ex4></Ex4><ExSource name=\"rangeOfDays\"></ExSource></div>, document.getElementById('ex4'));\nReactDom.render(<div><Ex5></Ex5><ExSource name=\"year\"></ExSource></div>, document.getElementById('ex5'));\nReactDom.render(<div><Ex6></Ex6><ExSource name=\"fixWeek\"></ExSource></div>, document.getElementById('ex6'));\nReactDom.render(<div><Ex7></Ex7><ExSource name=\"restrictMonth\"></ExSource></div>, document.getElementById('ex7'));\nReactDom.render(<div><Ex8></Ex8><ExSource name=\"modifiers\"></ExSource></div>, document.getElementById('ex8'));"
 
 /***/ },
 /* 202 */
 /***/ function(module, exports) {
 
-	module.exports = "require('babel-register');\nimport React, { Component, PropTypes } from 'react';\nimport ReactDom from 'react-dom';\n\n\nimport '../vendors/prism.css';\n\nimport ExSource  from './code.js';\n\nimport Ex1 from './selectedDays/selectedDays.js';\n\nimport Ex2 from './canChangeMonth/canChangeMonth.js';\n\n\nimport Ex3 from './disabledDays/disabledDays.js';\nimport Ex4 from './rangeOfDays/rangeOfDays.js';\nimport Ex5 from './year/year.js';\nimport Ex6 from './fixWeek/fixWeek.js';\nimport Ex7 from './restrictMonth/restrictMonth.js';\nimport Ex8 from './modifiers/modifiers.js';\n\n\n\nReactDom.render(<div>\n                    <Ex1></Ex1>\n                    <ExSource name=\"selectedDays\"></ExSource>\n                </div>, document.getElementById('ex1'));\nReactDom.render(\n                <div>\n                    <Ex2></Ex2>\n                    <ExSource name=\"canChangeMonth\"></ExSource>\n                </div>, document.getElementById('ex2'));\nReactDom.render(<div><Ex3></Ex3><ExSource name=\"disabledDays\"></ExSource></div>, document.getElementById('ex3'));\nReactDom.render(<div><Ex4></Ex4><ExSource name=\"rangeOfDays\"></ExSource></div>, document.getElementById('ex4'));\nReactDom.render(<div><Ex5></Ex5><ExSource name=\"year\"></ExSource></div>, document.getElementById('ex5'));\nReactDom.render(<div><Ex6></Ex6><ExSource name=\"fixWeek\"></ExSource></div>, document.getElementById('ex6'));\nReactDom.render(<div><Ex7></Ex7><ExSource name=\"restrictMonth\"></ExSource></div>, document.getElementById('ex7'));\nReactDom.render(<div><Ex8></Ex8><ExSource name=\"modifiers\"></ExSource></div>, document.getElementById('ex8'));"
+	module.exports = "require('babel-register');\nimport React, { Component, PropTypes } from 'react';\nimport ReactDom from 'react-dom';\n\nimport Ex8 from './modifiers.js';\n\nReactDom.render(<Ex8></Ex8>, document.getElementById('root'));\n"
 
 /***/ },
 /* 203 */
 /***/ function(module, exports) {
 
-	module.exports = "require('babel-register');\nimport React, { Component, PropTypes } from 'react';\nimport ReactDom from 'react-dom';\n\nimport Ex8 from './modifiers.js';\n\nReactDom.render(<Ex8></Ex8>, document.getElementById('root'));\n"
+	module.exports = "import React, { Component, PropTypes } from 'react';\n\nimport ReactDom from 'react-dom';\nimport DayPicker, {Utils} from '../../../DayPicker.js';\n\n\nclass Ex8 extends Component {\n\n\tconstructor(...args) {\n\t\tsuper(...args);\n\t\tthis.state = {\n            start: this.props.start,\n            end: this.props.end\n        };\n\n        this.handleDayClick = this.handleDayClick.bind(this);\n\t}\n\tcomponentWillReceiveProps(nextProps) {\n        this.state.start = nextProps.start;\n        this.state.end = nextProps.end;\n        this.setState(this.state);\n    }\n\n    handleDayClick(e, day, modifiers) {\n        if (modifiers.disabled) {\n            return;\n        }\n\n        let start = this.state.start;\n        let end = this.state.end;\n\n        if (!start || !end || !Utils.isSameDay(start, end)) {\n            start = day;\n            end = day;\n        }\n        else {\n            end = day;\n            if (end < start) {\n                end = start;\n                start = day;\n            }\n        }\n\n        this.state.start = start;\n        this.state.end = end;\n        this.setState(this.state);\n        // this.props.onValueChange(this.state.start, this.state.end);\n    }\n\n\trender() {\n\t\t// let className = [this.props.className].join(' ');\n        let start = this.state.start;\n        let end = this.state.end;\n\n        let modifiers = {\n            selected(day) {\n                return (start && Utils.isSameDay(day, start))\n                || (end && Utils.isSameDay(day, end));\n            },\n            between(day) {\n                return start && end && Utils.isDayBetween(day, start, end);\n            }\n            // disabled: day => !isCloseBetween(day, this.props.allowPickStart, this.props.allowPickEnd)\n        };\n\t\t\n\t\treturn (<DayPicker \n\t\t\tnumberOfMonths = {2} \n\t\t\tmodifiers = {modifiers}\n\t\t\tonDayClick={this.handleDayClick}\n\t\t/>);\n\t}\n}\n\n\nexport default Ex8;\n\n\n// ReactDom.render(<Demo></Demo>, document.getElementById('root'));"
 
 /***/ },
 /* 204 */
 /***/ function(module, exports) {
 
-	module.exports = "import React, { Component, PropTypes } from 'react';\n\nimport ReactDom from 'react-dom';\nimport DayPicker, {Utils} from '../../../DayPicker.js';\n\n\nclass Ex8 extends Component {\n\n\tconstructor(...args) {\n\t\tsuper(...args);\n\t\tthis.state = {\n            start: this.props.start,\n            end: this.props.end\n        };\n\n        this.handleDayClick = this.handleDayClick.bind(this);\n\t}\n\tcomponentWillReceiveProps(nextProps) {\n        this.state.start = nextProps.start;\n        this.state.end = nextProps.end;\n        this.setState(this.state);\n    }\n\n    handleDayClick(e, day, modifiers) {\n        if (modifiers.disabled) {\n            return;\n        }\n\n        let start = this.state.start;\n        let end = this.state.end;\n\n        if (!start || !end || !Utils.isSameDay(start, end)) {\n            start = day;\n            end = day;\n        }\n        else {\n            end = day;\n            if (end < start) {\n                end = start;\n                start = day;\n            }\n        }\n\n        this.state.start = start;\n        this.state.end = end;\n        this.setState(this.state);\n        // this.props.onValueChange(this.state.start, this.state.end);\n    }\n\n\trender() {\n\t\t// let className = [this.props.className].join(' ');\n        let start = this.state.start;\n        let end = this.state.end;\n\n        let modifiers = {\n            selected(day) {\n                return (start && Utils.isSameDay(day, start))\n                || (end && Utils.isSameDay(day, end));\n            },\n            between(day) {\n                return start && end && Utils.isDayBetween(day, start, end);\n            }\n            // disabled: day => !isCloseBetween(day, this.props.allowPickStart, this.props.allowPickEnd)\n        };\n\t\t\n\t\treturn (<DayPicker \n\t\t\tnumberOfMonths = {2} \n\t\t\tmodifiers = {modifiers}\n\t\t\tonDayClick={this.handleDayClick}\n\t\t/>);\n\t}\n}\n\n\nexport default Ex8;\n\n\n// ReactDom.render(<Demo></Demo>, document.getElementById('root'));"
+	module.exports = "require('babel-register');\nimport React, { Component, PropTypes } from 'react';\nimport ReactDom from 'react-dom';\n\nimport Ex4 from './rangeOfDays.js';\n\nReactDom.render(<Ex4></Ex4>, document.getElementById('root'));\n"
 
 /***/ },
 /* 205 */
 /***/ function(module, exports) {
 
-	module.exports = "require('babel-register');\nimport React, { Component, PropTypes } from 'react';\nimport ReactDom from 'react-dom';\n\nimport Ex4 from './rangeOfDays.js';\n\nReactDom.render(<Ex4></Ex4>, document.getElementById('root'));\n"
+	module.exports = "import React, { Component, PropTypes } from 'react';\n\nimport ReactDom from 'react-dom';\nimport DayPicker, {Utils} from '../../../DayPicker.js';\n\n\nclass Ex4 extends Component {\n\n\tconstructor(...args) {\n\t\tsuper(...args);\n\n\t\tthis.onDayClickHandler = this.onDayClickHandler.bind(this);\n\t\tthis.selected = this.selected.bind(this);\n\t}\n\n\tstate = {\n\t\tfrom: null,\n\t\tto: null\n\t};\n\n\tonDayClickHandler(e, day, modifilers) {\n\t\tif (modifilers.disabled) {\n\t\t\treturn;\n\t\t}\n\t\t\n\t\t// const range = Utils.addDayToRange(day, this.state);\n\t\tlet start = this.state.start;\n        let end = this.state.end;\n\n        if (!start || !end || !Utils.isSameDay(start, end)) {\n            start = day;\n            end = day;\n        }\n        else {\n            end = day;\n            if (end < start) {\n                end = start;\n                start = day;\n            }\n        }\n\n    \tthis.setState({\n    \t\tstart: start,\n    \t\tend: end\n    \t});\n\t}\n\n\tselected(day) {\n\t\tlet { start, end } = this.state;\n    \treturn (start && Utils.isSameDay(day, start))\n    \t\t|| (end && Utils.isSameDay(day, end)) \n    \t\t|| (day > start && day < end);\n    }\n\n\trender() {\n\t\tlet start = this.state.start;\n        let end = this.state.end;\n\n\t\treturn (<DayPicker \n\t\t\tnumberOfMonths = {2} \n\t\t\tcanChangeMonth = {true} \n\t\t\tselectedDays = {day => this.selected(day)}\n\t\t\tonDayClick = {this.onDayClickHandler}\n\t\t/>);\n\t}\n}\n\nexport default Ex4;\n\n\n\n// ReactDom.render(<Demo></Demo>, document.getElementById('root'));"
 
 /***/ },
 /* 206 */
 /***/ function(module, exports) {
 
-	module.exports = "import React, { Component, PropTypes } from 'react';\n\nimport ReactDom from 'react-dom';\nimport DayPicker, {Utils} from '../../../DayPicker.js';\n\n\nclass Ex4 extends Component {\n\n\tconstructor(...args) {\n\t\tsuper(...args);\n\n\t\tthis.onDayClickHandler = this.onDayClickHandler.bind(this);\n\t\tthis.selected = this.selected.bind(this);\n\t}\n\n\tstate = {\n\t\tfrom: null,\n\t\tto: null\n\t};\n\n\tonDayClickHandler(e, day, modifilers) {\n\t\tif (modifilers.disabled) {\n\t\t\treturn;\n\t\t}\n\t\t\n\t\t// const range = Utils.addDayToRange(day, this.state);\n\t\tlet start = this.state.start;\n        let end = this.state.end;\n\n        if (!start || !end || !Utils.isSameDay(start, end)) {\n            start = day;\n            end = day;\n        }\n        else {\n            end = day;\n            if (end < start) {\n                end = start;\n                start = day;\n            }\n        }\n\n    \tthis.setState({\n    \t\tstart: start,\n    \t\tend: end\n    \t});\n\t}\n\n\tselected(day) {\n\t\tlet { start, end } = this.state;\n    \treturn (start && Utils.isSameDay(day, start))\n    \t\t|| (end && Utils.isSameDay(day, end)) \n    \t\t|| (day > start && day < end);\n    }\n\n\trender() {\n\t\tlet start = this.state.start;\n        let end = this.state.end;\n\n\t\treturn (<DayPicker \n\t\t\tnumberOfMonths = {2} \n\t\t\tcanChangeMonth = {true} \n\t\t\tselectedDays = {day => this.selected(day)}\n\t\t\tonDayClick = {this.onDayClickHandler}\n\t\t/>);\n\t}\n}\n\nexport default Ex4;\n\n\n\n// ReactDom.render(<Demo></Demo>, document.getElementById('root'));"
+	module.exports = "require('babel-register');\nimport React, { Component, PropTypes } from 'react';\nimport ReactDom from 'react-dom';\n\nimport Ex7 from './restrictMonth.js';\n\nReactDom.render(<Ex7></Ex7>, document.getElementById('root'));\n"
 
 /***/ },
 /* 207 */
 /***/ function(module, exports) {
 
-	module.exports = "require('babel-register');\nimport React, { Component, PropTypes } from 'react';\nimport ReactDom from 'react-dom';\n\nimport Ex7 from './restrictMonth.js';\n\nReactDom.render(<Ex7></Ex7>, document.getElementById('root'));\n"
+	module.exports = "import React, { Component, PropTypes } from 'react';\n\nimport ReactDom from 'react-dom';\nimport DayPicker, {Utils} from '../../../DayPicker.js';\n\n\n\n\nconst fromMonth = new Date(2015, 0, 1, 0, 0);\nconst toMonth = new Date(2015, 9, 20, 23, 59);\n\nclass Ex7 extends Component {\n  render() {\n    return (\n      <DayPicker\n        numberOfMonths = {2}\n        fixedWeeks = {true}\n        initialMonth = {fromMonth}\n        fromMonth = {fromMonth}\n        toMonth = {toMonth}\n        disabledDays = {day => fromMonth > day || day > toMonth}\n        onDayClick = {(e, day, { disabled }) => {\n          if (!disabled) {\n            console.log(day.toLocaleDateString());\n          }\n        }}\n      />\n    );\n  }\n  \n}\n\nexport default Ex7;\n\n// ReactDom.render(<Demo></Demo>, document.getElementById('root'));"
 
 /***/ },
 /* 208 */
 /***/ function(module, exports) {
 
-	module.exports = "import React, { Component, PropTypes } from 'react';\n\nimport ReactDom from 'react-dom';\nimport DayPicker, {Utils} from '../../../DayPicker.js';\n\n\n\n\nconst fromMonth = new Date(2015, 0, 1, 0, 0);\nconst toMonth = new Date(2015, 9, 20, 23, 59);\n\nclass Ex7 extends Component {\n  render() {\n    return (\n      <DayPicker\n        numberOfMonths = {2}\n        fixedWeeks = {true}\n        initialMonth = {fromMonth}\n        fromMonth = {fromMonth}\n        toMonth = {toMonth}\n        disabledDays = {day => fromMonth > day || day > toMonth}\n        onDayClick = {(e, day, { disabled }) => {\n          if (!disabled) {\n            console.log(day.toLocaleDateString());\n          }\n        }}\n      />\n    );\n  }\n  \n}\n\nexport default Ex7;\n\n// ReactDom.render(<Demo></Demo>, document.getElementById('root'));"
+	module.exports = "require('babel-register');\nimport React, { Component, PropTypes } from 'react';\nimport ReactDom from 'react-dom';\n\nimport Ex1 from './selectedDays.js';\n\nReactDom.render(<Ex1></Ex1>, document.getElementById('root'));\n"
 
 /***/ },
 /* 209 */
 /***/ function(module, exports) {
 
-	module.exports = "require('babel-register');\nimport React, { Component, PropTypes } from 'react';\nimport ReactDom from 'react-dom';\n\nimport Ex1 from './selectedDays.js';\n\nReactDom.render(<Ex1></Ex1>, document.getElementById('root'));\n"
+	module.exports = "import React, { Component, PropTypes } from 'react';\n\nimport ReactDom from 'react-dom';\nimport DayPicker, {Utils} from '../../../DayPicker.js';\n\n\nclass Ex1 extends Component {\n\n\tconstructor(...args) {\n\t\tsuper(...args);\n\n\t\tthis.onDayClickHandler = this.onDayClickHandler.bind(this);\n\t}\n\n\tstate = {\n\t\tselectedDay: null\n\t};\n\n\tonDayClickHandler(e, day, modifilers) {\n\t\tif (modifilers.disabled) {\n\t\t\treturn;\n\t\t}\n\t\tthis.setState({\n\t    \tselectedDay: modifilers.selected ? null : day,\n\t    });\n\t}\n\n\trender() {\n\t\tconst { selectedDay } = this.state;\n\t\treturn (<DayPicker \n\t\t\tnumberOfMonths = {2} \n\t\t\tcanChangeMonth = {true} \n\t\t\tselectedDays = {day => Utils.isSameDay(selectedDay, day)}\n\t\t\tfixedWeeks = {true}\n\t\t\tonDayClick = {this.onDayClickHandler}\n\t\t/>);\n\t}\n}\n\n\nexport default Ex1;\n\n\n// ReactDom.render(<Demo></Demo>, document.getElementById('root'));"
 
 /***/ },
 /* 210 */
 /***/ function(module, exports) {
 
-	module.exports = "import React, { Component, PropTypes } from 'react';\n\nimport ReactDom from 'react-dom';\nimport DayPicker, {Utils} from '../../../DayPicker.js';\n\n\nclass Ex1 extends Component {\n\n\tconstructor(...args) {\n\t\tsuper(...args);\n\n\t\tthis.onDayClickHandler = this.onDayClickHandler.bind(this);\n\t}\n\n\tstate = {\n\t\tselectedDay: null\n\t};\n\n\tonDayClickHandler(e, day, modifilers) {\n\t\tif (modifilers.disabled) {\n\t\t\treturn;\n\t\t}\n\t\tthis.setState({\n\t    \tselectedDay: modifilers.selected ? null : day,\n\t    });\n\t}\n\n\trender() {\n\t\tconst { selectedDay } = this.state;\n\t\treturn (<DayPicker \n\t\t\tnumberOfMonths = {2} \n\t\t\tcanChangeMonth = {true} \n\t\t\tselectedDays = {day => Utils.isSameDay(selectedDay, day)}\n\t\t\tfixedWeeks = {true}\n\t\t\tonDayClick = {this.onDayClickHandler}\n\t\t/>);\n\t}\n}\n\n\nexport default Ex1;\n\n\n// ReactDom.render(<Demo></Demo>, document.getElementById('root'));"
+	module.exports = "require('babel-register');\nimport React, { Component, PropTypes } from 'react';\nimport ReactDom from 'react-dom';\n\nimport Ex5 from './year.js';\n\nReactDom.render(<Ex5></Ex5>, document.getElementById('root'));\n"
 
 /***/ },
 /* 211 */
 /***/ function(module, exports) {
 
-	module.exports = "require('babel-register');\nimport React, { Component, PropTypes } from 'react';\nimport ReactDom from 'react-dom';\n\nimport Ex5 from './year.js';\n\nReactDom.render(<Ex5></Ex5>, document.getElementById('root'));\n"
-
-/***/ },
-/* 212 */
-/***/ function(module, exports) {
-
 	module.exports = "import React, { Component, PropTypes } from 'react';\n\nimport ReactDom from 'react-dom';\nimport DayPicker, {Utils} from '../../../DayPicker.js';\n\n\nclass Ex5 extends Component {\n\n\tconstructor(...args) {\n\t\tsuper(...args);\n\n\t\tthis.showPrevious = this.showPrevious.bind(this);\n\t\tthis.showNext = this.showNext.bind(this);\n\t}\n\n\tstate = {\n    \tyear: (new Date()).getFullYear(),\n  \t};\n  \t\n  \tshowPrevious() {\n  \t\tthis.setState({\n    \t\tyear: this.state.year - 1,\n    \t});\n  \t}\n\n  \tshowNext() {\n  \t\tthis.setState({\n    \t\tyear: this.state.year + 1,\n    \t});\n  \t}\n\n\trender() {\n\t\tconst { year } = this.state;\n\t\t\n\t\treturn (\n\t\t\t<div>\n\t\t\t\t<h1>\n\t\t\t\t\t<a onClick={this.showPrevious}>{year - 1}</a>\n\t          \t\t{year}\n\t          \t\t<a onClick={this.showNext}>{year + 1}</a>\n          \t\t</h1>\n\t\t\t\t<DayPicker \n\t\t\t\tnumberOfMonths = {12} \n\t\t\t\tcanChangeMonth = {false}\n\t\t\t\tinitialMonth = {new Date(year, 0, 1)}\n\t\t\t\t></DayPicker>\n\t\t\t</div>\n\t\t);\n\t}\n}\n\n\nexport default Ex5;\n\n\n// ReactDom.render(<Demo></Demo>, document.getElementById('root'));"
 
 /***/ },
-/* 213 */
+/* 212 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -23532,7 +23467,7 @@
 	// ReactDom.render(<Demo></Demo>, document.getElementById('root'));
 
 /***/ },
-/* 214 */
+/* 213 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -23651,7 +23586,7 @@
 	// ReactDom.render(<Demo></Demo>, document.getElementById('root'));
 
 /***/ },
-/* 215 */
+/* 214 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -23761,7 +23696,7 @@
 	// ReactDom.render(<Demo></Demo>, document.getElementById('root'));
 
 /***/ },
-/* 216 */
+/* 215 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -23835,7 +23770,7 @@
 	// ReactDom.render(<Demo></Demo>, document.getElementById('root'));
 
 /***/ },
-/* 217 */
+/* 216 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
