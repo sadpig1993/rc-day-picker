@@ -11,16 +11,12 @@ const WEEKDAYS = ['日', '一', '二', '三', '四', '五', '六'];
 const MONTHS = ['一月', '二月', '三月', '四月', '五月', '六月',
     '七月', '八月', '九月', '十月', '十一月', '十二月'];
 
-
-<<<<<<< HEAD
-=======
 /**
  * 生成年月文案
  *
  * @param  {Date} 
  * @return {string} 返回对应文案
  */
->>>>>>> goodCoder
 export function formatMonthTitle(d) {
   return `${d.getFullYear()}年 ${MONTHS[d.getMonth()]}`;
 }
