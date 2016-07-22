@@ -1,6 +1,6 @@
 /**
 * @file 切换月份Tab组件
-* @author xijiawei@baidu.com
+* @author sadpig
 */
 import React, { Component, PropTypes } from 'react';
 

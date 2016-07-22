@@ -1,6 +1,6 @@
 /**
 * @file React日期选择组件入口文件
-* @author xijiawei@baidu.com
+* @author sadpig
 */
 
 import React, { Component, PropTypes } from 'react';

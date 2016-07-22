@@ -1,6 +1,6 @@
 /**
 * @file 组件工具函数
-* @author xijiawei@baidu.com
+* @author sadpig
 */
 
 

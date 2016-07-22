@@ -1,6 +1,6 @@
 /**
 * @file day
-* @author xijiawei@baidu.com
+* @author sadpig
 */
 
 import React, { Component, PropTypes } from 'react';
