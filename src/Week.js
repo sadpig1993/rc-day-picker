@@ -1,74 +1,88 @@
+/**
+* @file 星期
+* @author xijiawei@baidu.com
+*/
+
+
 import React, { Component, PropTypes } from 'react';
 import {formatWeekday} from './Utils.js';
 import Day from './Day.js';
 
+/**
+ * 星期组件类
+ *
+ * @class
+ * @extends Component
+ */
 export default class week extends Component {
 
-	static propTypes = {
-		className: PropTypes.string,
+    static propTypes = {
+        // 可设置的className
+        className: PropTypes.string,
+        // 该周内的日期Date对象数组
+        weekDays: PropTypes.array,
+        
+        modifiers: PropTypes.object,
+        // 该星期所属月份的Date对象
+        month: PropTypes.instanceOf(Date).isRequired,
 
-		weekDays: PropTypes.array,
+        // 禁止操作日期判断函数
+        disabledDays: PropTypes.func,
+        // 选中日期判断函数
+        selectedDays: PropTypes.func,
+        // 日期点击事件响应函数
+        onDayClick: PropTypes.func,
 
+        // 是否补全属于前后一个月的日期
+        fixedWeeks: PropTypes.bool
 
-		modifiers: PropTypes.object,
+    };
+    static defaultProps = {
+        // modifiers默认为空对象
+        modifiers: {}
+    };
 
-		weekIndex: PropTypes.number,
+    constructor(...args) {
+        super(...args);
+    }
 
-		month: PropTypes.instanceOf(Date).isRequired,
+    render () {
+        let className = this.props.className || 'DayPicker-Day';
+        let { weekDays, 
+            selectedDays, 
+            disabledDays, 
+            month,
+            fixedWeeks,
+            onDayClick,
+            modifiers
+            } = this.props;
 
-		disabledDays: PropTypes.func,
-  		selectedDays: PropTypes.func,
-  		onDayClick: PropTypes.func,
+        const days = weekDays.map((day, index) => {
+            // 判断该日期是否在本月内
+            const isOutside = day.getMonth() !== month.getMonth();
+            // 补全缺首尾两周日期未配置则默认不显示
+            let empty = isOutside && !fixedWeeks;
+            
+            return (<Day 
+                    className = {className} 
+                    children = {day.getDate()} 
+                    day = {day} 
+                    month = {month}
+                    modifiers = {modifiers}
+                    key = {index}
+                    empty = {empty}
+                    selectedDays = {selectedDays}
+                    disabledDays = {disabledDays}
+                    fixedWeeks = {fixedWeeks}
+                    onDayClick = {onDayClick}
+                    ></Day>);
+        });
 
-  		fixedWeeks: PropTypes.bool
-
-	};
-	static defaultProps = {
-		modifiers: {}
-  	};
-
-  	constructor(...args) {
-		super(...args);
-	}
-
-	render () {
-		let className = this.props.className || 'DayPicker-Day';
-		let { weekDays, 
-			weekIndex, 
-			selectedDays, 
-			disabledDays, 
-			month,
-			fixedWeeks,
-			onDayClick,
-			modifiers
-			} = this.props;
-
-		const days = weekDays.map((day, index) => {
-			// let dayIndex = weekIndex * 7 + index;
-			// let empty = (dayIndex > weekIndexRange.endIndex || 
-						// dayIndex < weekIndexRange.startIndex);
-			const isOutside = day.getMonth() !== month.getMonth();
-
-			let empty = isOutside && !fixedWeeks;
-			return (<Day className = {className} 
-					children = {day.getDate()} 
-					day = {day} 
-					month = {month}
-					modifiers = {modifiers}
-					key = {index}
-					empty = {empty}
-					selectedDays = {selectedDays}
-    				disabledDays = {disabledDays}
-    				fixedWeeks = {fixedWeeks}
-    				onDayClick = {onDayClick}
-    				></Day>);
-		});
-
-		return (
-			<div className="DayPicker-Week">
-				{days}
-			</div>
-		);
-		
-	}
+        return (
+            <div className="DayPicker-Week">
+                {days}
+            </div>
+        );
+        
+    }
 }
