@@ -8,35 +8,51 @@ import React, { Component, PropTypes } from 'react';
 import Navbar from './Navbar';
 import Month from './Month';
 import Day from './Day';
-import {addMonths, getModifiersForDay} from './Utils.js';
-import styles from './style.css';
+import { addMonths } from './Utils.js';
 import Caption from './Caption';
 
+
+/**
+ * DayPicker组件类
+ *
+ * @class
+ * @extends Component
+ */
 export default class DayPicker extends Component {
 
     static propTypes = {
+        // 初始的月份Date对象
         initialMonth: PropTypes.instanceOf(Date),
+        // 允许切换月份范围起始月份Date对象
         fromMonth: PropTypes.instanceOf(Date),
+        // 允许切换月份范围结束月份Date对象
         toMonth: PropTypes.instanceOf(Date),
 
+        // 渲染月份数目
         numberOfMonths: PropTypes.number,
 
+        // 选中日期判断函数
         selectedDays: PropTypes.func,
+        // 禁止操作日期判断函数
         disabledDays: PropTypes.func,
+        // 点击非禁止操作日期的回调函数
         onDayClick: PropTypes.func,
-
+        // 自定义判断函数
         modifiers: PropTypes.object,
 
+        // 可设置的className
         className: PropTypes.string,
 
+        // 设置是否可以切换月份
         canChangeMonth: PropTypes.bool,
+        // 设置是否补全日期
         fixedWeeks: PropTypes.bool,
 
+        // 头部标题的element
         captionElement: PropTypes.element    
     };
 
     static defaultProps = {
-        tabIndex: 0,
         initialMonth: new Date(),
         numberOfMonths: 1,
         className: 'DayPicker',
@@ -51,6 +67,7 @@ export default class DayPicker extends Component {
 
         this.showNextMonth = this.showNextMonth.bind(this);
         this.showPreviousMonth = this.showPreviousMonth.bind(this);
+        // 设置当前月份为传入的初始月份
         this.state = {
             currentMonth: this.props.initialMonth
         }
@@ -64,6 +81,12 @@ export default class DayPicker extends Component {
         }
     }
 
+    /**
+     * 切换到指定月份
+     *
+     * @param {Date} day 要切换的月份的Date对象
+     * @param {Function} callback
+     */
     showMonth(day, callback) {
         if (!this.allowMonth(day)) {
             return;
@@ -73,11 +96,19 @@ export default class DayPicker extends Component {
                 callback();
             }
             if (this.props.onMonthChange) {
-            this.props.onMonthChange(this.state.currentMonth);
-        }
+                this.props.onMonthChange(this.state.currentMonth);
+            }
         })
     }
 
+
+    /**
+     * 判断该月份是否可以切换
+     *
+     * @param {Date} day 要切换的月份的Date对象
+     * @param {Function} callback
+     * @return {Boolean} 
+     */
     allowMonth(day) {
         const { fromMonth, toMonth, canChangeMonth } = this.props;
 
@@ -91,6 +122,11 @@ export default class DayPicker extends Component {
         return true;
     }
 
+    /**
+     * 判断是否可以切换到下个月
+     *
+     * @return {Boolean} 
+     */
     allowNextMonth() {
         const { numberOfMonths } = this.props;
         const { currentMonth } = this.state;
@@ -98,6 +134,11 @@ export default class DayPicker extends Component {
         return this.allowMonth(previousMonth);
     }
 
+    /**
+     * 判断是否可以切换到上个月
+     *
+     * @return {Boolean} 
+     */
     allowPreviousMonth() {
         const { currentMonth } = this.state;
         const { numberOfMonths } = this.props;
@@ -105,6 +146,11 @@ export default class DayPicker extends Component {
         return this.allowMonth(previousMonth);
     }
 
+    /**
+     * 切换月份到下一个月
+     *
+     * @param {Function} callback
+     */
     showNextMonth(callback) {
         if (!this.allowNextMonth()) {
             return;
@@ -113,6 +159,11 @@ export default class DayPicker extends Component {
         this.showMonth(nextMonth, callback);
     }
 
+    /**
+     * 切换月份到上一个月
+     *
+     * @param {Function} callback 
+     */
     showPreviousMonth(callback) {
         if (!this.allowPreviousMonth()) {
             return;
@@ -121,6 +172,11 @@ export default class DayPicker extends Component {
         this.showMonth(previousMonth, callback);
     }
 
+    /**
+     * 生成切换月份导航栏Element
+     *
+     * @return {Object} 
+     */
     renderNavbar() {
         const props = {
             className: 'DayPicker-NavBar',
@@ -132,6 +188,11 @@ export default class DayPicker extends Component {
         return (<Navbar {...props}></Navbar>);
     }
 
+    /**
+     * 生成月份Elements数组
+     *
+     * @return {Array} 
+     */
     renderMonths() {
         let { 
             captionElement, 

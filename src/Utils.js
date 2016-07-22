@@ -11,6 +11,17 @@ const WEEKDAYS = ['日', '一', '二', '三', '四', '五', '六'];
 const MONTHS = ['一月', '二月', '三月', '四月', '五月', '六月',
     '七月', '八月', '九月', '十月', '十一月', '十二月'];
 
+
+/**
+ * 生成年月文案
+ *
+ * @param  {Date} 
+ * @return {string} 返回对应文案
+ */
+export function formatMonthTitle(d) {
+  return `${d.getFullYear()}年 ${MONTHS[d.getMonth()]}`;
+}
+
 /**
  * 获取星期文案
  *
@@ -142,12 +153,17 @@ export function getWeekArray(day, firstDayOfWeek = 0) {
     const dayNumOfMonth = getDayNumOfMonth(day);
     const dayArray = [];
 
+    // 生成整个月的每一天的Date对象
     for (let i = 1 ; i <= dayNumOfMonth; i++) {
         dayArray.push(new Date(day.getFullYear(), day.getMonth(), i, 12))
     }
 
+    // 一个星期的缓存数组
     let week = [];
+    // 整个月份的星期数组
     const weekArray = [];
+
+    // 遍历dayArray 分配到每个week数组里
     dayArray.forEach((day) => {
         if (week.length > 0 && day.getDay() === firstDayOfWeek) {
             weekArray.push(week);
@@ -162,6 +178,7 @@ export function getWeekArray(day, firstDayOfWeek = 0) {
 
     const firstWeek = weekArray[0];
     const startIndex = 7 - firstWeek.length;
+    // 补全第一周的缺的上月日期
     for (let i = startIndex; i > 0; i--) {
         const outsideDate = clone(firstWeek[0]);
         outsideDate.setDate(firstWeek[0].getDate() - 1);
@@ -169,6 +186,7 @@ export function getWeekArray(day, firstDayOfWeek = 0) {
     }
 
     const lastWeek = weekArray[weekArray.length - 1];
+    // 补全最后一周缺的下月的日期
     for (let i = lastWeek.length; i < 7; i++) {
         const outsideDate = clone(lastWeek[lastWeek.length - 1]);
         outsideDate.setDate(lastWeek[lastWeek.length - 1].getDate() + 1);
@@ -176,16 +194,16 @@ export function getWeekArray(day, firstDayOfWeek = 0) {
     }
 
     return weekArray;
-    // return {
-    //     'weekArray': weekArray,
-    //     'weekIndexRange': {
-    //         'startIndex': startIndex,
-    //         'endIndex': startIndex + dayNumOfMonth - 1
-    //     }
-    };
 }
 
 
+/**
+ * 自定义修饰器函数判断
+ *
+ * @param  {Date}  day
+ * @param  {Object} modifierFunctions 
+ * @return {Array}
+ */
 export function getModifiersForDay(d, modifierFunctions = {}) {
     return Object.keys(modifierFunctions).reduce((modifiers, modifier) => {
         const func = modifierFunctions[modifier];
@@ -198,10 +216,8 @@ export function getModifiersForDay(d, modifierFunctions = {}) {
 }
 
 export default {
+    formatMonthTitle,
     formatWeekday,
-    formatWeekdayShort,
-    formatWeekdayLong,
-    getFirstDayOfWeek,
     getMonths,
     getWeekArray,
     addMonths,

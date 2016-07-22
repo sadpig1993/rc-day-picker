@@ -54,7 +54,7 @@
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
-	var _selectedDays = __webpack_require__(213);
+	var _selectedDays = __webpack_require__(212);
 
 	var _selectedDays2 = _interopRequireDefault(_selectedDays);
 
@@ -21156,17 +21156,17 @@
 	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
 
 	Object.defineProperty(exports, "__esModule", {
-		value: true
+	    value: true
 	});
 
 	var _createClass = function () {
-		function defineProperties(target, props) {
-			for (var i = 0; i < props.length; i++) {
-				var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);
-			}
-		}return function (Constructor, protoProps, staticProps) {
-			if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;
-		};
+	    function defineProperties(target, props) {
+	        for (var i = 0; i < props.length; i++) {
+	            var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);
+	        }
+	    }return function (Constructor, protoProps, staticProps) {
+	        if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;
+	    };
 	}();
 
 	var _react = __webpack_require__(1);
@@ -21196,208 +21196,209 @@
 	var _Caption2 = _interopRequireDefault(_Caption);
 
 	function _interopRequireDefault(obj) {
-		return obj && obj.__esModule ? obj : { default: obj };
+	    return obj && obj.__esModule ? obj : { default: obj };
 	}
 
 	function _classCallCheck(instance, Constructor) {
-		if (!(instance instanceof Constructor)) {
-			throw new TypeError("Cannot call a class as a function");
-		}
+	    if (!(instance instanceof Constructor)) {
+	        throw new TypeError("Cannot call a class as a function");
+	    }
 	}
 
 	function _possibleConstructorReturn(self, call) {
-		if (!self) {
-			throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-		}return call && ((typeof call === "undefined" ? "undefined" : _typeof(call)) === "object" || typeof call === "function") ? call : self;
+	    if (!self) {
+	        throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+	    }return call && ((typeof call === "undefined" ? "undefined" : _typeof(call)) === "object" || typeof call === "function") ? call : self;
 	}
 
 	function _inherits(subClass, superClass) {
-		if (typeof superClass !== "function" && superClass !== null) {
-			throw new TypeError("Super expression must either be null or a function, not " + (typeof superClass === "undefined" ? "undefined" : _typeof(superClass)));
-		}subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-	}
+	    if (typeof superClass !== "function" && superClass !== null) {
+	        throw new TypeError("Super expression must either be null or a function, not " + (typeof superClass === "undefined" ? "undefined" : _typeof(superClass)));
+	    }subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+	} /**
+	  * @file React日期选择组件入口文件
+	  * @author xijiawei@baidu.com
+	  */
 
 	var DayPicker = function (_Component) {
-		_inherits(DayPicker, _Component);
+	    _inherits(DayPicker, _Component);
 
-		function DayPicker() {
-			var _Object$getPrototypeO;
+	    function DayPicker() {
+	        var _Object$getPrototypeO;
 
-			_classCallCheck(this, DayPicker);
+	        _classCallCheck(this, DayPicker);
 
-			for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-				args[_key] = arguments[_key];
-			}
+	        for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+	            args[_key] = arguments[_key];
+	        }
 
-			var _this = _possibleConstructorReturn(this, (_Object$getPrototypeO = Object.getPrototypeOf(DayPicker)).call.apply(_Object$getPrototypeO, [this].concat(args)));
+	        var _this = _possibleConstructorReturn(this, (_Object$getPrototypeO = Object.getPrototypeOf(DayPicker)).call.apply(_Object$getPrototypeO, [this].concat(args)));
 
-			_this.showNextMonth = _this.showNextMonth.bind(_this);
-			_this.showPreviousMonth = _this.showPreviousMonth.bind(_this);
-			_this.state = {
-				currentMonth: _this.props.initialMonth
-			};
-			return _this;
-		}
+	        _this.showNextMonth = _this.showNextMonth.bind(_this);
+	        _this.showPreviousMonth = _this.showPreviousMonth.bind(_this);
+	        _this.state = {
+	            currentMonth: _this.props.initialMonth
+	        };
+	        return _this;
+	    }
 
-		_createClass(DayPicker, [{
-			key: 'componentWillReceiveProps',
-			value: function componentWillReceiveProps(nextProps) {
-				if (this.props.initialMonth !== nextProps.initialMonth) {
-					this.setState({
-						currentMonth: nextProps.initialMonth
-					});
-				}
-			}
-		}, {
-			key: 'showMonth',
-			value: function showMonth(day, callback) {
-				var _this2 = this;
+	    _createClass(DayPicker, [{
+	        key: 'componentWillReceiveProps',
+	        value: function componentWillReceiveProps(nextProps) {
+	            if (this.props.initialMonth !== nextProps.initialMonth) {
+	                this.setState({
+	                    currentMonth: nextProps.initialMonth
+	                });
+	            }
+	        }
+	    }, {
+	        key: 'showMonth',
+	        value: function showMonth(day, callback) {
+	            var _this2 = this;
 
-				if (!this.allowMonth(day)) {
-					return;
-				}
-				this.setState({ currentMonth: day }, function () {
-					//Helpers.startOfMonth(d)
-					if (callback) {
-						callback();
-					}
-					if (_this2.props.onMonthChange) {
-						_this2.props.onMonthChange(_this2.state.currentMonth);
-					}
-				});
-			}
-		}, {
-			key: 'allowMonth',
-			value: function allowMonth(day) {
-				var _props = this.props;
-				var fromMonth = _props.fromMonth;
-				var toMonth = _props.toMonth;
-				var canChangeMonth = _props.canChangeMonth;
+	            if (!this.allowMonth(day)) {
+	                return;
+	            }
+	            this.setState({ currentMonth: day }, function () {
+	                if (callback) {
+	                    callback();
+	                }
+	                if (_this2.props.onMonthChange) {
+	                    _this2.props.onMonthChange(_this2.state.currentMonth);
+	                }
+	            });
+	        }
+	    }, {
+	        key: 'allowMonth',
+	        value: function allowMonth(day) {
+	            var _props = this.props;
+	            var fromMonth = _props.fromMonth;
+	            var toMonth = _props.toMonth;
+	            var canChangeMonth = _props.canChangeMonth;
 
-				if (!canChangeMonth || fromMonth && fromMonth > day || toMonth && toMonth < day) {
-					return false;
-				}
-				return true;
-			}
-		}, {
-			key: 'allowNextMonth',
-			value: function allowNextMonth() {
-				var numberOfMonths = this.props.numberOfMonths;
-				var currentMonth = this.state.currentMonth;
+	            if (!canChangeMonth || fromMonth && fromMonth > day || toMonth && toMonth < day) {
+	                return false;
+	            }
 
-				var previousMonth = (0, _Utils.addMonths)(currentMonth, numberOfMonths);
-				return this.allowMonth(previousMonth);
-			}
-		}, {
-			key: 'allowPreviousMonth',
-			value: function allowPreviousMonth() {
-				var currentMonth = this.state.currentMonth;
-				var numberOfMonths = this.props.numberOfMonths;
+	            return true;
+	        }
+	    }, {
+	        key: 'allowNextMonth',
+	        value: function allowNextMonth() {
+	            var numberOfMonths = this.props.numberOfMonths;
+	            var currentMonth = this.state.currentMonth;
 
-				var previousMonth = (0, _Utils.addMonths)(currentMonth, -1);
-				return this.allowMonth(previousMonth);
-			}
-		}, {
-			key: 'showNextMonth',
-			value: function showNextMonth(callback) {
-				if (!this.allowNextMonth()) {
-					return;
-				}
-				var nextMonth = (0, _Utils.addMonths)(this.state.currentMonth, 1);
-				this.showMonth(nextMonth, callback);
-			}
-		}, {
-			key: 'showPreviousMonth',
-			value: function showPreviousMonth(callback) {
-				if (!this.allowPreviousMonth()) {
-					return;
-				}
-				var previousMonth = (0, _Utils.addMonths)(this.state.currentMonth, -1);
-				this.showMonth(previousMonth, callback);
-			}
-		}, {
-			key: 'renderNavbar',
-			value: function renderNavbar() {
-				var props = {
-					className: 'DayPicker-NavBar',
-					showPreviousButton: this.allowPreviousMonth(),
-					showNextButton: this.allowNextMonth(),
-					onNextClick: this.showNextMonth,
-					onPreviousClick: this.showPreviousMonth
-				};
-				return _react2.default.createElement(_Navbar2.default, props);
-			}
-		}, {
-			key: 'renderMonths',
-			value: function renderMonths() {
-				var _props2 = this.props;
-				var captionElement = _props2.captionElement;
-				var selectedDays = _props2.selectedDays;
-				var disabledDays = _props2.disabledDays;
-				var fixedWeeks = _props2.fixedWeeks;
-				var onDayClick = _props2.onDayClick;
-				var modifiers = _props2.modifiers;
+	            var previousMonth = (0, _Utils.addMonths)(currentMonth, numberOfMonths);
+	            return this.allowMonth(previousMonth);
+	        }
+	    }, {
+	        key: 'allowPreviousMonth',
+	        value: function allowPreviousMonth() {
+	            var currentMonth = this.state.currentMonth;
+	            var numberOfMonths = this.props.numberOfMonths;
 
-				var months = [];
+	            var previousMonth = (0, _Utils.addMonths)(currentMonth, -1);
+	            return this.allowMonth(previousMonth);
+	        }
+	    }, {
+	        key: 'showNextMonth',
+	        value: function showNextMonth(callback) {
+	            if (!this.allowNextMonth()) {
+	                return;
+	            }
+	            var nextMonth = (0, _Utils.addMonths)(this.state.currentMonth, 1);
+	            this.showMonth(nextMonth, callback);
+	        }
+	    }, {
+	        key: 'showPreviousMonth',
+	        value: function showPreviousMonth(callback) {
+	            if (!this.allowPreviousMonth()) {
+	                return;
+	            }
+	            var previousMonth = (0, _Utils.addMonths)(this.state.currentMonth, -1);
+	            this.showMonth(previousMonth, callback);
+	        }
+	    }, {
+	        key: 'renderNavbar',
+	        value: function renderNavbar() {
+	            var props = {
+	                className: 'DayPicker-NavBar',
+	                showPreviousButton: this.allowPreviousMonth(),
+	                showNextButton: this.allowNextMonth(),
+	                onNextClick: this.showNextMonth,
+	                onPreviousClick: this.showPreviousMonth
+	            };
+	            return _react2.default.createElement(_Navbar2.default, props);
+	        }
+	    }, {
+	        key: 'renderMonths',
+	        value: function renderMonths() {
+	            var _props2 = this.props;
+	            var captionElement = _props2.captionElement;
+	            var selectedDays = _props2.selectedDays;
+	            var disabledDays = _props2.disabledDays;
+	            var fixedWeeks = _props2.fixedWeeks;
+	            var onDayClick = _props2.onDayClick;
+	            var modifiers = _props2.modifiers;
 
-				for (var i = 0; i < this.props.numberOfMonths; i++) {
-					var month = (0, _Utils.addMonths)(this.state.currentMonth, i);
-					months.push(_react2.default.createElement(_Month2.default, { key: i,
-						month: month,
-						modifiers: modifiers,
-						captionElement: captionElement,
-						selectedDays: selectedDays,
-						disabledDays: disabledDays,
-						fixedWeeks: fixedWeeks,
-						onDayClick: onDayClick || undefined
-					}));
-				}
+	            var months = [];
 
-				return months;
-			}
-		}, {
-			key: 'render',
-			value: function render() {
-				var className = this.props.className;
+	            for (var i = 0; i < this.props.numberOfMonths; i++) {
+	                var month = (0, _Utils.addMonths)(this.state.currentMonth, i);
+	                months.push(_react2.default.createElement(_Month2.default, { key: i,
+	                    month: month,
+	                    modifiers: modifiers,
+	                    captionElement: captionElement,
+	                    selectedDays: selectedDays,
+	                    disabledDays: disabledDays,
+	                    fixedWeeks: fixedWeeks,
+	                    onDayClick: onDayClick || undefined
+	                }));
+	            }
 
-				return _react2.default.createElement('div', { className: className }, this.renderNavbar(), this.renderMonths());
-			}
-		}]);
+	            return months;
+	        }
+	    }, {
+	        key: 'render',
+	        value: function render() {
+	            var className = this.props.className;
 
-		return DayPicker;
+	            return _react2.default.createElement('div', { className: className }, this.renderNavbar(), this.renderMonths());
+	        }
+	    }]);
+
+	    return DayPicker;
 	}(_react.Component);
 
 	DayPicker.propTypes = {
-		initialMonth: _react.PropTypes.instanceOf(Date),
-		fromMonth: _react.PropTypes.instanceOf(Date),
-		toMonth: _react.PropTypes.instanceOf(Date),
+	    initialMonth: _react.PropTypes.instanceOf(Date),
+	    fromMonth: _react.PropTypes.instanceOf(Date),
+	    toMonth: _react.PropTypes.instanceOf(Date),
 
-		numberOfMonths: _react.PropTypes.number,
+	    numberOfMonths: _react.PropTypes.number,
 
-		selectedDays: _react.PropTypes.func,
-		disabledDays: _react.PropTypes.func,
-		onDayClick: _react.PropTypes.func,
+	    selectedDays: _react.PropTypes.func,
+	    disabledDays: _react.PropTypes.func,
+	    onDayClick: _react.PropTypes.func,
 
-		modifiers: _react.PropTypes.object,
+	    modifiers: _react.PropTypes.object,
 
-		className: _react.PropTypes.string,
+	    className: _react.PropTypes.string,
 
-		canChangeMonth: _react.PropTypes.bool,
-		fixedWeeks: _react.PropTypes.bool,
+	    canChangeMonth: _react.PropTypes.bool,
+	    fixedWeeks: _react.PropTypes.bool,
 
-		captionElement: _react.PropTypes.element
+	    captionElement: _react.PropTypes.element
 	};
 	DayPicker.defaultProps = {
-		tabIndex: 0,
-		initialMonth: new Date(),
-		numberOfMonths: 1,
-		className: 'DayPicker',
-		// weekdayElement: <Weekday />,
-		// navbarElement: <Navbar />,
-		captionElement: _react2.default.createElement(_Caption2.default, null),
-		canChangeMonth: true,
-		fixedWeeks: false,
-		modifiers: {}
+	    tabIndex: 0,
+	    initialMonth: new Date(),
+	    numberOfMonths: 1,
+	    className: 'DayPicker',
+	    captionElement: _react2.default.createElement(_Caption2.default, null),
+	    canChangeMonth: true,
+	    fixedWeeks: false,
+	    modifiers: {}
 	};
 	exports.default = DayPicker;
 	//# sourceMappingURL=DayPicker.js.map
@@ -21411,17 +21412,17 @@
 	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
 
 	Object.defineProperty(exports, "__esModule", {
-		value: true
+	    value: true
 	});
 
 	var _createClass = function () {
-		function defineProperties(target, props) {
-			for (var i = 0; i < props.length; i++) {
-				var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);
-			}
-		}return function (Constructor, protoProps, staticProps) {
-			if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;
-		};
+	    function defineProperties(target, props) {
+	        for (var i = 0; i < props.length; i++) {
+	            var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);
+	        }
+	    }return function (Constructor, protoProps, staticProps) {
+	        if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;
+	    };
 	}();
 
 	var _react = __webpack_require__(1);
@@ -21429,84 +21430,84 @@
 	var _react2 = _interopRequireDefault(_react);
 
 	function _interopRequireDefault(obj) {
-		return obj && obj.__esModule ? obj : { default: obj };
+	    return obj && obj.__esModule ? obj : { default: obj };
 	}
 
 	function _classCallCheck(instance, Constructor) {
-		if (!(instance instanceof Constructor)) {
-			throw new TypeError("Cannot call a class as a function");
-		}
+	    if (!(instance instanceof Constructor)) {
+	        throw new TypeError("Cannot call a class as a function");
+	    }
 	}
 
 	function _possibleConstructorReturn(self, call) {
-		if (!self) {
-			throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-		}return call && ((typeof call === "undefined" ? "undefined" : _typeof(call)) === "object" || typeof call === "function") ? call : self;
+	    if (!self) {
+	        throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+	    }return call && ((typeof call === "undefined" ? "undefined" : _typeof(call)) === "object" || typeof call === "function") ? call : self;
 	}
 
 	function _inherits(subClass, superClass) {
-		if (typeof superClass !== "function" && superClass !== null) {
-			throw new TypeError("Super expression must either be null or a function, not " + (typeof superClass === "undefined" ? "undefined" : _typeof(superClass)));
-		}subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+	    if (typeof superClass !== "function" && superClass !== null) {
+	        throw new TypeError("Super expression must either be null or a function, not " + (typeof superClass === "undefined" ? "undefined" : _typeof(superClass)));
+	    }subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
 	}
 
 	var Navbar = function (_Component) {
-		_inherits(Navbar, _Component);
+	    _inherits(Navbar, _Component);
 
-		function Navbar() {
-			_classCallCheck(this, Navbar);
+	    function Navbar() {
+	        _classCallCheck(this, Navbar);
 
-			return _possibleConstructorReturn(this, Object.getPrototypeOf(Navbar).apply(this, arguments));
-		}
+	        return _possibleConstructorReturn(this, Object.getPrototypeOf(Navbar).apply(this, arguments));
+	    }
 
-		_createClass(Navbar, [{
-			key: 'render',
-			value: function render() {
-				var buttonBaseClass = 'DayPicker-NavButton DayPicker-NavButton';
-				var _props = this.props;
-				var className = _props.className;
-				var showNextButton = _props.showNextButton;
-				var showPreviousButton = _props.showPreviousButton;
-				var onPreviousClick = _props.onPreviousClick;
-				var onNextClick = _props.onNextClick;
+	    _createClass(Navbar, [{
+	        key: 'render',
+	        value: function render() {
+	            var buttonBaseClass = 'DayPicker-NavButton DayPicker-NavButton';
+	            var _props = this.props;
+	            var className = _props.className;
+	            var showNextButton = _props.showNextButton;
+	            var showPreviousButton = _props.showPreviousButton;
+	            var onPreviousClick = _props.onPreviousClick;
+	            var onNextClick = _props.onNextClick;
 
-				var previousButton = showPreviousButton && _react2.default.createElement('span', {
-					role: 'button',
-					key: 'previous',
-					className: buttonBaseClass + '--prev',
-					onClick: function onClick() {
-						return onPreviousClick();
-					}
-				});
+	            var previousButton = showPreviousButton && _react2.default.createElement('span', {
+	                role: 'button',
+	                key: 'previous',
+	                className: buttonBaseClass + '--prev',
+	                onClick: function onClick() {
+	                    return onPreviousClick();
+	                }
+	            });
 
-				var nextButton = showNextButton && _react2.default.createElement('span', {
-					role: 'button',
-					key: 'right',
-					className: buttonBaseClass + '--next',
-					onClick: function onClick() {
-						return onNextClick();
-					}
-				});
+	            var nextButton = showNextButton && _react2.default.createElement('span', {
+	                role: 'button',
+	                key: 'right',
+	                className: buttonBaseClass + '--next',
+	                onClick: function onClick() {
+	                    return onNextClick();
+	                }
+	            });
 
-				return _react2.default.createElement('div', { className: className }, previousButton, nextButton);
-			}
-		}]);
+	            return _react2.default.createElement('div', { className: className }, previousButton, nextButton);
+	        }
+	    }]);
 
-		return Navbar;
+	    return Navbar;
 	}(_react.Component);
 
 	Navbar.propTypes = {
-		date: _react.PropTypes.instanceOf(Date),
-		className: _react.PropTypes.string,
-		showPreviousButton: _react.PropTypes.bool,
-		showNextButton: _react.PropTypes.bool,
-		onPreviousClick: _react.PropTypes.func,
-		onNextClick: _react.PropTypes.func
+	    date: _react.PropTypes.instanceOf(Date),
+	    className: _react.PropTypes.string,
+	    showPreviousButton: _react.PropTypes.bool,
+	    showNextButton: _react.PropTypes.bool,
+	    onPreviousClick: _react.PropTypes.func,
+	    onNextClick: _react.PropTypes.func
 	};
 	Navbar.defaultProps = {
-		className: 'DayPicker-NavBar',
-		showPreviousButton: true,
-		showNextButton: true
+	    className: 'DayPicker-NavBar',
+	    showPreviousButton: true,
+	    showNextButton: true
 	};
 	exports.default = Navbar;
 	//# sourceMappingURL=Navbar.js.map
@@ -21520,17 +21521,17 @@
 	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
 
 	Object.defineProperty(exports, "__esModule", {
-		value: true
+	    value: true
 	});
 
 	var _createClass = function () {
-		function defineProperties(target, props) {
-			for (var i = 0; i < props.length; i++) {
-				var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);
-			}
-		}return function (Constructor, protoProps, staticProps) {
-			if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;
-		};
+	    function defineProperties(target, props) {
+	        for (var i = 0; i < props.length; i++) {
+	            var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);
+	        }
+	    }return function (Constructor, protoProps, staticProps) {
+	        if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;
+	    };
 	}();
 
 	var _react = __webpack_require__(1);
@@ -21548,111 +21549,108 @@
 	var _Utils = __webpack_require__(178);
 
 	function _interopRequireDefault(obj) {
-		return obj && obj.__esModule ? obj : { default: obj };
+	    return obj && obj.__esModule ? obj : { default: obj };
 	}
 
 	function _classCallCheck(instance, Constructor) {
-		if (!(instance instanceof Constructor)) {
-			throw new TypeError("Cannot call a class as a function");
-		}
+	    if (!(instance instanceof Constructor)) {
+	        throw new TypeError("Cannot call a class as a function");
+	    }
 	}
 
 	function _possibleConstructorReturn(self, call) {
-		if (!self) {
-			throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-		}return call && ((typeof call === "undefined" ? "undefined" : _typeof(call)) === "object" || typeof call === "function") ? call : self;
+	    if (!self) {
+	        throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+	    }return call && ((typeof call === "undefined" ? "undefined" : _typeof(call)) === "object" || typeof call === "function") ? call : self;
 	}
 
 	function _inherits(subClass, superClass) {
-		if (typeof superClass !== "function" && superClass !== null) {
-			throw new TypeError("Super expression must either be null or a function, not " + (typeof superClass === "undefined" ? "undefined" : _typeof(superClass)));
-		}subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-	}
+	    if (typeof superClass !== "function" && superClass !== null) {
+	        throw new TypeError("Super expression must either be null or a function, not " + (typeof superClass === "undefined" ? "undefined" : _typeof(superClass)));
+	    }subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+	} /**
+	  * @file 月份
+	  * @author xijiawei@baidu.com
+	  */
 
 	var Month = function (_Component) {
-		_inherits(Month, _Component);
+	    _inherits(Month, _Component);
 
-		function Month() {
-			_classCallCheck(this, Month);
+	    function Month() {
+	        _classCallCheck(this, Month);
 
-			return _possibleConstructorReturn(this, Object.getPrototypeOf(Month).apply(this, arguments));
-		}
+	        return _possibleConstructorReturn(this, Object.getPrototypeOf(Month).apply(this, arguments));
+	    }
 
-		_createClass(Month, [{
-			key: 'render',
-			value: function render() {
-				var weekLabels = [];
-				var _props = this.props;
-				var month = _props.month;
-				var className = _props.className;
-				var captionElement = _props.captionElement;
-				var selectedDays = _props.selectedDays;
-				var disabledDays = _props.disabledDays;
-				var fixedWeeks = _props.fixedWeeks;
-				var onDayClick = _props.onDayClick;
-				var modifiers = _props.modifiers;
+	    _createClass(Month, [{
+	        key: 'render',
+	        value: function render() {
+	            var weekLabels = [];
+	            var _props = this.props;
+	            var month = _props.month;
+	            var className = _props.className;
+	            var captionElement = _props.captionElement;
+	            var selectedDays = _props.selectedDays;
+	            var disabledDays = _props.disabledDays;
+	            var fixedWeeks = _props.fixedWeeks;
+	            var onDayClick = _props.onDayClick;
+	            var modifiers = _props.modifiers;
 
-				for (var i = 0; i < 7; i++) {
-					var eleProps = {
-						className: 'DayPicker-Weekday',
-						weekDay: i,
-						key: i
-					};
-					var ele = _react2.default.createElement(_WeekLabel2.default, eleProps);
-					weekLabels.push(ele);
-				}
+	            for (var i = 0; i < 7; i++) {
+	                var eleProps = {
+	                    className: 'DayPicker-Weekday',
+	                    weekDay: i,
+	                    key: i
+	                };
+	                var ele = _react2.default.createElement(_WeekLabel2.default, eleProps);
+	                weekLabels.push(ele);
+	            }
 
-				// let month = new Date();
+	            var weekArray = (0, _Utils.getWeekArray)(month);
+	            var weekEles = weekArray.map(function (week, index) {
+	                return _react2.default.createElement(_Week2.default, {
+	                    weekDays: week,
+	                    key: index,
+	                    month: month,
+	                    weekIndex: index,
+	                    selectedDays: selectedDays,
+	                    disabledDays: disabledDays,
+	                    fixedWeeks: fixedWeeks,
+	                    onDayClick: onDayClick,
+	                    modifiers: modifiers
+	                });
+	            });
 
-				var _getWeekArray = (0, _Utils.getWeekArray)(month);
+	            var captionProps = {
+	                date: month
+	            };
 
-				var weekArray = _getWeekArray.weekArray;
-				var weekIndexRange = _getWeekArray.weekIndexRange;
+	            return _react2.default.createElement('div', { className: className }, _react2.default.cloneElement(captionElement, captionProps), _react2.default.createElement('div', { className: 'DayPicker-Weekdays' }, _react2.default.createElement('div', { className: 'DayPicker-WeekdaysRow' }, weekLabels)), _react2.default.createElement('div', { className: 'DayPicker-Body' }, weekEles));
+	        }
+	    }]);
 
-				var weekEles = weekArray.map(function (week, index) {
-					return _react2.default.createElement(_Week2.default, { weekDays: week,
-						key: index,
-						month: month,
-						weekIndexRange: weekIndexRange,
-						weekIndex: index,
-						selectedDays: selectedDays,
-						disabledDays: disabledDays,
-						fixedWeeks: fixedWeeks,
-						onDayClick: onDayClick,
-						modifiers: modifiers
-					});
-				});
-				var captionProps = {
-					date: month
-					// onClick: onCaptionClick ? e => onCaptionClick(e, month) : undefined,
-				};
-
-				return _react2.default.createElement('div', { className: className }, _react2.default.cloneElement(captionElement, captionProps), _react2.default.createElement('div', { className: 'DayPicker-Weekdays' }, _react2.default.createElement('div', { className: 'DayPicker-WeekdaysRow' }, weekLabels)), _react2.default.createElement('div', { className: 'DayPicker-Body' }, weekEles));
-			}
-		}]);
-
-		return Month;
+	    return Month;
 	}(_react.Component);
 
 	Month.propTypes = {
-		month: _react.PropTypes.instanceOf(Date).isRequired,
+	    month: _react.PropTypes.instanceOf(Date).isRequired,
 
-		captionElement: _react.PropTypes.node.isRequired,
+	    captionElement: _react.PropTypes.node.isRequired,
 
-		className: _react.PropTypes.string,
+	    className: _react.PropTypes.string,
 
-		modifiers: _react.PropTypes.object,
+	    modifiers: _react.PropTypes.object,
 
-		disabledDays: _react.PropTypes.func,
-		selectedDays: _react.PropTypes.func,
-		onDayClick: _react.PropTypes.func,
+	    disabledDays: _react.PropTypes.func,
+	    selectedDays: _react.PropTypes.func,
+	    onDayClick: _react.PropTypes.func,
 
-		fixedWeeks: _react.PropTypes.bool
+	    fixedWeeks: _react.PropTypes.bool
 	};
 	Month.defaultProps = {
-		month: new Date(),
-		className: 'DayPicker-Month',
-		modifiers: {}
+	    month: new Date(),
+	    className: 'DayPicker-Month',
+	    modifiers: {}
 	};
 	exports.default = Month;
 	//# sourceMappingURL=Month.js.map
@@ -21666,17 +21664,17 @@
 	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
 
 	Object.defineProperty(exports, "__esModule", {
-		value: true
+	    value: true
 	});
 
 	var _createClass = function () {
-		function defineProperties(target, props) {
-			for (var i = 0; i < props.length; i++) {
-				var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);
-			}
-		}return function (Constructor, protoProps, staticProps) {
-			if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;
-		};
+	    function defineProperties(target, props) {
+	        for (var i = 0; i < props.length; i++) {
+	            var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);
+	        }
+	    }return function (Constructor, protoProps, staticProps) {
+	        if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;
+	    };
 	}();
 
 	var _react = __webpack_require__(1);
@@ -21686,63 +21684,64 @@
 	var _Utils = __webpack_require__(178);
 
 	function _interopRequireDefault(obj) {
-		return obj && obj.__esModule ? obj : { default: obj };
+	    return obj && obj.__esModule ? obj : { default: obj };
 	}
 
 	function _classCallCheck(instance, Constructor) {
-		if (!(instance instanceof Constructor)) {
-			throw new TypeError("Cannot call a class as a function");
-		}
+	    if (!(instance instanceof Constructor)) {
+	        throw new TypeError("Cannot call a class as a function");
+	    }
 	}
 
 	function _possibleConstructorReturn(self, call) {
-		if (!self) {
-			throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-		}return call && ((typeof call === "undefined" ? "undefined" : _typeof(call)) === "object" || typeof call === "function") ? call : self;
+	    if (!self) {
+	        throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+	    }return call && ((typeof call === "undefined" ? "undefined" : _typeof(call)) === "object" || typeof call === "function") ? call : self;
 	}
 
 	function _inherits(subClass, superClass) {
-		if (typeof superClass !== "function" && superClass !== null) {
-			throw new TypeError("Super expression must either be null or a function, not " + (typeof superClass === "undefined" ? "undefined" : _typeof(superClass)));
-		}subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-	}
+	    if (typeof superClass !== "function" && superClass !== null) {
+	        throw new TypeError("Super expression must either be null or a function, not " + (typeof superClass === "undefined" ? "undefined" : _typeof(superClass)));
+	    }subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+	} /**
+	  * @file 星期头部标题
+	  * @author xijiawei@baidu.com
+	  */
 
 	var WeekLabel = function (_Component) {
-		_inherits(WeekLabel, _Component);
+	    _inherits(WeekLabel, _Component);
 
-		function WeekLabel() {
-			var _Object$getPrototypeO;
+	    function WeekLabel() {
+	        var _Object$getPrototypeO;
 
-			_classCallCheck(this, WeekLabel);
+	        _classCallCheck(this, WeekLabel);
 
-			for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-				args[_key] = arguments[_key];
-			}
+	        for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+	            args[_key] = arguments[_key];
+	        }
 
-			return _possibleConstructorReturn(this, (_Object$getPrototypeO = Object.getPrototypeOf(WeekLabel)).call.apply(_Object$getPrototypeO, [this].concat(args)));
-		}
+	        return _possibleConstructorReturn(this, (_Object$getPrototypeO = Object.getPrototypeOf(WeekLabel)).call.apply(_Object$getPrototypeO, [this].concat(args)));
+	    }
 
-		_createClass(WeekLabel, [{
-			key: 'render',
-			value: function render() {
-				var className = this.props.className || 'DayPicker-Weekday';
-				var _props = this.props;
-				var localeUtils = _props.localeUtils;
-				var weekDay = _props.weekDay;
+	    _createClass(WeekLabel, [{
+	        key: 'render',
+	        value: function render() {
+	            var className = this.props.className || 'DayPicker-Weekday';
+	            var _props = this.props;
+	            var localeUtils = _props.localeUtils;
+	            var weekDay = _props.weekDay;
 
-				return _react2.default.createElement('div', { className: className }, _react2.default.createElement('div', null, (0, _Utils.formatWeekday)(weekDay)));
-			}
-		}]);
+	            return _react2.default.createElement('div', { className: className }, _react2.default.createElement('div', null, (0, _Utils.formatWeekday)(weekDay)));
+	        }
+	    }]);
 
-		return WeekLabel;
+	    return WeekLabel;
 	}(_react.Component);
 
 	WeekLabel.propTypes = {
-		className: _react.PropTypes.string,
-		weekDay: _react.PropTypes.number
-
+	    className: _react.PropTypes.string,
+	    weekDay: _react.PropTypes.number
 	};
-	WeekLabel.defaultProps = {};
 	exports.default = WeekLabel;
 	//# sourceMappingURL=WeekLabel.js.map
 
@@ -21753,100 +21752,114 @@
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
-	  value: true
+	    value: true
 	});
-	exports.formatDay = formatDay;
 	exports.formatMonthTitle = formatMonthTitle;
 	exports.formatWeekday = formatWeekday;
-	exports.formatWeekdayShort = formatWeekdayShort;
-	exports.formatWeekdayLong = formatWeekdayLong;
-	exports.getFirstDayOfWeek = getFirstDayOfWeek;
 	exports.getMonths = getMonths;
+	exports.clone = clone;
 	exports.addMonths = addMonths;
 	exports.isSameDay = isSameDay;
 	exports.isDayInRange = isDayInRange;
 	exports.isDayBetween = isDayBetween;
-	exports.addDayToRange = addDayToRange;
-	exports.getModifiersForDay = getModifiersForDay;
-	exports.getWeekArray = getWeekArray;
 	exports.getFirstDayOfMonth = getFirstDayOfMonth;
 	exports.getDayNumOfMonth = getDayNumOfMonth;
-	exports.clone = clone;
+	exports.getWeekArray = getWeekArray;
+	exports.getModifiersForDay = getModifiersForDay;
+	/**
+	* @file 组件工具函数
+	* @author xijiawei@baidu.com
+	*/
+
+	// 星期文案
 	var WEEKDAYS = ['日', '一', '二', '三', '四', '五', '六'];
 
-	var WEEKDAYS_EN = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-
-	var WEEKDAYS_EN_SHORT = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'];
-
+	// 月份文案
 	var MONTHS = ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月'];
 
-	var MONTHS_EN = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-
-	function formatDay(day) {
-	  return day.toDateString();
-	}
-
+	/**
+	 * 生成年月文案
+	 *
+	 * @param  {Date} 
+	 * @return {string} 返回对应文案
+	 */
 	function formatMonthTitle(d) {
-	  return d.getFullYear() + '年 ' + MONTHS[d.getMonth()];
-	}
-
-	function formatWeekday(i) {
-	  return WEEKDAYS[i];
-	}
-
-	function formatWeekdayShort(i) {
-	  return WEEKDAYS_EN_SHORT[i];
-	}
-
-	function formatWeekdayLong(i) {
-	  return WEEKDAYS_EN[i];
-	}
-
-	function getFirstDayOfWeek() {
-	  return 0;
-	}
-
-	function getMonths() {
-	  return MONTHS;
-	}
-
-	function addMonths(day, n) {
-	  var newDate = clone(day);
-	  newDate.setMonth(day.getMonth() + n);
-	  return newDate;
+	    return d.getFullYear() + '年 ' + MONTHS[d.getMonth()];
 	}
 
 	/**
-	 * Return `true` if two dates are the same day, ignoring the time.
+	 * 获取星期文案
+	 *
+	 * @param  {number} i 星期几
+	 * @return {string} 返回对应文案
+	 */
+	function formatWeekday(i) {
+	    return WEEKDAYS[i];
+	}
+
+	/**
+	 * 获取星期文案
+	 *
+	 * @return {Array} 返回全部月份文案
+	 */
+	function getMonths() {
+	    return MONTHS;
+	}
+
+	/**
+	 * 拷贝一个Date对象
+	 *
+	 * @param  {Date} day 要拷贝的Date对象
+	 * @return {Date} 返回的Date对象
+	 */
+	function clone(day) {
+	    return new Date(day.getTime());
+	}
+
+	/**
+	 * 增加\减少某个Date对象的月份
+	 *
+	 * @param  {Date} day 要修改的Date对象
+	 * @param  {number} n 要增加\减少的月数
+	 * @return {Date} 返回的Date对象
+	 */
+	function addMonths(day, n) {
+	    var newDate = clone(day);
+	    newDate.setMonth(day.getMonth() + n);
+	    return newDate;
+	}
+
+	/**
+	 * 判断两个日期是否是同一天
 	 *
 	 * @param  {Date}  d1
 	 * @param  {Date}  d2
 	 * @return {Boolean}
 	 */
 	function isSameDay(d1, d2) {
-	  if (!d1 || !d2) {
-	    return false;
-	  }
-	  return d1.getDate() === d2.getDate() && d1.getMonth() === d2.getMonth() && d1.getFullYear() === d2.getFullYear();
+	    if (!d1 || !d2) {
+	        return false;
+	    }
+	    return d1.getDate() === d2.getDate() && d1.getMonth() === d2.getMonth() && d1.getFullYear() === d2.getFullYear();
 	}
 
 	/**
-	 * Return `true` if a day is included in a range of days.
+	 * 判断一个日期是否在一个范围内（包含边界）
 	 *
 	 * @param  {Date}  day
 	 * @param  {Object}  range
 	 * @return {Boolean}
 	 */
 	function isDayInRange(day, range) {
-	  var from = range.from;
-	  var to = range.to;
+	    var from = range.from;
+	    var to = range.to;
 
-	  return from && isSameDay(day, from) || to && isSameDay(day, to) || from && to && isDayBetween(day, from, to);
+	    return from && isSameDay(day, from) || to && isSameDay(day, to) || from && to && isDayBetween(day, from, to);
 	}
 
 	/**
-	 * Return `true` if day `d` is between days `d1` and `d2`,
-	 * without including them.
+	 * 判断一个日期是否在另外两个日期之间
+	 * 不包含边界
 	 *
 	 * @param  {Date}  d
 	 * @param  {Date}  d1
@@ -21854,142 +21867,117 @@
 	 * @return {Boolean}
 	 */
 	function isDayBetween(d, d1, d2) {
-	  var date = clone(d);
-	  var date1 = clone(d1);
-	  var date2 = clone(d2);
+	    var date = clone(d);
+	    var date1 = clone(d1);
+	    var date2 = clone(d2);
 
-	  date.setHours(0, 0, 0, 0);
-	  date1.setHours(0, 0, 0, 0);
-	  date2.setHours(0, 0, 0, 0);
-	  return date1 < date && date < date2 || date2 < date && date < date1;
+	    date.setHours(0, 0, 0, 0);
+	    date1.setHours(0, 0, 0, 0);
+	    date2.setHours(0, 0, 0, 0);
+	    return date1 < date && date < date2 || date2 < date && date < date1;
 	}
 
 	/**
-	 * Add a day to a range and return a new range. A range is an object with
-	 * `from` and `to` days.
+	 * 获取一个日期所在的月份的第一天
 	 *
-	 * @param {Date} day
-	 * @param {Object} range
-	 * @return {Object} Returns a new range object
+	 * @param  {Date}  day
+	 * @return {Boolean}
 	 */
-	function addDayToRange(day) {
-	  var range = arguments.length <= 1 || arguments[1] === undefined ? { from: null, to: null } : arguments[1];
-	  var from = range.from;
-	  var to = range.to;
+	function getFirstDayOfMonth(day) {
+	    return new Date(day.getFullYear(), day.getMonth(), 1, 12);
+	}
 
-	  if (!from) {
-	    from = day;
-	  } else if (from && to && isSameDay(from, to) && isSameDay(day, from)) {
-	    from = null;
-	    to = null;
-	  } else if (to && day < from) {
-	    from = day;
-	  } else if (to && isSameDay(day, to)) {
-	    from = day;
-	    to = day;
-	  } else {
-	    to = day;
-	    if (to < from) {
-	      to = from;
-	      from = day;
+	/**
+	 * 获取一个日期所在的月份的总天数
+	 *
+	 * @param  {Date}  day
+	 * @return {Boolean}
+	 */
+	function getDayNumOfMonth(day) {
+	    var resultDate = getFirstDayOfMonth(day);
+
+	    resultDate.setMonth(resultDate.getMonth() + 1);
+	    resultDate.setDate(resultDate.getDate() - 1);
+
+	    return resultDate.getDate();
+	}
+
+	/**
+	 * 把给定月份按星期的生成
+	 *
+	 * @param  {Date}  day
+	 * @param  {Number=} firstDayOfWeek 
+	 * @return {Array}
+	 */
+	function getWeekArray(day) {
+	    var firstDayOfWeek = arguments.length <= 1 || arguments[1] === undefined ? 0 : arguments[1];
+
+	    var dayNumOfMonth = getDayNumOfMonth(day);
+	    var dayArray = [];
+
+	    for (var i = 1; i <= dayNumOfMonth; i++) {
+	        dayArray.push(new Date(day.getFullYear(), day.getMonth(), i, 12));
 	    }
-	  }
 
-	  return { from: from, to: to };
+	    var week = [];
+	    var weekArray = [];
+	    dayArray.forEach(function (day) {
+	        if (week.length > 0 && day.getDay() === firstDayOfWeek) {
+	            weekArray.push(week);
+	            week = [];
+	        }
+	        week.push(day);
+	        if (dayArray.indexOf(day) === dayArray.length - 1) {
+	            weekArray.push(week);
+	        }
+	    });
+
+	    var firstWeek = weekArray[0];
+	    var startIndex = 7 - firstWeek.length;
+	    for (var _i = startIndex; _i > 0; _i--) {
+	        var outsideDate = clone(firstWeek[0]);
+	        outsideDate.setDate(firstWeek[0].getDate() - 1);
+	        firstWeek.unshift(outsideDate);
+	    }
+
+	    var lastWeek = weekArray[weekArray.length - 1];
+	    for (var _i2 = lastWeek.length; _i2 < 7; _i2++) {
+	        var _outsideDate = clone(lastWeek[lastWeek.length - 1]);
+	        _outsideDate.setDate(lastWeek[lastWeek.length - 1].getDate() + 1);
+	        lastWeek.push(_outsideDate);
+	    }
+
+	    return weekArray;
+	    // return {
+	    //     'weekArray': weekArray,
+	    //     'weekIndexRange': {
+	    //         'startIndex': startIndex,
+	    //         'endIndex': startIndex + dayNumOfMonth - 1
+	    //     }
 	}
 
 	function getModifiersForDay(d) {
-	  var modifierFunctions = arguments.length <= 1 || arguments[1] === undefined ? {} : arguments[1];
+	    var modifierFunctions = arguments.length <= 1 || arguments[1] === undefined ? {} : arguments[1];
 
-	  return Object.keys(modifierFunctions).reduce(function (modifiers, modifier) {
-	    var func = modifierFunctions[modifier];
-	    if (func(d)) {
-	      modifiers.push(modifier);
-	    }
+	    return Object.keys(modifierFunctions).reduce(function (modifiers, modifier) {
+	        var func = modifierFunctions[modifier];
+	        if (func(d)) {
+	            modifiers.push(modifier);
+	        }
 
-	    return modifiers;
-	  }, []);
-	}
-
-	function getWeekArray(day) {
-	  var firstDayOfWeek = arguments.length <= 1 || arguments[1] === undefined ? getFirstDayOfWeek() : arguments[1];
-
-	  var dayNumOfMonth = getDayNumOfMonth(day);
-	  var dayArray = [];
-
-	  for (var i = 1; i <= dayNumOfMonth; i++) {
-	    dayArray.push(new Date(day.getFullYear(), day.getMonth(), i, 12));
-	  }
-
-	  var week = [];
-	  var weekArray = [];
-	  dayArray.forEach(function (day) {
-	    if (week.length > 0 && day.getDay() === firstDayOfWeek) {
-	      weekArray.push(week);
-	      week = [];
-	    }
-	    week.push(day);
-	    if (dayArray.indexOf(day) === dayArray.length - 1) {
-	      weekArray.push(week);
-	    }
-	  });
-	  // unshift days to start the first week
-	  var firstWeek = weekArray[0];
-	  var startIndex = 7 - firstWeek.length;
-	  for (var _i = startIndex; _i > 0; _i--) {
-	    var outsideDate = clone(firstWeek[0]);
-	    outsideDate.setDate(firstWeek[0].getDate() - 1);
-	    firstWeek.unshift(outsideDate);
-	  }
-
-	  var lastWeek = weekArray[weekArray.length - 1];
-	  for (var _i2 = lastWeek.length; _i2 < 7; _i2++) {
-	    var _outsideDate = clone(lastWeek[lastWeek.length - 1]);
-	    _outsideDate.setDate(lastWeek[lastWeek.length - 1].getDate() + 1);
-	    lastWeek.push(_outsideDate);
-	  }
-	  // console.log(firstWeek);
-
-	  return {
-	    'weekArray': weekArray,
-	    'weekIndexRange': {
-	      'startIndex': startIndex,
-	      'endIndex': startIndex + dayNumOfMonth - 1
-	    }
-	  };
-	}
-
-	function getFirstDayOfMonth(day) {
-	  return new Date(day.getFullYear(), day.getMonth(), 1, 12);
-	}
-
-	function getDayNumOfMonth(day) {
-	  var resultDate = getFirstDayOfMonth(day);
-
-	  resultDate.setMonth(resultDate.getMonth() + 1);
-	  resultDate.setDate(resultDate.getDate() - 1);
-
-	  return resultDate.getDate();
-	}
-
-	function clone(day) {
-	  return new Date(day.getTime());
+	        return modifiers;
+	    }, []);
 	}
 
 	exports.default = {
-	  formatDay: formatDay,
-	  formatMonthTitle: formatMonthTitle,
-	  formatWeekday: formatWeekday,
-	  formatWeekdayShort: formatWeekdayShort,
-	  formatWeekdayLong: formatWeekdayLong,
-	  getFirstDayOfWeek: getFirstDayOfWeek,
-	  getMonths: getMonths,
-	  getWeekArray: getWeekArray,
-	  addMonths: addMonths,
-	  isSameDay: isSameDay,
-	  isDayInRange: isDayInRange,
-	  addDayToRange: addDayToRange,
-	  getModifiersForDay: getModifiersForDay
+	    formatMonthTitle: formatMonthTitle,
+	    formatWeekday: formatWeekday,
+	    getMonths: getMonths,
+	    getWeekArray: getWeekArray,
+	    addMonths: addMonths,
+	    isSameDay: isSameDay,
+	    isDayInRange: isDayInRange,
+	    getModifiersForDay: getModifiersForDay
 	};
 	//# sourceMappingURL=Utils.js.map
 
@@ -22002,17 +21990,17 @@
 	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
 
 	Object.defineProperty(exports, "__esModule", {
-		value: true
+	    value: true
 	});
 
 	var _createClass = function () {
-		function defineProperties(target, props) {
-			for (var i = 0; i < props.length; i++) {
-				var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);
-			}
-		}return function (Constructor, protoProps, staticProps) {
-			if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;
-		};
+	    function defineProperties(target, props) {
+	        for (var i = 0; i < props.length; i++) {
+	            var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);
+	        }
+	    }return function (Constructor, protoProps, staticProps) {
+	        if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;
+	    };
 	}();
 
 	var _react = __webpack_require__(1);
@@ -22026,106 +22014,106 @@
 	var _Day2 = _interopRequireDefault(_Day);
 
 	function _interopRequireDefault(obj) {
-		return obj && obj.__esModule ? obj : { default: obj };
+	    return obj && obj.__esModule ? obj : { default: obj };
 	}
 
 	function _classCallCheck(instance, Constructor) {
-		if (!(instance instanceof Constructor)) {
-			throw new TypeError("Cannot call a class as a function");
-		}
+	    if (!(instance instanceof Constructor)) {
+	        throw new TypeError("Cannot call a class as a function");
+	    }
 	}
 
 	function _possibleConstructorReturn(self, call) {
-		if (!self) {
-			throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-		}return call && ((typeof call === "undefined" ? "undefined" : _typeof(call)) === "object" || typeof call === "function") ? call : self;
+	    if (!self) {
+	        throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+	    }return call && ((typeof call === "undefined" ? "undefined" : _typeof(call)) === "object" || typeof call === "function") ? call : self;
 	}
 
 	function _inherits(subClass, superClass) {
-		if (typeof superClass !== "function" && superClass !== null) {
-			throw new TypeError("Super expression must either be null or a function, not " + (typeof superClass === "undefined" ? "undefined" : _typeof(superClass)));
-		}subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-	}
+	    if (typeof superClass !== "function" && superClass !== null) {
+	        throw new TypeError("Super expression must either be null or a function, not " + (typeof superClass === "undefined" ? "undefined" : _typeof(superClass)));
+	    }subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+	} /**
+	  * @file 星期
+	  * @author xijiawei@baidu.com
+	  */
 
 	var week = function (_Component) {
-		_inherits(week, _Component);
+	    _inherits(week, _Component);
 
-		function week() {
-			var _Object$getPrototypeO;
+	    function week() {
+	        var _Object$getPrototypeO;
 
-			_classCallCheck(this, week);
+	        _classCallCheck(this, week);
 
-			for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-				args[_key] = arguments[_key];
-			}
+	        for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+	            args[_key] = arguments[_key];
+	        }
 
-			return _possibleConstructorReturn(this, (_Object$getPrototypeO = Object.getPrototypeOf(week)).call.apply(_Object$getPrototypeO, [this].concat(args)));
-		}
+	        return _possibleConstructorReturn(this, (_Object$getPrototypeO = Object.getPrototypeOf(week)).call.apply(_Object$getPrototypeO, [this].concat(args)));
+	    }
 
-		_createClass(week, [{
-			key: 'render',
-			value: function render() {
-				var className = this.props.className || 'DayPicker-Day';
-				var _props = this.props;
-				var weekDays = _props.weekDays;
-				var weekIndex = _props.weekIndex;
-				var weekIndexRange = _props.weekIndexRange;
-				var selectedDays = _props.selectedDays;
-				var disabledDays = _props.disabledDays;
-				var month = _props.month;
-				var fixedWeeks = _props.fixedWeeks;
-				var onDayClick = _props.onDayClick;
-				var modifiers = _props.modifiers;
+	    _createClass(week, [{
+	        key: 'render',
+	        value: function render() {
+	            var className = this.props.className || 'DayPicker-Day';
+	            var _props = this.props;
+	            var weekDays = _props.weekDays;
+	            var weekIndex = _props.weekIndex;
+	            var selectedDays = _props.selectedDays;
+	            var disabledDays = _props.disabledDays;
+	            var month = _props.month;
+	            var fixedWeeks = _props.fixedWeeks;
+	            var onDayClick = _props.onDayClick;
+	            var modifiers = _props.modifiers;
 
-				var days = weekDays.map(function (day, index) {
-					// let dayIndex = weekIndex * 7 + index;
-					// let empty = (dayIndex > weekIndexRange.endIndex || 
-					// dayIndex < weekIndexRange.startIndex);
-					var isOutside = day.getMonth() !== month.getMonth();
+	            var days = weekDays.map(function (day, index) {
 
-					var empty = isOutside && !fixedWeeks;
-					return _react2.default.createElement(_Day2.default, { className: className,
-						children: day.getDate(),
-						day: day,
-						month: month,
-						modifiers: modifiers,
-						key: index,
-						empty: empty,
-						selectedDays: selectedDays,
-						disabledDays: disabledDays,
-						fixedWeeks: fixedWeeks,
-						onDayClick: onDayClick
-					});
-				});
+	                var isOutside = day.getMonth() !== month.getMonth();
+	                var empty = isOutside && !fixedWeeks;
 
-				return _react2.default.createElement('div', { className: 'DayPicker-Week' }, days);
-			}
-		}]);
+	                return _react2.default.createElement(_Day2.default, {
+	                    className: className,
+	                    children: day.getDate(),
+	                    day: day,
+	                    month: month,
+	                    modifiers: modifiers,
+	                    key: index,
+	                    empty: empty,
+	                    selectedDays: selectedDays,
+	                    disabledDays: disabledDays,
+	                    fixedWeeks: fixedWeeks,
+	                    onDayClick: onDayClick
+	                });
+	            });
 
-		return week;
+	            return _react2.default.createElement('div', { className: 'DayPicker-Week' }, days);
+	        }
+	    }]);
+
+	    return week;
 	}(_react.Component);
 
 	week.propTypes = {
-		className: _react.PropTypes.string,
+	    className: _react.PropTypes.string,
 
-		weekDays: _react.PropTypes.array,
+	    weekDays: _react.PropTypes.array,
 
-		weekIndexRange: _react.PropTypes.object,
-		modifiers: _react.PropTypes.object,
+	    modifiers: _react.PropTypes.object,
 
-		weekIndex: _react.PropTypes.number,
+	    weekIndex: _react.PropTypes.number,
 
-		month: _react.PropTypes.instanceOf(Date).isRequired,
+	    month: _react.PropTypes.instanceOf(Date).isRequired,
 
-		disabledDays: _react.PropTypes.func,
-		selectedDays: _react.PropTypes.func,
-		onDayClick: _react.PropTypes.func,
+	    disabledDays: _react.PropTypes.func,
+	    selectedDays: _react.PropTypes.func,
+	    onDayClick: _react.PropTypes.func,
 
-		fixedWeeks: _react.PropTypes.bool
+	    fixedWeeks: _react.PropTypes.bool
 
 	};
 	week.defaultProps = {
-		modifiers: {}
+	    modifiers: {}
 	};
 	exports.default = week;
 	//# sourceMappingURL=Week.js.map
@@ -22198,7 +22186,10 @@
 	    if (typeof superClass !== "function" && superClass !== null) {
 	        throw new TypeError("Super expression must either be null or a function, not " + (typeof superClass === "undefined" ? "undefined" : _typeof(superClass)));
 	    }subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-	}
+	} /**
+	  * @file day
+	  * @author xijiawei@baidu.com
+	  */
 
 	var day = function (_Component) {
 	    _inherits(day, _Component);
@@ -22211,7 +22202,6 @@
 	        var _this = _possibleConstructorReturn(this, (_Object$getPrototypeO = Object.getPrototypeOf(day)).call.apply(_Object$getPrototypeO, [this].concat(_toConsumableArray(args))));
 
 	        _this.handleEvent = _this.handleEvent.bind(_this);
-	        // this.handleDayClick = this.handleDayClick.bind(this);
 	        return _this;
 	    }
 
@@ -22219,23 +22209,16 @@
 	        key: 'getModifiersFromProps',
 	        value: function getModifiersFromProps(props) {
 	            var modifiers = _extends({}, props.modifiers);
+
 	            if (props.selectedDays) {
 	                modifiers.selected = props.selectedDays;
 	            }
 	            if (props.disabledDays) {
 	                modifiers.disabled = props.disabledDays;
 	            }
+
 	            return modifiers;
 	        }
-
-	        // handleDayClick(e, day, modifiers) {
-	        //     // e.persist();
-	        //     if (modifiers.outside) {
-	        //       // this.handleOutsideDayClick(day);
-	        //     }
-	        //     this.props.onDayClick(e, day, modifiers);
-	        // }
-
 	    }, {
 	        key: 'render',
 	        value: function render() {
@@ -22251,7 +22234,6 @@
 	            var dayModifiers = [];
 
 	            var isOutside = day.getMonth() !== month.getMonth();
-
 	            if (isOutside) {
 	                dayModifiers.push('outside');
 	            }
@@ -22263,7 +22245,8 @@
 	                return ' ' + className + '--' + modifier;
 	            }).join('');
 
-	            return _react2.default.createElement('div', { className: className,
+	            return _react2.default.createElement('div', {
+	                className: className,
 	                tabIndex: this.props.tabIndex,
 	                onClick: !empty ? this.handleEvent(onDayClick, day, dayModifiers) : undefined
 	            }, empty ? '' : children);
@@ -22278,7 +22261,6 @@
 	            modifiers.forEach(function (modifier) {
 	                dayState[modifier] = true;
 	            });
-	            // onClick();
 	            return function (e) {
 	                handler(e, day, dayState);
 	            };
@@ -22662,17 +22644,17 @@
 	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
 
 	Object.defineProperty(exports, "__esModule", {
-	  value: true
+	    value: true
 	});
 
 	var _createClass = function () {
-	  function defineProperties(target, props) {
-	    for (var i = 0; i < props.length; i++) {
-	      var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);
-	    }
-	  }return function (Constructor, protoProps, staticProps) {
-	    if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;
-	  };
+	    function defineProperties(target, props) {
+	        for (var i = 0; i < props.length; i++) {
+	            var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);
+	        }
+	    }return function (Constructor, protoProps, staticProps) {
+	        if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;
+	    };
 	}();
 
 	var _react = __webpack_require__(1);
@@ -22682,59 +22664,62 @@
 	var _Utils = __webpack_require__(178);
 
 	function _interopRequireDefault(obj) {
-	  return obj && obj.__esModule ? obj : { default: obj };
+	    return obj && obj.__esModule ? obj : { default: obj };
 	}
 
 	function _classCallCheck(instance, Constructor) {
-	  if (!(instance instanceof Constructor)) {
-	    throw new TypeError("Cannot call a class as a function");
-	  }
+	    if (!(instance instanceof Constructor)) {
+	        throw new TypeError("Cannot call a class as a function");
+	    }
 	}
 
 	function _possibleConstructorReturn(self, call) {
-	  if (!self) {
-	    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-	  }return call && ((typeof call === "undefined" ? "undefined" : _typeof(call)) === "object" || typeof call === "function") ? call : self;
+	    if (!self) {
+	        throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+	    }return call && ((typeof call === "undefined" ? "undefined" : _typeof(call)) === "object" || typeof call === "function") ? call : self;
 	}
 
 	function _inherits(subClass, superClass) {
-	  if (typeof superClass !== "function" && superClass !== null) {
-	    throw new TypeError("Super expression must either be null or a function, not " + (typeof superClass === "undefined" ? "undefined" : _typeof(superClass)));
-	  }subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-	}
+	    if (typeof superClass !== "function" && superClass !== null) {
+	        throw new TypeError("Super expression must either be null or a function, not " + (typeof superClass === "undefined" ? "undefined" : _typeof(superClass)));
+	    }subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+	} /**
+	  * @file 每个月的头部年份月份标题
+	  * @author xijiawei@baidu.com
+	  */
 
-	var Month = function (_Component) {
-	  _inherits(Month, _Component);
+	var Caption = function (_Component) {
+	    _inherits(Caption, _Component);
 
-	  function Month() {
-	    _classCallCheck(this, Month);
+	    function Caption() {
+	        _classCallCheck(this, Caption);
 
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Month).apply(this, arguments));
-	  }
-
-	  _createClass(Month, [{
-	    key: 'render',
-	    value: function render() {
-	      // {localeUtils.formatMonthTitle(date, locale)}
-	      var _props = this.props;
-	      var className = _props.className;
-	      var date = _props.date;
-
-	      return _react2.default.createElement('div', { className: className }, (0, _Utils.formatMonthTitle)(date));
+	        return _possibleConstructorReturn(this, Object.getPrototypeOf(Caption).apply(this, arguments));
 	    }
-	  }]);
 
-	  return Month;
+	    _createClass(Caption, [{
+	        key: 'render',
+	        value: function render() {
+	            var _props = this.props;
+	            var className = _props.className;
+	            var date = _props.date;
+
+	            return _react2.default.createElement('div', { className: className }, (0, _Utils.formatMonthTitle)(date));
+	        }
+	    }]);
+
+	    return Caption;
 	}(_react.Component);
 
-	Month.propTypes = {
-	  date: _react.PropTypes.instanceOf(Date),
-	  onClick: _react.PropTypes.func
+	Caption.propTypes = {
+	    // 传入的Date对象，通过这个对象生成对应的月份标题
+	    date: _react.PropTypes.instanceOf(Date)
 	};
-	Month.defaultProps = {
-	  className: 'DayPicker-Caption'
+	Caption.defaultProps = {
+	    // 默认的className
+	    className: 'DayPicker-Caption'
 	};
-	exports.default = Month;
+	exports.default = Caption;
 	//# sourceMappingURL=Caption.js.map
 
 /***/ },
@@ -22775,8 +22760,7 @@
 /* 209 */,
 /* 210 */,
 /* 211 */,
-/* 212 */,
-/* 213 */
+/* 212 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';

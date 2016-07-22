@@ -6,6 +6,13 @@
 import React, { Component, PropTypes } from 'react';
 import {formatMonthTitle} from './Utils.js';
 
+
+/**
+ * 切换月份Tab组件类
+ *
+ * @class
+ * @extends Component
+ */
 export default class Caption extends Component {
     static propTypes = {
         // 传入的Date对象，通过这个对象生成对应的月份标题

@@ -1,33 +1,46 @@
 /**
-* @file 月份
+* @file 月份组件
 * @author xijiawei@baidu.com
 */
 
 import React, { Component, PropTypes } from 'react';
 import WeekLabel from './WeekLabel.js';
 import Week from './Week.js';
-import {getWeekArray, getMonthIndexRange} from './Utils.js';
+import { getWeekArray } from './Utils.js';
 
+/**
+ * 月份组件类
+ *
+ * @class
+ * @extends Component
+ */
 export default class Month extends Component {
 
     static propTypes = {
+        // 月份Date对象
         month: PropTypes.instanceOf(Date).isRequired,
-
+        // 头部标题组件
         captionElement: PropTypes.node.isRequired,
-
+        // 可设置的className
         className: PropTypes.string,
 
         modifiers: PropTypes.object,
 
+        // 禁止操作的日期判断函数
         disabledDays: PropTypes.func,
+        // 选中日期判断函数
         selectedDays: PropTypes.func,
+        // 点击非禁止操作日期的回调函数
         onDayClick: PropTypes.func,
 
+        // 补全日期
         fixedWeeks: PropTypes.bool
     };
 
     static defaultProps = {
+        // 用户没有设置初始日期则用当前月份
         month: new Date(),
+        // 默认className
         className: 'DayPicker-Month',
         modifiers: {}
     };
@@ -45,6 +58,7 @@ export default class Month extends Component {
             modifiers 
         } = this.props;
 
+        // 生成星期标题
         for (let i = 0; i < 7; i++) {
             const eleProps = {
                 className: 'DayPicker-Weekday',
@@ -62,7 +76,6 @@ export default class Month extends Component {
                     weekDays = {week} 
                     key = {index}
                     month = {month}
-                    weekIndex = {index}
                     selectedDays = {selectedDays}
                     disabledDays = {disabledDays}
                     fixedWeeks = {fixedWeeks}
