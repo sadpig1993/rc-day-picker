@@ -16,7 +16,7 @@ global.navigator = global.window.navigator;
 
 describe('DayPicker', () => {
 
-    describe('渲染', () => {
+    describe('渲染测试', () => {
         it('默认Props检查', () => {
             const dayPicker = <DayPicker />;
             const now = new Date();
@@ -88,7 +88,66 @@ describe('DayPicker', () => {
             expect(wrapper.find('.DayPicker-Day').at(3)).to.have.text('29');
             expect(wrapper.find('.DayPicker-Day').at(4)).to.have.text('30');
         });
-    })
+    });
+
+    describe('自带修饰器、自定义修饰器测试', () => {
+        it('添加自带选中日期修饰器，当月所有日期都被选中', () => {
+            const wrapper = mount(<DayPicker initialMonth={new Date(2016, 6)} selectedDays={() => true} />);
+            expect(wrapper.find('.DayPicker-Day--selected')).to.have.length(42);
+        });
+        it('添加自带禁止操作日期修饰器，当月所有日期都不可操作', () => {
+            const wrapper = mount(<DayPicker initialMonth={new Date(2016, 6)} disabledDays={() => true} />);
+            expect(wrapper.find('.DayPicker-Day--disabled')).to.have.length(42);
+        });
+        it('添加一个修饰器foo能够在className体现', () => {
+            const wrapper = mount(<DayPicker initialMonth={new Date(2016, 6)} modifiers={{ foo: () => true }} />);
+            expect(wrapper.find('.DayPicker-Day--foo')).to.have.length(42);
+        });
+    });
+
+    describe('月份调整：showNextMonth()', () => {
+        it('currentMonth要变成下个月', () => {
+          const instance = shallow(
+            <DayPicker
+              initialMonth={new Date(2016, 6)}
+              numberOfMonths={2}
+            />
+          ).instance();
+          instance.showNextMonth();
+          expect(instance.state.currentMonth.getFullYear()).to.equal(2016);
+          expect(instance.state.currentMonth.getMonth()).to.equal(7);
+        });
+    });
+    describe('月份调整：showPreviousMonth()', () => {
+        it('currentMonth要变成上个月', () => {
+          const instance = shallow(
+            <DayPicker
+              initialMonth={new Date(2016, 6)}
+              numberOfMonths={2}
+            />
+          ).instance();
+          instance.showPreviousMonth();
+          expect(instance.state.currentMonth.getFullYear()).to.equal(2016);
+          expect(instance.state.currentMonth.getMonth()).to.equal(5);
+        });
+    });
+    describe('任意月份调整:ShowMonth()', () => {
+        it('2016年7月', () => {
+          const instance = shallow(
+            <DayPicker
+              initialMonth={new Date(2015, 6)}
+              numberOfMonths={2}
+            />
+          ).instance();
+          instance.showMonth(new Date(2016, 6, 1));
+          expect(instance.state.currentMonth.getFullYear()).to.equal(2016);
+          expect(instance.state.currentMonth.getMonth()).to.equal(6);
+          expect(instance.state.currentMonth.getDate()).to.equal(1);
+        });
+    });
+    describe('事件处理eventHandlers', () => {
+
+    });
     
 });
 /* eslint-disable */
