@@ -1,11 +1,15 @@
 /* eslint-disable */
 import chai, { expect } from 'chai';
 import DayPicker from '../lib/DayPicker.js';
+import SyntheticEvent from 'react/lib/SyntheticEvent';
 import React from 'react';
 import { shallow, mount, render } from 'enzyme';
 import { jsdom } from 'jsdom';
+import sinon, { spy } from 'sinon';
+import sinonChai from 'sinon-chai';
 import chaiEnzyme from 'chai-enzyme';
 
+chai.use(sinonChai);
 chai.use(chaiEnzyme());
 
 global.document = jsdom('<!doctype html><html><body></body></html>');
@@ -146,7 +150,26 @@ describe('DayPicker', () => {
         });
     });
     describe('事件处理eventHandlers', () => {
+        it('应该在day组件被点击后响应事件', () => {
+            const handleDayClick = spy();
+            const modifiers = { click: d => d.getDate() === 15 };
+            const wrapper = mount(
+                <DayPicker
+                    modifiers = {modifiers}
+                    onDayClick = {handleDayClick}
+                />
+            );
 
+            const eventArgs = [
+                sinon.match(e => e instanceof SyntheticEvent && e.target !== null, 'e'),
+                sinon.match(date => date.getFullYear() === (new Date()).getFullYear() && date.getMonth() === (new Date()).getMonth(), 'currentMonth'),
+                sinon.match(mods => mods.click, 'modifiers')
+            ];
+
+            wrapper.find('.DayPicker-Day--click').simulate('click');
+            expect(handleDayClick).to.have.been.calledWith(...eventArgs);
+
+        });
     });
     
 });
