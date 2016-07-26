@@ -1,0 +1,44 @@
+{
+  "name": "rc-day-picker-examples",
+  "version": "1.0.0",
+  "description": "Day picker examples",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "sadpig",
+  "license": "MIT",
+  "dependencies": {
+    "autoprefixer-loader": "^3.1.0",
+    "babel-cli": "6.10.1",
+    "babel-core": "6.10.4",
+    "babel-eslint": "6.0.4",
+    "babel-polyfill": "^6.9.1",
+    "babel-preset-es2015": "6.9.0",
+    "babel-preset-react": "6.11.1",
+    "babel-preset-stage-0": "6.5.0",
+    "babel-register": "6.9.0",
+    "babel-runtime": "6.9.2",
+    "css-loader": "0.23.1",
+    "eslint-config-airbnb": "9.0.1",
+    "eslint-plugin-import": "1.9.2",
+    "eslint-plugin-jsx-a11y": "1.5.3",
+    "eslint-plugin-react": "5.2.2",
+    "file-loader": "^0.8.4",
+    "history": "3.0.0",
+    "raw-loader": "^0.5.1",
+    "rc-day-picker": "../",
+    "react": "15.2.0",
+    "react-dom": "15.2.0",
+    "style-loader": "0.13.1",
+    "url-loader": "^0.5.6",
+    "webpack": "1.13.1"
+  },
+  "devDependencies": {
+    "babel-eslint": "6.1.0",
+    "core-js": "^2.4.1",
+    "eslint": "2.13.1",
+    "react-hot-loader": "^1.2.7",
+    "webpack-dev-server": "^1.9.0"
+  }
+}

@@ -35,5 +35,18 @@ module.exports = {
         loader: 'url?limit=10000&name=img/[name].[ext]'
       }
   	]
-  }
+  },
+  plugins: [
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: JSON.stringify('production'),
+      }
+    }),
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        //supresses warnings, usually from module minification
+        warnings: false
+      }
+    })
+  ]
 }
