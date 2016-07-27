@@ -26463,7 +26463,7 @@
 /* 227 */
 /***/ function(module, exports) {
 
-	module.exports = "import React, { Component, PropTypes } from 'react';\n\nimport ReactDom from 'react-dom';\nimport DayPicker, {Utils} from '../../../DayPicker.js';\n\n\nclass Ex8 extends Component {\n\n\tconstructor(...args) {\n\t\tsuper(...args);\n\t\tthis.state = {\n            start: this.props.start,\n            end: this.props.end\n        };\n\n        this.handleDayClick = this.handleDayClick.bind(this);\n\t}\n\tcomponentWillReceiveProps(nextProps) {\n        this.state.start = nextProps.start;\n        this.state.end = nextProps.end;\n        this.setState(this.state);\n    }\n\n    handleDayClick(e, day, modifiers) {\n        if (modifiers.disabled) {\n            return;\n        }\n\n        let start = this.state.start;\n        let end = this.state.end;\n\n        if (!start || !end || !Utils.isSameDay(start, end)) {\n            start = day;\n            end = day;\n        }\n        else {\n            end = day;\n            if (end < start) {\n                end = start;\n                start = day;\n            }\n        }\n\n        this.state.start = start;\n        this.state.end = end;\n        this.setState(this.state);\n        // this.props.onValueChange(this.state.start, this.state.end);\n    }\n\n\trender() {\n\t\t// let className = [this.props.className].join(' ');\n        let start = this.state.start;\n        let end = this.state.end;\n\n        let modifiers = {\n            selected(day) {\n                return (start && Utils.isSameDay(day, start))\n                || (end && Utils.isSameDay(day, end));\n            },\n            between(day) {\n                return start && end && Utils.isDayBetween(day, start, end);\n            }\n            // disabled: day => !isCloseBetween(day, this.props.allowPickStart, this.props.allowPickEnd)\n        };\n\t\t\n\t\treturn (<DayPicker \n\t\t\tnumberOfMonths = {2} \n\t\t\tmodifiers = {modifiers}\n\t\t\tonDayClick={this.handleDayClick}\n\t\t/>);\n\t}\n}\n\n\nexport default Ex8;\n\n\n// ReactDom.render(<Demo></Demo>, document.getElementById('root'));"
+	module.exports = "import React, { Component, PropTypes } from 'react';\n\nimport ReactDom from 'react-dom';\nimport DayPicker, {Utils} from '../../../DayPicker.js';\n\n\nclass Ex8 extends Component {\n\n\tconstructor(...args) {\n\t\tsuper(props);\n\t\tthis.state = {\n            start: props.start,\n            end: props.end\n        };\n\n        this.handleDayClick = this.handleDayClick.bind(this);\n\t}\n\tcomponentWillReceiveProps(nextProps) {\n        this.state.start = nextProps.start;\n        this.state.end = nextProps.end;\n        this.setState(this.state);\n    }\n\n    handleDayClick(e, day, modifiers) {\n        if (modifiers.disabled) {\n            return;\n        }\n\n        let start = this.state.start;\n        let end = this.state.end;\n\n        if (!start || !end || !Utils.isSameDay(start, end)) {\n            start = day;\n            end = day;\n        }\n        else {\n            end = day;\n            if (end < start) {\n                end = start;\n                start = day;\n            }\n        }\n\n        this.state.start = start;\n        this.state.end = end;\n        this.setState(this.state);\n        // this.props.onValueChange(this.state.start, this.state.end);\n    }\n\n\trender() {\n\t\t// let className = [this.props.className].join(' ');\n        let start = this.state.start;\n        let end = this.state.end;\n\n        let modifiers = {\n            selected(day) {\n                return (start && Utils.isSameDay(day, start))\n                || (end && Utils.isSameDay(day, end));\n            },\n            between(day) {\n                return start && end && Utils.isDayBetween(day, start, end);\n            }\n            // disabled: day => !isCloseBetween(day, this.props.allowPickStart, this.props.allowPickEnd)\n        };\n\t\t\n\t\treturn (<DayPicker \n\t\t\tnumberOfMonths = {2} \n\t\t\tmodifiers = {modifiers}\n\t\t\tonDayClick={this.handleDayClick}\n\t\t/>);\n\t}\n}\n\n\nexport default Ex8;\n\n\n// ReactDom.render(<Demo></Demo>, document.getElementById('root'));"
 
 /***/ },
 /* 228 */
@@ -26941,19 +26941,13 @@
 	    _inherits(Ex8, _Component);
 
 	    function Ex8() {
-	        var _Object$getPrototypeO;
-
 	        _classCallCheck(this, Ex8);
 
-	        for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-	            args[_key] = arguments[_key];
-	        }
-
-	        var _this = _possibleConstructorReturn(this, (_Object$getPrototypeO = Object.getPrototypeOf(Ex8)).call.apply(_Object$getPrototypeO, [this].concat(args)));
+	        var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Ex8).call(this, props));
 
 	        _this.state = {
-	            start: _this.props.start,
-	            end: _this.props.end
+	            start: props.start,
+	            end: props.end
 	        };
 
 	        _this.handleDayClick = _this.handleDayClick.bind(_this);

@@ -7,10 +7,10 @@ import DayPicker, {Utils} from '../../../DayPicker.js';
 class Ex8 extends Component {
 
 	constructor(...args) {
-		super(...args);
+		super(props);
 		this.state = {
-            start: this.props.start,
-            end: this.props.end
+            start: props.start,
+            end: props.end
         };
 
         this.handleDayClick = this.handleDayClick.bind(this);

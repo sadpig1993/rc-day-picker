@@ -25587,19 +25587,13 @@
 	    _inherits(Ex8, _Component);
 
 	    function Ex8() {
-	        var _Object$getPrototypeO;
-
 	        _classCallCheck(this, Ex8);
 
-	        for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-	            args[_key] = arguments[_key];
-	        }
-
-	        var _this = _possibleConstructorReturn(this, (_Object$getPrototypeO = Object.getPrototypeOf(Ex8)).call.apply(_Object$getPrototypeO, [this].concat(args)));
+	        var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Ex8).call(this, props));
 
 	        _this.state = {
-	            start: _this.props.start,
-	            end: _this.props.end
+	            start: props.start,
+	            end: props.end
 	        };
 
 	        _this.handleDayClick = _this.handleDayClick.bind(_this);
