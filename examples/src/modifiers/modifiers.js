@@ -1,16 +1,16 @@
 import React, { Component, PropTypes } from 'react';
 
 import ReactDom from 'react-dom';
-import DayPicker, {Utils} from 'rc-day-picker';
+import DayPicker, {Utils} from '../../../DayPicker.js';
 
 
 class Ex8 extends Component {
 
-	constructor(...args) {
-		super(...args);
+	constructor(props) {
+		super(props);
 		this.state = {
-            start: this.props.start,
-            end: this.props.end
+            start: props.start,
+            end: props.end
         };
 
         this.handleDayClick = this.handleDayClick.bind(this);

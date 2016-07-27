@@ -41,12 +41,12 @@ module.exports = {
       'process.env': {
         NODE_ENV: JSON.stringify('production'),
       }
-    }),
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        //supresses warnings, usually from module minification
-        warnings: false
-      }
     })
+    // new webpack.optimize.UglifyJsPlugin({
+    //   compress: {
+    //     //supresses warnings, usually from module minification
+    //     warnings: false
+    //   }
+    // })
   ]
 }

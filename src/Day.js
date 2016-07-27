@@ -43,8 +43,8 @@ export default class day extends Component {
         className: 'DayPicker-Day'
     };
 
-    constructor(args) {
-        super(...args)
+    constructor(props) {
+        super(props)
         this.handleEvent = this.handleEvent.bind(this);
     }
 
@@ -86,6 +86,8 @@ export default class day extends Component {
         if (isOutside) {
             dayModifiers.push('outside');
         }
+
+        var test  = getModifiersForDay(day, this.getModifiersFromProps(this.props));
 
         dayModifiers = [
             ...dayModifiers,

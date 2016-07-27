@@ -1,5 +1,4 @@
 require('babel-register');
-require("babel-polyfill");
 import React, { Component, PropTypes } from 'react';
 import ReactDom from 'react-dom';
 

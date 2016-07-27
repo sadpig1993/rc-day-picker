@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import DayPicker, {Utils} from 'rc-day-picker';
+import DayPicker, {Utils} from '../../../DayPicker.js';
 
 
 class Ex2 extends Component {
