@@ -68,9 +68,9 @@ export default class DayPicker extends Component {
         this.showNextMonth = this.showNextMonth.bind(this);
         this.showPreviousMonth = this.showPreviousMonth.bind(this);
         // 设置当前月份为传入的初始月份
-        this.state = {
-            currentMonth: this.props.initialMonth || new Date()
-        };
+        this.state = {};
+        this.state.currentMonth = this.props.initialMonth;
+        
     }
 
     componentWillReceiveProps(nextProps) {

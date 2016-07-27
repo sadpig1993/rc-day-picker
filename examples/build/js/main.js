@@ -20778,9 +20778,9 @@
 	        _this.showNextMonth = _this.showNextMonth.bind(_this);
 	        _this.showPreviousMonth = _this.showPreviousMonth.bind(_this);
 	        // 设置当前月份为传入的初始月份
-	        _this.state = {
-	            currentMonth: _this.props.initialMonth || new Date()
-	        };
+	        _this.state = {};
+	        _this.state.currentMonth = _this.props.initialMonth;
+	
 	        return _this;
 	    }
 	
