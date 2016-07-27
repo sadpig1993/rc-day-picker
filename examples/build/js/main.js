@@ -20764,22 +20764,16 @@
 	var DayPicker = function (_Component) {
 	    _inherits(DayPicker, _Component);
 	
-	    function DayPicker() {
-	        var _Object$getPrototypeO;
-	
+	    function DayPicker(props) {
 	        _classCallCheck(this, DayPicker);
 	
-	        for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-	            args[_key] = arguments[_key];
-	        }
-	
-	        var _this = _possibleConstructorReturn(this, (_Object$getPrototypeO = Object.getPrototypeOf(DayPicker)).call.apply(_Object$getPrototypeO, [this].concat(args)));
+	        var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(DayPicker).call(this, props));
 	
 	        _this.showNextMonth = _this.showNextMonth.bind(_this);
 	        _this.showPreviousMonth = _this.showPreviousMonth.bind(_this);
 	        // 设置当前月份为传入的初始月份
 	        _this.state = {};
-	        _this.state.currentMonth = _this.props.initialMonth;
+	        _this.state.currentMonth = props.initialMonth;
 	
 	        return _this;
 	    }
