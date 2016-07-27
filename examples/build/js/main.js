@@ -20772,9 +20772,9 @@
 	        _this.showNextMonth = _this.showNextMonth.bind(_this);
 	        _this.showPreviousMonth = _this.showPreviousMonth.bind(_this);
 	        // 设置当前月份为传入的初始月份
-	        _this.state = {};
-	        _this.state.currentMonth = props.initialMonth;
-	
+	        _this.state = {
+	            currentMonth: props.initialMonth
+	        };
 	        return _this;
 	    }
 	
@@ -21769,12 +21769,10 @@
 	var day = function (_Component) {
 	    _inherits(day, _Component);
 	
-	    function day(args) {
-	        var _Object$getPrototypeO;
-	
+	    function day(props) {
 	        _classCallCheck(this, day);
 	
-	        var _this = _possibleConstructorReturn(this, (_Object$getPrototypeO = Object.getPrototypeOf(day)).call.apply(_Object$getPrototypeO, [this].concat(_toConsumableArray(args))));
+	        var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(day).call(this, props));
 	
 	        _this.handleEvent = _this.handleEvent.bind(_this);
 	        return _this;
@@ -21822,7 +21820,9 @@
 	            if (isOutside) {
 	                dayModifiers.push('outside');
 	            }
-	
+	            console.log(Array.isArray(dayModifiers));
+	            var test = (0, _Utils.getModifiersForDay)(day, this.getModifiersFromProps(this.props));
+	            console.log('test', Array.isArray(test));
 	            dayModifiers = [].concat(_toConsumableArray(dayModifiers), _toConsumableArray((0, _Utils.getModifiersForDay)(day, this.getModifiersFromProps(this.props))));
 	
 	            // 根据修饰器生成对应的ClassName
