@@ -25586,7 +25586,7 @@
 	var Ex8 = function (_Component) {
 	    _inherits(Ex8, _Component);
 
-	    function Ex8() {
+	    function Ex8(props) {
 	        _classCallCheck(this, Ex8);
 
 	        var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Ex8).call(this, props));

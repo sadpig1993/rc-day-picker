@@ -6,7 +6,7 @@ import DayPicker, {Utils} from '../../../DayPicker.js';
 
 class Ex8 extends Component {
 
-	constructor(...args) {
+	constructor(props) {
 		super(props);
 		this.state = {
             start: props.start,
