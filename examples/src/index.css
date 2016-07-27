@@ -1,0 +1,38 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+ul{
+    list-style: none;
+    width:560px;
+    margin:0 auto;
+}
+li{
+    margin:50px 0;
+}
+ul li>div{
+    width:560px;
+    margin: 0 auto;
+}
+ul li a{
+    text-decoration:none;
+    color:#333;
+    display:block;
+    /* background:#333; */
+    margin:20px;
+    text-align:left;
+}
+.Header {
+    border-bottom: 1px solid #eaeaea;
+    padding: .5rem;
+    padding-top: .6rem;
+    text-align: center;
+}
+.Examples{
+    width:960px;
+    margin:0 auto;
+    text-align: center;
+}
+.Examples-component{
+    display: inline-block;
+}
